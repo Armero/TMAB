@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1510776478 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e4\estudo_dirigido_4\src\geradordedados.cpp
+	"GeradorDeDados.h"
+
+1510777588 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e4\estudo_dirigido_4\include\geradordedados.h
+
+1510784808 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e4\estudo_dirigido_4\src\main.cpp
+	<iostream>
+	"Pessoa.h"
+	"Professor.h"
+
+1510785473 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e4\estudo_dirigido_4\include\pessoa.h
+	<string>
+
+1510785413 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e4\estudo_dirigido_4\src\pessoa.cpp
+	"Pessoa.h"
+
+1510785788 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e4\estudo_dirigido_4\src\professor.cpp
+	"Professor.h"
+	<iostream>
+
+1510785810 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e4\estudo_dirigido_4\include\professor.h
+	"Pessoa.h"
+
