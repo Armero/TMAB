@@ -1,0 +1,160 @@
+# depslib dependency file v1.0
+1507816101 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\codigo\calculadoramatricial\src\calculadora.cpp
+	"Calculadora.h"
+
+1507816101 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\codigo\calculadoramatricial\include\calculadora.h
+
+1507819182 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\codigo\calculadoramatricial\src\interface.cpp
+	"Interface.h"
+	"CMatriz.h"
+	"vector"
+
+1507816978 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\codigo\calculadoramatricial\include\interface.h
+	<iostream>
+
+1507816371 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\codigo\calculadoramatricial\src\main.cpp
+	<Interface.h>
+
+1507821233 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\codigo\calculadoramatricial\include\cmatriz.h
+	<vector>
+	<iostream>
+
+1508368802 source:c:\users\loki\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\calculadora.cpp
+	"Calculadora.h"
+
+1508368802 c:\users\loki\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\include\calculadora.h
+	"CMatriz.h"
+	<vector>
+	<iostream>
+	"Interface.h"
+	"ManipuladorDeArquivos.h"
+
+1508368802 source:c:\users\loki\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\cmatriz.cpp
+	"CMatriz.h"
+
+1508368802 c:\users\loki\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\include\cmatriz.h
+	<vector>
+	<iostream>
+	<exception>
+
+1508089104 source:c:\users\loki\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\interface.cpp
+	"Interface.h"
+	"CMatriz.h"
+	"vector"
+
+1508368802 c:\users\loki\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\include\interface.h
+	<iostream>
+	<vector>
+	"CMatriz.h"
+	"CMatriz.h"
+	"vector"
+	"ManipuladorDeArquivos.h"
+	"Calculadora.h"
+
+1508368802 source:c:\users\loki\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\main.cpp
+	"Interface.h"
+	"ManipuladorDeArquivos.h"
+	"CMatriz.h"
+
+1508368802 c:\users\loki\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\include\manipuladordearquivos.h
+	<vector>
+	<string>
+	<fstream>
+	<sstream>
+	"CMatriz.h"
+
+1508368802 source:c:\users\loki\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\manipuladordearquivos.cpp
+	"ManipuladorDeArquivos.h"
+
+1508265825 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\calculadora.cpp
+	"Calculadora.h"
+
+1508209450 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\estudo-dirigido-2\e3\codigo\calculadoramatricial\include\calculadora.h
+	"CMatriz.h"
+	<vector>
+	<iostream>
+	"Interface.h"
+	"ManipuladorDeArquivos.h"
+
+1508214641 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\interface.cpp
+	"Interface.h"
+
+1508214641 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\estudo-dirigido-2\e3\codigo\calculadoramatricial\include\interface.h
+	<iostream>
+	<vector>
+	"CMatriz.h"
+	"CMatriz.h"
+	"vector"
+	"ManipuladorDeArquivos.h"
+	"Calculadora.h"
+
+1508265716 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\estudo-dirigido-2\e3\codigo\calculadoramatricial\include\cmatriz.h
+	<vector>
+	<iostream>
+	<exception>
+
+1508209450 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\main.cpp
+	"Interface.h"
+	"ManipuladorDeArquivos.h"
+	"CMatriz.h"
+
+1508266073 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\estudo-dirigido-2\e3\codigo\calculadoramatricial\include\manipuladordearquivos.h
+	<vector>
+	<string>
+	<fstream>
+	<sstream>
+	"CMatriz.h"
+
+1508266013 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\manipuladordearquivos.cpp
+	"ManipuladorDeArquivos.h"
+
+1508265841 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e3\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\cmatriz.cpp
+	"CMatriz.h"
+
+1508102752 source:c:\users\thiag\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\cmatriz.cpp
+	"CMatriz.h"
+
+1508102752 c:\users\thiag\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\include\cmatriz.h
+	<vector>
+	<iostream>
+	<exception>
+
+1508100878 source:c:\users\thiag\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\interface.cpp
+	"Interface.h"
+	"CMatriz.h"
+	"vector"
+	"ManipuladorDeArquivos.h"
+	"Calculadora.h"
+
+1508097350 c:\users\thiag\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\include\interface.h
+	<iostream>
+	<vector>
+	"CMatriz.h"
+
+1508097350 c:\users\thiag\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\include\manipuladordearquivos.h
+	<vector>
+	<string>
+	<fstream>
+	<sstream>
+	<iostream>
+	"CMatriz.h"
+
+1508101037 source:c:\users\thiag\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\main.cpp
+	"Interface.h"
+	"ManipuladorDeArquivos.h"
+	"CMatriz.h"
+
+1508097350 source:c:\users\thiag\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\manipuladordearquivos.cpp
+	"ManipuladorDeArquivos.h"
+
+1508102867 source:c:\users\thiag\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\src\calculadora.cpp
+	"Calculadora.h"
+	"Interface.h"
+	"CMatriz.h"
+	"ManipuladorDeArquivos.h"
+
+1508100904 c:\users\thiag\documents\github\estudo-dirigido-2\e3\codigo\calculadoramatricial\include\calculadora.h
+	"CMatriz.h"
+	<vector>
+	<iostream>
+

@@ -1,0 +1,10 @@
+ERwin Data Modeler v7.3.1666.0
+Unknown Version: 6.2  (Build 9200)
+System Default Locale: Português (Brasil)
+User Default Locale: Português (Brasil)
+30 setembro 2017 21:44:37
+--------------------------------------------------
+
+Error XML - 155: Could not open 'C:\Users\felip\Documents\Materias\2017_2\TMAB\Estudos_Dirigidos\E2\TMAB-02_2017-09-28_16-28.xml'.  If this XML file was not validated against the CA ERwin DM schema, you may be able to obtain more information regarding this error by re-running the import with the XML validation option turned on. 
+
+

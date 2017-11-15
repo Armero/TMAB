@@ -1,0 +1,19 @@
+No menu principal, entre com a entrada referente ao comando desejado.
+Ex: 2 ira chamar o comando de multiplicar uma matriz por uma constante.
+
+O arquivo de entrada de matrizes, deve possuir uma matriz por linha e estar dentro do repositorio "CalculadoraMatricial".
+Sendo escrito da forma:
+ n1 n2 a11 a12 ... a21 a22 ... an1n2
+
+Onde n1 e o numero de linhas e n2 o numero de colunas.
+Um exemplo seria: 2 3 1 2 3 3 2 1 essa matriz representaria a matriz |1 2 3|
+                                                                     |3 2 1|
+
+O arquivo de saida sera especificado durante a execucao do programa, podendo existir ou nao.
+Ex de arquivo:
+2 2 1 2 3 4
+1 1 4.5
+1 2 2 1
+
+Este arquivo contem 3 matrizes, as matrizes |1 2|, |4.5| e |2 1|
+                                            |3 4|
