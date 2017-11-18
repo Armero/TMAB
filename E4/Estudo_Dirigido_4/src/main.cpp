@@ -153,10 +153,6 @@ CREATE TABLE Atividade
 #include "Pessoa.h"
 #include "Professor.h"
 #include "GeradorDeDados.h"
-#include <map>
-
-
-
 
 using namespace std;
 
