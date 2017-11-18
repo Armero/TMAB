@@ -22,10 +22,17 @@
 1510785810 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e4\estudo_dirigido_4\include\professor.h
 	"Pessoa.h"
 
-1510776478 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\geradordedados.cpp
+1511033015 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\geradordedados.cpp
 	"GeradorDeDados.h"
 
-1510777588 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\geradordedados.h
+1511032920 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\geradordedados.h
+	<string>
+	<cstdlib>
+	<time.h>
+	<stdlib.h>
+	<sstream>
+	<iostream>
+	<math.h>
 
 1511017259 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\pessoa.cpp
 	"Pessoa.h"
@@ -40,10 +47,11 @@
 1511022442 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\professor.h
 	"Pessoa.h"
 
-1511022148 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\main.cpp
+1511033029 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\main.cpp
 	<iostream>
 	"Pessoa.h"
 	"Professor.h"
+	"GeradorDeDados.h"
 
 1511017247 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\coordenacao.cpp
 	"Coordenacao.h"
