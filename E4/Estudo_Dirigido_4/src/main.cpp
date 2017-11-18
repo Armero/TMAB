@@ -33,7 +33,7 @@ CREATE TABLE Coordenacao
 	FOREIGN KEY R_25 (Nu_SIAPE) REFERENCES Professor (Nu_SIAPE)
 );
 
-
+--- ^OK ---
 
 CREATE TABLE Curso
 (
@@ -45,7 +45,7 @@ CREATE TABLE Curso
 	FOREIGN KEY R_9 (Cd_Coordenacao) REFERENCES Coordenacao (Cd_Coordenacao)
 );
 
-
+--- ^OK ---
 
 CREATE TABLE Aluno
 (
@@ -59,7 +59,7 @@ CREATE TABLE Aluno
 	FOREIGN KEY R_34 (Cd_Curso) REFERENCES Curso (Cd_Curso)
 );
 
-
+--- ^OK ---
 
 CREATE TABLE Periodo
 (
@@ -68,7 +68,7 @@ CREATE TABLE Periodo
 	Dt_Fim               DATE NOT NULL,
 	PRIMARY KEY (Cd_Periodo)
 );
-
+--- ^OK ---
 
 
 CREATE TABLE Grade_Curricular
@@ -81,7 +81,7 @@ CREATE TABLE Grade_Curricular
 	FOREIGN KEY R_36 (Cd_Periodo) REFERENCES Periodo (Cd_Periodo)
 );
 
-
+--- ^OK ---
 
 CREATE TABLE Disciplina
 (
@@ -95,7 +95,7 @@ CREATE TABLE Disciplina
 	FOREIGN KEY R_5 (Cd_Grade) REFERENCES Grade_Curricular (Cd_Grade)
 );
 
-
+--- ^OK ---
 
 CREATE TABLE Pre_Requisitos
 (
@@ -106,7 +106,7 @@ CREATE TABLE Pre_Requisitos
 	FOREIGN KEY R_30 (Cd_Pre_Requisito) REFERENCES Disciplina (Cd_Disciplina)
 );
 
-
+--- ^OK ---
 
 CREATE TABLE Incricao
 (
@@ -116,7 +116,7 @@ CREATE TABLE Incricao
 	PRIMARY KEY (Cd_Inscricao),
 	FOREIGN KEY R_31 (Nu_Dre) REFERENCES Aluno (Nu_Dre)
 );
-
+--- ^OK ---
 
 
 CREATE TABLE Turma
@@ -134,7 +134,7 @@ CREATE TABLE Turma
 	FOREIGN KEY R_32 (Cd_Inscricao) REFERENCES Incricao (Cd_Inscricao)
 );
 
-
+--- ^OK ---
 
 CREATE TABLE Atividade
 (
@@ -158,12 +158,12 @@ using namespace std;
 int main (void)
 {
     cout << "Funciona!" << endl;
-    Pessoa p1 (1234, "Fulano");
-    Professor pr1 (829, "abc", "Bloco H", "2197619-2847", "professor@poli.ufrj.br", "professor.poli.ufrj", "Doutor", p1);
-    cout << pr1.GetNm_NomePessoa()<< " " << pr1.Get_Local_Gabinete() << " "<< pr1.Get_En_Email() << endl;
+    Pessoa p1 (1, "Fulano");
+    Professor pr1 (829, "abc", "Bloco H", "2197619-2847", "professor@poli.ufrj.br", "professor.poli.ufrj", "Doutor");
+    cout << p1.Get_Nm_NomePessoa()<< " " << pr1.Get_Local_Gabinete() << " "<< pr1.Get_En_Email() << " " << pr1.Get_Cd_Professor() << endl;
 
-    Pessoa p2 (12397, "Cicrano");
-    Professor pr2 (964, "kdl", "Bloco G", "1197619-2847", "professor2@poli.ufrj.br", "professor2.poli.ufrj", "PHD", p2);
-    cout << pr2.GetNm_NomePessoa()<< " " << pr2.Get_Local_Gabinete() << " "<< pr2.Get_En_Email() << endl;
+    Pessoa p2 (2, "Cicrano");
+    Professor pr2 (964, "kdl", "Bloco G", "1197619-2847", "professor2@poli.ufrj.br", "professor2.poli.ufrj", "PHD");
+    cout << p2.Get_Nm_NomePessoa()<< " " << pr2.Get_Local_Gabinete() << " "<< pr2.Get_En_Email() << " " << pr2.Get_Cd_Professor() << endl;
     return (0);
 }

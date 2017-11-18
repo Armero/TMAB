@@ -9,14 +9,14 @@ using namespace std;
 class Pessoa
 {
     public:
-        static unsigned contPessoa;
-        Pessoa(unsigned _Cd_Pessoa = 0, string _Nm_NomePessoa = "VAZIO");
+        Pessoa(unsigned Cd_Pessoa, string Nm_NomePessoa):
+        _Cd_Pessoa(Cd_Pessoa), _Nm_NomePessoa (Nm_NomePessoa) {};
         virtual ~Pessoa() {};
 
-        unsigned GetCd_Pessoa() { return _Cd_Pessoa; };
-        void SetCd_Pessoa(unsigned val) { _Cd_Pessoa = val; };
-        string GetNm_NomePessoa() { return _Nm_NomePessoa; };
-        void SetNm_NomePessoa(string val) {_Nm_NomePessoa = val;};
+        unsigned Get_Cd_Pessoa() { return _Cd_Pessoa; };
+        void Set_Cd_Pessoa(unsigned val) { _Cd_Pessoa = val; };
+        string Get_Nm_NomePessoa() { return _Nm_NomePessoa; };
+        void Set_Nm_NomePessoa(string val) {_Nm_NomePessoa = val;};
 
     private:
         unsigned _Cd_Pessoa;
