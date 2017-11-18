@@ -153,6 +153,12 @@ CREATE TABLE Atividade
 #include "Pessoa.h"
 #include "Professor.h"
 #include "GeradorDeDados.h"
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> master
 
 using namespace std;
 
@@ -176,5 +182,13 @@ int main (void)
     Pessoa p2 (2, "Cicrano");
     Professor pr2 (964, "kdl", "Bloco G", "1197619-2847", "professor2@poli.ufrj.br", "professor2.poli.ufrj", "PHD");
     cout << p2.Get_Nm_NomePessoa()<< " " << pr2.Get_Local_Gabinete() << " "<< pr2.Get_En_Email() << " " << pr2.Get_Cd_Professor() << endl;
+
+    GeradorDeDados g1;
+    for (unsigned cont = 0; cont < 10; cont++)
+    {
+        cout << "telefone" << cont << " : " << g1.GerarTelefone("021", g1.gerarNumeros(9, 900000000, 999999999) ) << endl;;
+    }
+
+
     return (0);
 }
