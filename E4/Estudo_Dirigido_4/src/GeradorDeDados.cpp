@@ -14,7 +14,7 @@ vector <vector <string> > data;
 
 GeradorDeDados::GeradorDeDados()
 {
-    srand (time(0));
+    srand (time(NULL));
     CURSOS.push_back("ENGENHARIA");
     CURSOS.push_back("MEDICINA");
     CURSOS.push_back("DIREITO");
@@ -163,7 +163,6 @@ vector<string> GeradorDeDados::LerSobrenomes()
 
 Nome GeradorDeDados::GerarNome(bool nomeComposto,int qtdSobrenome, bool masculino)
 {
-    srand(time(NULL));
     std::vector<std::string> nomes = LerNomes(masculino);
     std::vector<std::string> sobrenomes = LerSobrenomes();
 
@@ -188,6 +187,7 @@ Nome GeradorDeDados::GerarNome(bool nomeComposto,int qtdSobrenome, bool masculin
 
             else
                 nome[i] = sobrenomes[rand() % sobrenomes.size()];
+
         }
         return nome;
     }
@@ -200,11 +200,27 @@ Nome GeradorDeDados::GerarNome(bool nomeComposto,int qtdSobrenome, bool masculin
             if(i < 1)
                 nome[i] = nomes[rand()% nomes.size()];
             else
+            {
                 nome[i] = sobrenomes[rand() % sobrenomes.size()];
+                cout << "AQUI" << " " << "rand: " << rand() <<  endl;
+            }
+
         }
 
         return nome;
     }
 
 
+}
+
+void GeradorDeDados::gerarPessoas (string nomeArquivo, unsigned qtdPessoas)
+{
+    ofstream arquivo;
+    arquivo.open (nomeArquivo.c_str());
+    for (unsigned numP = 0; numP <(qtdPessoas - 1); numP++)
+    {
+        pessoas.push_back(Pessoa (numP + 1, NometoString(GerarNome(rand()%2,rand()%2 + 1,rand()%2))));
+        arquivo <<  pessoas[numP].Get_Cd_Pessoa()  << SEP  << pessoas[numP].Get_Nm_NomePessoa() << endl;
+    }
+    arquivo.close();
 }
