@@ -1,8 +1,14 @@
 #include "GeradorDeDados.h"
 
+
+
+
 GeradorDeDados::GeradorDeDados()
 {
     srand (time(0));
+    CURSOS.push_back("ENGENHARIA");
+    CURSOS.push_back("MEDICINA");
+    CURSOS.push_back("DIREITO");
 }
 
 unsigned GeradorDeDados::gerarNumeros (unsigned numeroElementos,

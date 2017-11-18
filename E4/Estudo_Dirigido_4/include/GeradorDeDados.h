@@ -7,6 +7,7 @@
 #include <sstream>
 #include <iostream>
 #include <math.h>
+#include <vector>
 
 #define EOS		'\0'
 
@@ -32,6 +33,8 @@ class GeradorDeDados
         virtual ~GeradorDeDados();
 
     private:
+    vector <string> CURSOS;
+
 };
 
 #endif // GERADORDEDADOS_H
