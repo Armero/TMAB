@@ -12,9 +12,6 @@ using namespace std;
 vector <vector <string> > data;
 
 
-
-
-
 GeradorDeDados::GeradorDeDados()
 {
     srand (time(0));
@@ -63,15 +60,10 @@ string GeradorDeDados::GerarTelefone (string prefixo, unsigned numero)
     return prefixo + (string) itoa(numero, buffer, 10);
 }
 
-GeradorDeDados::~GeradorDeDados()
-{
-    //dtor
-}
-
 string GeradorDeDados::NometoString(Nome nome)
 {
     string output = "";
-    for(int i = 0; i < nome.size();i++)
+    for(unsigned i = 0; i < nome.size();i++)
     {
         if(i < nome.size() -1)
             output += nome[i] + " ";
@@ -89,8 +81,6 @@ vector<string> GeradorDeDados::LerNomes(bool masculino)
     string line0;
     string line1;
     vector <string> nomes;
-
-    int i;
 
     if(!file)
     {
@@ -137,7 +127,6 @@ vector<string> GeradorDeDados::LerNomes(bool masculino)
             }
 
         }
-
 }
 
 vector<string> GeradorDeDados::LerSobrenomes()
@@ -146,8 +135,6 @@ vector<string> GeradorDeDados::LerSobrenomes()
     file.open("Sobrenomes.txt");
     string line;
     vector <string> sobrenomes;
-
-    int i;
 
     if(!file)
     {
@@ -183,7 +170,7 @@ Nome GeradorDeDados::GerarNome(bool nomeComposto,int qtdSobrenome, bool masculin
     if(nomeComposto == true)
     {
         Nome nome(qtdSobrenome + 2);
-        for(int i = 0; i < nome.size();i++)
+        for(unsigned i = 0; i < nome.size();i++)
         {
             if(i < 2)
             {
@@ -208,7 +195,7 @@ Nome GeradorDeDados::GerarNome(bool nomeComposto,int qtdSobrenome, bool masculin
     else
     {
         Nome nome(qtdSobrenome + 1);
-          for(int i = 0; i < nome.size();i++)
+          for(unsigned i = 0; i < nome.size();i++)
         {
             if(i < 1)
                 nome[i] = nomes[rand()% nomes.size()];

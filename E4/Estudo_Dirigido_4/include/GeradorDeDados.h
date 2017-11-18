@@ -1,11 +1,9 @@
 #ifndef GERADORDEDADOS_H
 #define GERADORDEDADOS_H
-<<<<<<< HEAD
 #include <vector>
 #include <string>
 
 typedef std::vector <std::string> Nome;
-=======
 #include <string>
 #include <cstdlib>
 #include <time.h>
@@ -13,11 +11,7 @@ typedef std::vector <std::string> Nome;
 #include <sstream>
 #include <iostream>
 #include <math.h>
-<<<<<<< HEAD
 #include <vector>
-=======
->>>>>>> master
->>>>>>> master
 
 #define EOS		'\0'
 
@@ -31,7 +25,6 @@ class GeradorDeDados
         std::string NometoString(Nome);
         std::vector < std::string > LerNomes(bool);
         std::vector < std::string > LerSobrenomes();
-        virtual ~GeradorDeDados();
 
 
         //numeroElementos eh o numero de total de elementos no vetor que sera gerado
@@ -45,8 +38,6 @@ class GeradorDeDados
 
         //Adiciona o prefixo ao numero de entrada e retorna tudo como string
         string GerarTelefone (string prefixo, unsigned numero);
-
-        virtual ~GeradorDeDados();
 
     private:
     vector <string> CURSOS;
