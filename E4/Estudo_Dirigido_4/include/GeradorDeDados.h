@@ -1,5 +1,9 @@
 #ifndef GERADORDEDADOS_H
 #define GERADORDEDADOS_H
+#include <vector>
+#include <string>
+
+typedef std::vector <std::string> Nome;
 #include <string>
 #include <cstdlib>
 #include <time.h>
@@ -17,6 +21,11 @@ class GeradorDeDados
 {
     public:
         GeradorDeDados();
+        Nome GerarNome(bool,int,bool);
+        std::string NometoString(Nome);
+        std::vector < std::string > LerNomes(bool);
+        std::vector < std::string > LerSobrenomes();
+        virtual ~GeradorDeDados();
 
         //numeroElementos eh o numero de total de elementos no vetor que sera gerado
         //numeroInicial eh o numero minimo permitido

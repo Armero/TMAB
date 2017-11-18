@@ -162,6 +162,16 @@ using namespace std;
 
 int main (void)
 {
+    GeradorDeDados gerador;
+    bool masculino = true;
+    bool nomeComposto = false;
+    int qtdeSobrenomes = 1;
+
+    Nome nome = gerador.GerarNome(nomeComposto,qtdeSobrenomes,masculino);
+
+    cout << gerador.NometoString(nome);
+
+
     cout << "Funciona!" << endl;
     Pessoa p1 (1, "Fulano");
     Professor pr1 (829, "abc", "Bloco H", "2197619-2847", "professor@poli.ufrj.br", "professor.poli.ufrj", "Doutor");
