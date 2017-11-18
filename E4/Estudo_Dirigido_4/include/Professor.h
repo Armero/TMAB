@@ -3,15 +3,17 @@
 
 #include "Pessoa.h"
 
-class Professor : public Pessoa
+class Professor
 {
     public:
-        static unsigned contProfessor;
         Professor(unsigned Nu_Siape, string Ds_Titulo,
                   string Local_Gabinete, string Nu_Telefone,
                   string En_Email, string En_Web,
-                  string Ic_Classe, Pessoa pessoa);
-        virtual ~Professor() {};
+                  string Ic_Classe):
+                  _Nu_SIAPE (Nu_Siape), _Ds_Titulo (Ds_Titulo),
+                  _Local_Gabinete (Local_Gabinete),
+                  _Nu_Telefone (Nu_Telefone), _En_Email (En_Email),
+                  _En_Web (En_Web), _Ic_Classe (Ic_Classe) {};
 
         unsigned Get_Nu_SIAPE() { return _Nu_SIAPE; }
         void Set_Nu_SIAPE(unsigned val) { _Nu_SIAPE = val; }
@@ -25,7 +27,7 @@ class Professor : public Pessoa
         void Set_En_Email(string val) { _En_Email = val; }
         string Get_En_Web() { return _En_Web; }
         void Set_En_Web(string val) { _En_Web = val; }
-        unsigned Get_Cd_Professor() { return GetCd_Pessoa(); }
+        unsigned Get_Cd_Professor() { return _Cd_Professor; }
         void Set_Cd_Professor(unsigned val) { _Cd_Professor = val; }
         string Get_Ic_Classe() { return _Ic_Classe; }
         void Set_Ic_Classe(string val) { _Ic_Classe = val; }
