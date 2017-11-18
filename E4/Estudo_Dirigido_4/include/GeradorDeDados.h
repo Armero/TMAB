@@ -11,6 +11,10 @@ typedef std::vector <std::string> Nome;
 #include <iostream>
 #include <math.h>
 #include <vector>
+#include "Pessoa.h"
+#include <fstream>
+
+#define SEP ";" //Separador do arquivo CSV
 
 #define EOS		'\0'
 
@@ -37,9 +41,11 @@ class GeradorDeDados
 
         //Adiciona o prefixo ao numero de entrada e retorna tudo como string
         string GerarTelefone (string prefixo, unsigned numero);
+        void gerarPessoas (string nomeArquivo, unsigned qtdPessoas);
 
     private:
     vector <string> CURSOS;
+    vector <Pessoa> pessoas;
 
 };
 

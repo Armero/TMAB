@@ -184,6 +184,7 @@ int main (void)
         cout << "telefone" << cont << " : " << g1.GerarTelefone("021", g1.gerarNumeros(9, 900000000, 999999999) ) << endl;;
     }
 
+    g1.gerarPessoas("pessoas.csv", 1000);
 
     return (0);
 }
