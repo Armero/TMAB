@@ -39,6 +39,12 @@ unsigned GeradorDeDados::gerarNumeros (unsigned numeroElementos,
     return valor;
 }
 
+string GeradorDeDados::GerarTelefone (string prefixo, unsigned numero)
+{
+    char buffer [20];
+    return prefixo + (string) itoa(numero, buffer, 10);
+}
+
 GeradorDeDados::~GeradorDeDados()
 {
     //dtor

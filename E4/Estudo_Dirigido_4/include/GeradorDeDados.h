@@ -23,6 +23,9 @@ class GeradorDeDados
         unsigned gerarNumeros (unsigned numeroElementos,
                                unsigned numeroInicial,
                                unsigned numeroFinal);
+
+        string GerarTelefone (string prefixo, unsigned numero);
+
         virtual ~GeradorDeDados();
 
     private:

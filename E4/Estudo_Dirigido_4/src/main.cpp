@@ -172,7 +172,11 @@ int main (void)
 
     GeradorDeDados g1;
     for (unsigned cont = 0; cont < 10; cont++)
-    cout << "valor " << cont << ": " << g1.gerarNumeros(9, 105000000, 117000000) << endl;
+    {
+//       cout << "valor " << cont << ": " << g1.gerarNumeros(9, 105000000, 117000000) << endl;
+        cout << "telefone" << cont << " : " << g1.GerarTelefone("021", g1.gerarNumeros(9, 900000000, 999999999) ) << endl;;
+    }
+
 
     return (0);
 }
