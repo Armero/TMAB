@@ -2,7 +2,6 @@
 #define GERADORDEDADOS_H
 #include <vector>
 #include <string>
-
 typedef std::vector <std::string> Nome;
 #include <string>
 #include <cstdlib>

@@ -22,7 +22,7 @@
 1510785810 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e4\estudo_dirigido_4\include\professor.h
 	"Pessoa.h"
 
-1511037508 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\geradordedados.cpp
+1511037856 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\geradordedados.cpp
 	"GeradorDeDados.h"
 	<fstream>
 	<iostream>
@@ -33,7 +33,7 @@
 	<stdlib.h>
 	<time.h>
 
-1511037543 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\geradordedados.h
+1511038148 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\geradordedados.h
 	<vector>
 	<string>
 	<string>
@@ -58,7 +58,7 @@
 1511022442 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\professor.h
 	"Pessoa.h"
 
-1511037431 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\main.cpp
+1511037956 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\main.cpp
 	<iostream>
 	"Pessoa.h"
 	"Professor.h"
@@ -91,7 +91,6 @@
 1511019796 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\disciplina.h
 	<string>
 
-1511034306 source:c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\src\geradordedados.cpp
 1511037363 source:c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\src\geradordedados.cpp
 	"GeradorDeDados.h"
 	<fstream>
@@ -103,7 +102,6 @@
 	<stdlib.h>
 	<time.h>
 
-1511033694 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\geradordedados.h
 1511037740 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\geradordedados.h
 	<vector>
 	<string>
@@ -114,18 +112,15 @@
 	<iostream>
 	<math.h>
 
-1511033683 source:c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\src\main.cpp
 1511037733 source:c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\src\main.cpp
 	<iostream>
 	"Pessoa.h"
 	"Professor.h"
 	"GeradorDeDados.h"
 
-1511024306 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\pessoa.h
 1511037363 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\pessoa.h
 	<string>
 
-1511024306 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\professor.h
 1511037363 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\professor.h
 	"Pessoa.h"
 
