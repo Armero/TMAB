@@ -80,3 +80,30 @@
 1511019796 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\disciplina.h
 	<string>
 
+1511034306 source:c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\src\geradordedados.cpp
+	"GeradorDeDados.h"
+	<fstream>
+	<iostream>
+	<sstream>
+	<vector>
+	<string>
+	<iterator>
+	<stdlib.h>
+	<time.h>
+
+1511033694 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\geradordedados.h
+	<vector>
+	<string>
+
+1511033683 source:c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\src\main.cpp
+	<iostream>
+	"Pessoa.h"
+	"Professor.h"
+	"GeradorDeDados.h"
+
+1511024306 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\pessoa.h
+	<string>
+
+1511024306 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\professor.h
+	"Pessoa.h"
+
