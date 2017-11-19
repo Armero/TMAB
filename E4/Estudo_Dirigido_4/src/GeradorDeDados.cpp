@@ -353,3 +353,18 @@ void GeradorDeDados::gerarAlunos (string nomeArquivo, unsigned qtdCoord)
     }
     arquivo.close();
 }
+
+void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned qtdCoord)
+{
+    ofstream arquivo;
+    arquivo.open (nomeArquivo.c_str());
+    for (unsigned numP = 0; numP <(qtdCoord - 1); numP++)
+    {
+        inscricoes.push_back(Inscricao(numP, 10 * ((float) (rand() % 101) / 100),
+                                        alunos[rand() % alunos.size()].Get_Nu_Dre()));
+        arquivo << inscricoes[numP].Get_Cd_Inscricao() << SEP <<
+                   inscricoes[numP].Get_Nu_Grau() << SEP <<
+                   inscricoes[numP].Get_Nu_Dre() << SEP << endl;
+    }
+    arquivo.close();
+}

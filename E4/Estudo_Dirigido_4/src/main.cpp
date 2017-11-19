@@ -146,7 +146,7 @@ CREATE TABLE Atividade
 	Nu_Orientador        INTEGER NULL,
 	PRIMARY KEY (Cd_Atividade),
 	FOREIGN KEY R_19 (Nu_Dre) REFERENCES Aluno (Nu_Dre),
-	FOREIGN KEY R_35 (N
+	FOREIGN KEY R_35 (Nu_Orientador) REFERENCES Professor (Nu_SIAPE)
 */
 
 #include <iostream>
@@ -170,6 +170,7 @@ int main (void)
     g1.gerarCoordenacao("coordenacoes.csv", 5);
     g1.gerarCursos("cursos.csv", 10);
     g1.gerarAlunos("alunos.csv", 100);
+    g1.gerarIncricoes("inscricoes.csv", 100);
 
     return (0);
 }
