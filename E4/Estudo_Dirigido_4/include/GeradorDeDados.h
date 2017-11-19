@@ -22,7 +22,7 @@ typedef std::vector <std::string> Nome;
 #include <fstream>
 #include <iterator>
 
-#define SEP "," //Separador do arquivo CSV
+#define SEP ";" //Separador do arquivo CSV
 
 #define EOS		'\0'
 
