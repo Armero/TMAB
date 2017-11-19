@@ -1,3 +1,21 @@
+/**
+* UFRJ - Universidade Federal do Rio de Janeiro
+* IM - Instituto de Matemática
+* DMA - Departamento de Matemática Aplicada
+*
+* TMAB - Programação C/C++ & Banco de Dados
+* ParteII - Programação OO em C++
+*
+* Descrição do Estudo Dirigido 04
+* Prazo de Entrega: 21 de novembro de 2017
+*
+* Prof. Milton Ramirez (milton@labma.ufrj.br)
+* Rio de Janeiro, 13 de novembro de 2017
+* Grupo K
+* Felipe Claudio
+* Thiago Koster Lago
+**/
+
 #include "GeradorDeDados.h"
 #include <fstream>
 #include <iostream>
@@ -13,7 +31,9 @@
 using namespace std;
 vector <vector <string> > data;
 string alphabet[26] = { "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z" };
-
+string materias[17] = {"TMAB","Calculo I","Calculo II","Calculo III","Calculo IV","Fisica I","Fisica II","Fisica III","Fisica IV", "Modelos Probabilisticos", "Computacao I", "Computacao II",
+                        "Circuitos Eletricos", "Eletronica I","Eletronica II","Eletronica III", "Eletronica IV"};
+string bibliografias[4] = {"Stack Overflow", "The C++ Programming Language","Fundamentals of Database Systems","Effective C++"}
 
 GeradorDeDados::GeradorDeDados()
 {
@@ -426,10 +446,10 @@ void GeradorDeDados :: gerarDisciplina(string nomeArquivo,unsigned qtdDisciplina
     {
         string cdDisciplina = alphabet[rand() % 26] + alphabet[rand() % 26] + alphabet[rand() % 26] +
                                 itoa(rand() % 200 + 100,buffer,10);
-        string nomeDisciplina = "TMAB";
+        string nomeDisciplina = materias[rand() % 17];
         unsigned qtdCred = rand() % 6 + 1;
-        string ementa = "Ementa da disciplina, uma breve descrição";
-        string bibliografia = "stack overflow";
+        string ementa = "Ementa da disciplina uma breve descrição";
+        string bibliografia = bibliografias[rand() % 4];
         unsigned cdGrade = grades[rand() % grades.size()].Get_Cd_Grade();
         disciplinas.push_back(Disciplina(cdDisciplina,nomeDisciplina,qtdCred,ementa,bibliografia,cdGrade));
         arquivo << disciplinas[index].Get_Cd_Disciplina() << SEP << disciplinas[index].Get_Nm_Disciplina()

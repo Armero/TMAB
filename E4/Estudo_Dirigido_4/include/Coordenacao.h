@@ -1,3 +1,21 @@
+/**
+* UFRJ - Universidade Federal do Rio de Janeiro
+* IM - Instituto de Matemática
+* DMA - Departamento de Matemática Aplicada
+*
+* TMAB - Programação C/C++ & Banco de Dados
+* ParteII - Programação OO em C++
+*
+* Descrição do Estudo Dirigido 04
+* Prazo de Entrega: 21 de novembro de 2017
+*
+* Prof. Milton Ramirez (milton@labma.ufrj.br)
+* Rio de Janeiro, 13 de novembro de 2017
+* Grupo K
+* Felipe Claudio
+* Thiago Koster Lago
+**/
+
 #ifndef COORDENACAO_H
 #define COORDENACAO_H
 
