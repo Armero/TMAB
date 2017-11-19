@@ -1,24 +1,19 @@
 /**
 * UFRJ - Universidade Federal do Rio de Janeiro
-* IM - Instituto de Matem·tica
-* DMA - Departamento de Matem·tica Aplicada
+* IM - Instituto de Matem√°tica
+* DMA - Departamento de Matem√°tica Aplicada
 *
-* TMAB - ProgramaÁ„o C/C++ & Banco de Dados
-* ParteII - ProgramaÁ„o OO em C++
+* TMAB - Programa√ß√£o & Banco de Dados
 *
-* DescriÁ„o do Estudo Dirigido 04
-* Prazo de Entrega: 21 de novembro de 2017
+* Parte I - Introdu√ß√£o √† Computa√ß√£o
+* 
+* Descri√ß√£o do Estudo Dirigido 02
+* Prazo de Entrega: 03 de outubro de 2017
 *
-* Prof. Milton Ramirez (milton@labma.ufrj.br)
-* Rio de Janeiro, 13 de novembro de 2017
-* Grupo K
-* Felipe Claudio
+* Felipe Claudio da Silva Santos
 * Thiago Koster Lago
 **/
 
-
-
-/*
 
 CREATE TABLE Pessoa
 (
@@ -27,14 +22,14 @@ CREATE TABLE Pessoa
 	PRIMARY KEY (Cd_Pessoa)
 );
 
---- ^OK ---
+
 
 CREATE TABLE Professor
 (
 	Nu_SIAPE             INTEGER NOT NULL,
 	Ds_Titulo            CHAR(255) NOT NULL,
 	Nm_Local_Gabinete    CHAR(60) NOT NULL,
-	Nu_Telefone          CHAR(11) NOT NULL,
+	Nu_Telefone          CHAR(12) NOT NULL,
 	En_Email             CHAR(60) NOT NULL,
 	En_Web               CHAR (255),
 	Cd_Pessoa            INTEGER NOT NULL,
@@ -43,7 +38,7 @@ CREATE TABLE Professor
 	FOREIGN KEY R_24 (Cd_Pessoa) REFERENCES Pessoa (Cd_Pessoa)
 );
 
---- ^OK ---
+
 
 CREATE TABLE Coordenacao
 (
@@ -53,7 +48,7 @@ CREATE TABLE Coordenacao
 	FOREIGN KEY R_25 (Nu_SIAPE) REFERENCES Professor (Nu_SIAPE)
 );
 
---- ^OK ---
+
 
 CREATE TABLE Curso
 (
@@ -65,7 +60,7 @@ CREATE TABLE Curso
 	FOREIGN KEY R_9 (Cd_Coordenacao) REFERENCES Coordenacao (Cd_Coordenacao)
 );
 
---- ^OK ---
+
 
 CREATE TABLE Aluno
 (
@@ -79,7 +74,7 @@ CREATE TABLE Aluno
 	FOREIGN KEY R_34 (Cd_Curso) REFERENCES Curso (Cd_Curso)
 );
 
---- ^OK ---
+
 
 CREATE TABLE Periodo
 (
@@ -88,7 +83,7 @@ CREATE TABLE Periodo
 	Dt_Fim               DATE NOT NULL,
 	PRIMARY KEY (Cd_Periodo)
 );
---- ^OK ---
+
 
 
 CREATE TABLE Grade_Curricular
@@ -101,7 +96,7 @@ CREATE TABLE Grade_Curricular
 	FOREIGN KEY R_36 (Cd_Periodo) REFERENCES Periodo (Cd_Periodo)
 );
 
---- ^OK ---
+
 
 CREATE TABLE Disciplina
 (
@@ -115,7 +110,7 @@ CREATE TABLE Disciplina
 	FOREIGN KEY R_5 (Cd_Grade) REFERENCES Grade_Curricular (Cd_Grade)
 );
 
---- ^OK ---
+
 
 CREATE TABLE Pre_Requisitos
 (
@@ -126,9 +121,9 @@ CREATE TABLE Pre_Requisitos
 	FOREIGN KEY R_30 (Cd_Pre_Requisito) REFERENCES Disciplina (Cd_Disciplina)
 );
 
---- ^OK ---
 
-CREATE TABLE Incricao
+
+CREATE TABLE Inscricao
 (
 	Cd_Inscricao         INTEGER NOT NULL,
 	Nu_Grau              DECIMAL(4,2) NULL,
@@ -136,7 +131,7 @@ CREATE TABLE Incricao
 	PRIMARY KEY (Cd_Inscricao),
 	FOREIGN KEY R_31 (Nu_Dre) REFERENCES Aluno (Nu_Dre)
 );
---- ^OK ---
+
 
 
 CREATE TABLE Turma
@@ -154,7 +149,7 @@ CREATE TABLE Turma
 	FOREIGN KEY R_32 (Cd_Inscricao) REFERENCES Incricao (Cd_Inscricao)
 );
 
---- ^OK ---
+
 
 CREATE TABLE Atividade
 (
@@ -167,32 +162,6 @@ CREATE TABLE Atividade
 	PRIMARY KEY (Cd_Atividade),
 	FOREIGN KEY R_19 (Nu_Dre) REFERENCES Aluno (Nu_Dre),
 	FOREIGN KEY R_35 (Nu_Orientador) REFERENCES Professor (Nu_SIAPE)
-*/
-
-#include <iostream>
-#include "Pessoa.h"
-#include "Professor.h"
-#include "GeradorDeDados.h"
+);
 
 
-using namespace std;
-
-int main (void)
-{
-    GeradorDeDados gerador;
-    gerador.gerarPessoas("pessoas.csv", 1000);
-    gerador.gerarProfessor("professores.csv", 20);
-    gerador.gerarCoordenacao("coordenacoes.csv", 10);
-    gerador.gerarCursos("cursos.csv", 10);
-    gerador.gerarAlunos("alunos.csv", 900);
-    gerador.gerarIncricoes("inscricoes.csv", 300);
-    gerador.gerarAtividades("atividades.csv", 100);
-    gerador.gerarPeriodo("periodos.csv",300);
-    gerador.gerarGrade("grades.csv",300);
-    gerador.gerarDisciplina("disciplinas.csv",300);
-    gerador.gerarPreRequisito("pre_requisitos.csv",50);
-    gerador.gerarTurmas("turmas.csv",30);
-
-
-    return (0);
-}
