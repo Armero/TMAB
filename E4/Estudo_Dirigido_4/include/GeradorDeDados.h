@@ -19,7 +19,7 @@ typedef std::vector <std::string> Nome;
 #include "Turma.h"
 #include <fstream>
 
-#define SEP "," //Separador do arquivo CSV
+#define SEP ";" //Separador do arquivo CSV
 
 #define EOS		'\0'
 

@@ -145,9 +145,9 @@
 1511055968 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\professor.h
 	"Pessoa.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-1511055968 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\periodo.h
+1511022937 D
+
+1511052015 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\periodo.h
 
 1511059254 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\grade_curricular.h
 
@@ -157,24 +157,17 @@
 1511064953 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\pre_requisitos.h
 
 1511065050 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\turma.h
-=======
-<<<<<<< HEAD
-=======
-1511038719 D
 
->>>>>>> master
-1511052015 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\periodo.h
+1511023738 ter
 
 1511022937 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\inscricao.h
-<<<<<<< HEAD
->>>>>>> Felipe
->>>>>>> master
-=======
 
 1511022937 ipe
 
 1511065434 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\periodo.h
 
 1511023738 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\atividade.h
->>>>>>> master
+
+1511055968 source:c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\main.cpp
+	<iostream>
 

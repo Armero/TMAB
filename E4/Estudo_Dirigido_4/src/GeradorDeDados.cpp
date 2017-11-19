@@ -399,7 +399,7 @@ void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned qtdInscricoes)
     arquivo.close();
 }
 
-<<<<<<< HEAD
+
 
 void GeradorDeDados :: gerarGrade(string nomeArquivo, unsigned qtdGrades)
 {
@@ -477,7 +477,7 @@ void GeradorDeDados :: gerarTurmas(string nomeArquivo, unsigned qtdTurmas)
 
     arquivo.close();
 }
-=======
+
 void GeradorDeDados::gerarAtividades (string nomeArquivo, unsigned qtdAtividades)
 {
     ofstream arquivo;
@@ -498,8 +498,4 @@ void GeradorDeDados::gerarAtividades (string nomeArquivo, unsigned qtdAtividades
     }
     arquivo.close();
 }
-<<<<<<< HEAD
->>>>>>> Felipe
->>>>>>> master
-=======
->>>>>>> master
+
