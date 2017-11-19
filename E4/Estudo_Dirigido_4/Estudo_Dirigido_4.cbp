@@ -34,12 +34,20 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Aluno.h" />
+		<Unit filename="include/Atividade.h" />
+		<Unit filename="include/Coordenacao.h" />
+		<Unit filename="include/Curso.h" />
+		<Unit filename="include/Disciplina.h" />
 		<Unit filename="include/GeradorDeDados.h" />
+		<Unit filename="include/Grade_Curricular.h" />
+		<Unit filename="include/Inscricao.h" />
+		<Unit filename="include/Periodo.h" />
 		<Unit filename="include/Pessoa.h" />
+		<Unit filename="include/Pre_Requisitos.h" />
 		<Unit filename="include/Professor.h" />
+		<Unit filename="include/Turma.h" />
 		<Unit filename="src/GeradorDeDados.cpp" />
-		<Unit filename="src/Pessoa.cpp" />
-		<Unit filename="src/Professor.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />
