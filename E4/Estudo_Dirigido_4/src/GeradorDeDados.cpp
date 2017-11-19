@@ -252,3 +252,60 @@ void GeradorDeDados::gerarPeriodo(string nomeArquivo, unsigned qtdPeriodo)
 }
 
 
+
+void GeradorDeDados :: gerarGrade(string nomeArquivo, unsigned qtdGrades)
+{
+    ofstream arquivo;
+    arquivo.open(nomeArquivo.c_str());
+    for(unsigned index = 0;index < qtdGrades; index ++)
+    {
+        unsigned dre = 111111111;                           //TODO: MUDAR COMO PEGA O DRE
+        unsigned cdPeriodo = periodos[rand() % periodos.size()].Get_Cd_Periodo();
+        grades.push_back(Grade_Curricular(index+1,dre,cdPeriodo));
+        arquivo << grades[index].Get_Cd_Grade() << SEP << grades[index].Get_Nu_Dre() << SEP << grades[index].Get_Cd_Periodo() << endl;
+    }
+
+    arquivo.close();
+}
+
+
+void GeradorDeDados :: gerarDisciplina(string nomeArquivo,unsigned qtdDisciplina)
+{
+    ofstream arquivo;
+    arquivo.open(nomeArquivo.c_str());
+    for(unsigned index = 0; index < qtdDisciplina;index ++)
+    {
+        string nomeDisciplina = "TMAB";
+        unsigned qtdCred = rand() % 6 + 1;
+        string ementa = "Ementa da disciplina, uma breve descrição";
+        string bibliografia = "stack overflow";
+        unsigned cdGrade = grades[rand() % grades.size()].Get_Cd_Grade();
+        disciplinas.push_back(Disciplina(index + 1,nomeDisciplina,qtdCred,ementa,bibliografia,cdGrade));
+        arquivo << disciplinas[index].Get_Cd_Disciplina() << SEP << disciplinas[index].Get_Nm_Disciplina()
+            << SEP << disciplinas[index].Get_Qt_Creditos() << SEP << disciplinas[index].Get_Ds_Ementa()
+            << SEP << disciplinas[index].Get_Ds_Bibliografia() << SEP << disciplinas[index].GetCd_Grade() << endl;
+    }
+    arquivo.close();
+}
+/*
+CREATE TABLE Pre_Requisitos
+(
+	Cd_Disciplina_Dependente CHAR(6) NOT NULL,
+	Cd_Pre_Requisito     CHAR(6) NULL,
+	PRIMARY KEY (Cd_Disciplina_Dependente),
+	FOREIGN KEY R_27 (Cd_Disciplina_Dependente) REFERENCES Disciplina (Cd_Disciplina),
+	FOREIGN KEY R_30 (Cd_Pre_Requisito) REFERENCES Disciplina (Cd_Disciplina)
+);
+*/
+
+void GeradorDeDados :: gerarPreRequisito(string nomeArquivo,unsigned qtdPreReq)
+{
+    ofstream arquivo;
+    arquivo.open(nomeArquivo.c_str());
+    for(unsigned index = 0;index < qtdPreReq;index++)
+    {
+        preRequisitos.push_back(Pre_Requisitos(disciplinas[rand() % disciplinas.size()].Get_Cd_Disciplina(),index + 1));
+        arquivo << preRequisitos[index].Get_Cd_Disciplina_Dependente() << SEP << preRequisitos[index].Get_Cd_Pre_Requisito() << endl;
+    }
+    arquivo.close();
+}

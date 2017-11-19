@@ -188,7 +188,11 @@ int main (void)
 
     g1.gerarPeriodo("periodos.csv",1000);
 
+    g1.gerarGrade("grades.csv",1000);
 
+    g1.gerarDisciplina("disciplinas.csv",1000);
+
+    g1.gerarPreRequisito("pre_requisitos.csv",1000);
 
     return (0);
 }

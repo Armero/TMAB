@@ -20,14 +20,19 @@ class Disciplina
 
         unsigned Get_Cd_Disciplina() { return _Cd_Disciplina; }
         void Set_Cd_Disciplina(unsigned val) { _Cd_Disciplina = val; }
+
         string Get_Nm_Disciplina() { return _Nm_Disciplina; }
         void Set_Nm_Disciplina(string val) { _Nm_Disciplina = val; }
+
         string Get_Ds_Ementa() { return _Ds_Ementa; }
         void Set_Ds_Ementa(string val) { _Ds_Ementa = val; }
+
         unsigned Get_Qt_Creditos() { return _Qt_Creditos; }
         void Set_Qt_Creditos(unsigned val) { _Qt_Creditos = val; }
+
         string Get_Ds_Bibliografia() { return _Ds_Bibliografia; }
         void Set_Ds_Bibliografia(string val) { _Ds_Bibliografia = val; }
+
         unsigned GetCd_Grade() { return _Cd_Grade; }
         void SetCd_Grade(unsigned val) { _Cd_Grade = val; }
 
