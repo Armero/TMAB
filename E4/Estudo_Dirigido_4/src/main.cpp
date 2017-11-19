@@ -179,12 +179,8 @@ int main (void)
     cout << p2.Get_Nm_NomePessoa()<< " " << pr2.Get_Local_Gabinete() << " "<< pr2.Get_En_Email() << " " << pr2.Get_Cd_Professor() << endl;
 
     GeradorDeDados g1;
-    for (unsigned cont = 0; cont < 10; cont++)
-    {
-        cout << "telefone" << cont << " : " << g1.GerarTelefone("021", g1.gerarNumeros(9, 900000000, 999999999) ) << endl;;
-    }
-
     g1.gerarPessoas("pessoas.csv", 1000);
+    g1.gerarProfessor("professores.csv", 10);
 
     return (0);
 }

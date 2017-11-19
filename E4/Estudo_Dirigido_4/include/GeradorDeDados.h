@@ -12,7 +12,9 @@ typedef std::vector <std::string> Nome;
 #include <math.h>
 #include <vector>
 #include "Pessoa.h"
+#include "Professor.h"
 #include <fstream>
+#include <iterator>
 
 #define SEP ";" //Separador do arquivo CSV
 
@@ -39,13 +41,26 @@ class GeradorDeDados
                                unsigned numeroInicial,
                                unsigned numeroFinal);
 
-        //Adiciona o prefixo ao numero de entrada e retorna tudo como string
-        string GerarTelefone (string prefixo, unsigned numero);
+
+        //gera o arquivo .csv com o numero de pessoas desejadas
         void gerarPessoas (string nomeArquivo, unsigned qtdPessoas);
 
+        //gera o arquivo .csv com o numero de professores desejados
+        void gerarProfessor (string nomeArquivo, unsigned qtdPessoas);
+
+
     private:
+    string GerarTelefone (string prefixo, unsigned numero); //Adiciona o prefixo ao numero de entrada e retorna tudo como string
+    void gerarEmaileEnWeb (string nome, string &email, string &enWeb);
+    string gerarLocalGabinete ();
     vector <string> CURSOS;
+    vector <string> TITULOS;
+    vector <string> EMAILS;
+    vector <string> DOMINIOS;
+    vector <string> BLOCOS;
+    vector <string> CLASSE;
     vector <Pessoa> pessoas;
+    vector <Professor> prof;
 
 };
 

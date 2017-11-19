@@ -18,6 +18,32 @@ GeradorDeDados::GeradorDeDados()
     CURSOS.push_back("ENGENHARIA");
     CURSOS.push_back("MEDICINA");
     CURSOS.push_back("DIREITO");
+    TITULOS.push_back("Licenciatura");
+    TITULOS.push_back("Bacharelado");
+    TITULOS.push_back("Mestrado");
+    TITULOS.push_back("Doutorado");
+    TITULOS.push_back("PHD");
+    EMAILS.push_back("@poli.ufrj.br");
+    EMAILS.push_back("@hotmail.com");
+    EMAILS.push_back("@gmail.com");
+    EMAILS.push_back("@yahoo.com");
+    EMAILS.push_back("@outlook.com");
+    DOMINIOS.push_back(".ufrj.br");
+    DOMINIOS.push_back(".com.br");
+    DOMINIOS.push_back(".com");
+    DOMINIOS.push_back(".org");
+    BLOCOS.push_back("A-");
+    BLOCOS.push_back("B-");
+    BLOCOS.push_back("C-");
+    BLOCOS.push_back("D-");
+    BLOCOS.push_back("E-");
+    BLOCOS.push_back("F-");
+    BLOCOS.push_back("G-");
+    BLOCOS.push_back("H-");
+    BLOCOS.push_back("I-");
+    CLASSE.push_back("Substituto");
+    CLASSE.push_back("Adjunto");
+    CLASSE.push_back("Titular");
 }
 
 unsigned GeradorDeDados::gerarNumeros (unsigned numeroElementos,
@@ -200,10 +226,7 @@ Nome GeradorDeDados::GerarNome(bool nomeComposto,int qtdSobrenome, bool masculin
             if(i < 1)
                 nome[i] = nomes[rand()% nomes.size()];
             else
-            {
                 nome[i] = sobrenomes[rand() % sobrenomes.size()];
-                cout << "AQUI" << " " << "rand: " << rand() <<  endl;
-            }
 
         }
 
@@ -223,4 +246,41 @@ void GeradorDeDados::gerarPessoas (string nomeArquivo, unsigned qtdPessoas)
         arquivo <<  pessoas[numP].Get_Cd_Pessoa()  << SEP  << pessoas[numP].Get_Nm_NomePessoa() << endl;
     }
     arquivo.close();
+}
+
+
+void GeradorDeDados::gerarProfessor (string nomeArquivo, unsigned qtdPessoas)
+{
+    ofstream arquivo;
+    arquivo.open (nomeArquivo.c_str());
+    for (unsigned numP = 0; numP <(qtdPessoas - 1); numP++)
+    {
+        string email, enweb;
+        gerarEmaileEnWeb(pessoas[rand()%pessoas.size()].Get_Nm_NomePessoa(), email,enweb);
+        prof.push_back(Professor(gerarNumeros(9, 100000000, 900000000), TITULOS[rand()%TITULOS.size()], gerarLocalGabinete(),
+                                             GerarTelefone("021", gerarNumeros(9,900000000, 999999999)), email, enweb, CLASSE[rand ()%CLASSE.size()]));
+        arquivo << prof[numP].Get_Nu_SIAPE() << SEP << prof[numP].Get_Ds_Titulo() <<
+                SEP << prof[numP].Get_Local_Gabinete() << SEP << prof[numP].Get_Nu_Telefone() <<
+                SEP << prof[numP].Get_En_Email() << SEP << prof[numP].Get_En_Web() <<
+                SEP << prof[numP].Get_Cd_Professor() << SEP << prof[numP].Get_Ic_Classe()<< endl;
+    }
+    arquivo.close();
+}
+
+//os emails e enderecos gerados serao no formato nome.sobrenome+algo
+void GeradorDeDados::gerarEmaileEnWeb (string nome, string &email, string &enWeb)
+{
+    istringstream iss(nome);
+    vector<string> nomes;
+    copy(istream_iterator<string>(iss),
+         istream_iterator<string>(),
+         back_inserter(nomes));
+
+    email = nomes[0] + '.' + nomes[nomes.size()-1] + EMAILS [rand()% EMAILS.size()];
+    enWeb = nomes[0] + '.' + nomes[nomes.size()-1] + DOMINIOS [rand()% DOMINIOS.size()];;
+}
+
+string GeradorDeDados::gerarLocalGabinete ()
+{
+    return GerarTelefone(BLOCOS[rand()%BLOCOS.size()], (rand ()%400)+ 1);
 }
