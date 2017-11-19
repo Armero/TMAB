@@ -1,21 +1,9 @@
-<<<<<<< HEAD
-0;Aplicada;1;Matematica
-1;Aplicada;1;Matematica
-2;Espanhol;2;Letras
-3;Civil;2;Direito
-4;Eletrônica;3;Engenharia
-5;Quimica;1;Engenharia
-6;Aplicada;1;MEDICINA
-7;Trabalhista;1;Direito
-8;Geriatrica;2;Medicina
-=======
-0;937612545;0;MEDICINA
-1;Geriatrica;0;Medicina
-2;152930735;3;MEDICINA
-3;Eletrônica;3;Engenharia
-4;Geriatrica;2;Medicina
-5;937612545;1;DIREITO
-6;H-398;3;ENGENHARIA
-7;Eletrônica;0;Engenharia
-8;H-398;1;MEDICINA
->>>>>>> 936742337747dc20da4cf9a8cc2cd4974eac4da3
+0;Eletrica;2;Engenharia
+1;922584687;3;ENGENHARIA
+2;Eletrica;0;Engenharia
+3;Eletrica;3;MEDICINA
+4;Espanhol;3;Letras
+5;Mecanica;1;Engenharia
+6;Espanhol;1;Letras
+7;Ingles;1;Letras
+8;Quimica;0;Engenharia

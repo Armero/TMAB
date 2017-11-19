@@ -159,11 +159,6 @@ using namespace std;
 
 int main (void)
 {
-    GeradorDeDados gerador;
-    bool masculino = true;
-    bool nomeComposto = false;
-    int qtdeSobrenomes = 1;
-
     GeradorDeDados g1;
     g1.gerarPessoas("pessoas.csv", 1000);
     g1.gerarProfessor("professores.csv", 10);

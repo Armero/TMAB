@@ -1,201 +1,99 @@
-<<<<<<< HEAD
-0;Pesquisa Generica;7;Iniciacao Cientifica;116970558;107984248
-1;Pesquisa Generica;5.2;Iniciacao Cientifica;116994848;119159488
-2;Pesquisa Generica;5.3;Extensao;116985835;119159488
-3;Pesquisa Generica;0;Extensao;106085853;195620968
-4;Pesquisa Generica;6.1;Iniciacao Cientifica;116988988;195745842
-5;Pesquisa Generica;5.1;Extensao;116984668;147211535
-6;Pesquisa Generica;8.5;Iniciacao Cientifica;105018673;147211535
-7;Pesquisa Generica;7.4;Extensao;116996012;195620968
-8;Pesquisa Generica;5;Extensao;116992112;103700222
-9;Pesquisa Generica;8.1;Extensao;116996176;103700222
-10;Pesquisa Generica;2.4;Extensao;116998253;147211535
-11;Pesquisa Generica;9.9;Iniciacao Cientifica;105005301;195620968
-12;Pesquisa Generica;0.9;Extensao;116987992;157371194
-13;Pesquisa Generica;0.7;Extensao;105015868;195745842
-14;Pesquisa Generica;5.9;Iniciacao Cientifica;114924633;143908488
-15;Pesquisa Generica;4.8;Extensao;116994848;107984248
-16;Pesquisa Generica;2;Extensao;105025949;143908488
-17;Pesquisa Generica;9.1;Extensao;116993375;195745842
-18;Pesquisa Generica;8.2;Extensao;116998253;107984248
-19;Pesquisa Generica;8.3;Iniciacao Cientifica;105007435;147211535
-20;Pesquisa Generica;3.6;Iniciacao Cientifica;116989728;103700222
-21;Pesquisa Generica;0.7;Iniciacao Cientifica;116998253;119159488
-22;Pesquisa Generica;3.7;Extensao;116987992;107984248
-23;Pesquisa Generica;6.2;Iniciacao Cientifica;116992112;195620968
-24;Pesquisa Generica;8.3;Extensao;116994476;157371194
-25;Pesquisa Generica;2.4;Iniciacao Cientifica;116995875;195745842
-26;Pesquisa Generica;4.3;Extensao;111297054;147211535
-27;Pesquisa Generica;3;Iniciacao Cientifica;116994159;175895891
-28;Pesquisa Generica;7.2;Extensao;108444428;175895891
-29;Pesquisa Generica;3.4;Extensao;116996012;195745842
-30;Pesquisa Generica;7.8;Extensao;116990294;143908488
-31;Pesquisa Generica;5.5;Iniciacao Cientifica;116988131;119159488
-32;Pesquisa Generica;10;Iniciacao Cientifica;116982205;103700222
-33;Pesquisa Generica;9;Extensao;105007435;147211535
-34;Pesquisa Generica;6;Iniciacao Cientifica;116988131;143908488
-35;Pesquisa Generica;10;Extensao;105007984;195620968
-36;Pesquisa Generica;9.7;Extensao;116987992;107984248
-37;Pesquisa Generica;8;Extensao;116998634;195620968
-38;Pesquisa Generica;3.9;Iniciacao Cientifica;116976092;157371194
-39;Pesquisa Generica;4.8;Iniciacao Cientifica;116996176;195745842
-40;Pesquisa Generica;6.4;Iniciacao Cientifica;116992723;157371194
-41;Pesquisa Generica;7.7;Extensao;114601586;195745842
-42;Pesquisa Generica;5.7;Extensao;116998769;107984248
-43;Pesquisa Generica;6.1;Extensao;116985351;147211535
-44;Pesquisa Generica;4.7;Extensao;114077222;143908488
-45;Pesquisa Generica;8.8;Extensao;116996356;143908488
-46;Pesquisa Generica;4;Extensao;116993216;195745842
-47;Pesquisa Generica;3;Extensao;116970558;147211535
-48;Pesquisa Generica;0;Extensao;106085853;143908488
-49;Pesquisa Generica;5.7;Iniciacao Cientifica;116996176;147211535
-50;Pesquisa Generica;4.6;Iniciacao Cientifica;116982533;103700222
-51;Pesquisa Generica;2.3;Extensao;116998698;195745842
-52;Pesquisa Generica;5.1;Extensao;116969989;195620968
-53;Pesquisa Generica;0;Iniciacao Cientifica;114077222;107984248
-54;Pesquisa Generica;0.2;Extensao;116978582;143908488
-55;Pesquisa Generica;1.6;Extensao;116993958;143908488
-56;Pesquisa Generica;1.1;Extensao;116996012;107984248
-57;Pesquisa Generica;7;Iniciacao Cientifica;116998769;195620968
-58;Pesquisa Generica;8.9;Iniciacao Cientifica;106085853;119159488
-59;Pesquisa Generica;1.7;Iniciacao Cientifica;116992723;147211535
-60;Pesquisa Generica;5.2;Extensao;116983473;147211535
-61;Pesquisa Generica;9.9;Iniciacao Cientifica;116998425;143908488
-62;Pesquisa Generica;8.2;Extensao;116985351;119159488
-63;Pesquisa Generica;5.6;Extensao;116992112;157371194
-64;Pesquisa Generica;5.5;Iniciacao Cientifica;116995299;157371194
-65;Pesquisa Generica;3.7;Iniciacao Cientifica;116999411;195745842
-66;Pesquisa Generica;6.2;Iniciacao Cientifica;116993375;107984248
-67;Pesquisa Generica;0.2;Extensao;116987839;143908488
-68;Pesquisa Generica;8.4;Iniciacao Cientifica;116987470;147211535
-69;Pesquisa Generica;0;Extensao;116988988;195745842
-70;Pesquisa Generica;6.2;Extensao;116984668;119159488
-71;Pesquisa Generica;7.1;Iniciacao Cientifica;116989762;195745842
-72;Pesquisa Generica;5.3;Iniciacao Cientifica;116998769;157371194
-73;Pesquisa Generica;0.2;Extensao;116984668;195620968
-74;Pesquisa Generica;3.1;Iniciacao Cientifica;108444428;107984248
-75;Pesquisa Generica;1.5;Iniciacao Cientifica;116987839;157371194
-76;Pesquisa Generica;8.3;Extensao;116993958;143908488
-77;Pesquisa Generica;9.1;Iniciacao Cientifica;116982533;119159488
-78;Pesquisa Generica;4.8;Extensao;116996012;157371194
-79;Pesquisa Generica;4.7;Iniciacao Cientifica;116996012;103700222
-80;Pesquisa Generica;7;Extensao;116978582;107984248
-81;Pesquisa Generica;9.4;Extensao;116984668;103700222
-82;Pesquisa Generica;6.5;Extensao;116996012;195745842
-83;Pesquisa Generica;0.8;Extensao;116969989;157371194
-84;Pesquisa Generica;0.1;Extensao;116986864;103700222
-85;Pesquisa Generica;6.8;Iniciacao Cientifica;116987470;143908488
-86;Pesquisa Generica;7.4;Iniciacao Cientifica;116998698;175895891
-87;Pesquisa Generica;2.5;Iniciacao Cientifica;116998253;103700222
-88;Pesquisa Generica;6.4;Extensao;116992689;175895891
-89;Pesquisa Generica;0.5;Extensao;116981291;119159488
-90;Pesquisa Generica;9.4;Iniciacao Cientifica;116986864;175895891
-91;Pesquisa Generica;2.4;Iniciacao Cientifica;116988382;157371194
-92;Pesquisa Generica;7;Extensao;108444428;175895891
-93;Pesquisa Generica;8.2;Extensao;105018673;147211535
-94;Pesquisa Generica;6.3;Extensao;114924633;103700222
-95;Pesquisa Generica;9.8;Extensao;116985351;119159488
-96;Pesquisa Generica;6.3;Iniciacao Cientifica;116990294;157371194
-97;Pesquisa Generica;7.2;Iniciacao Cientifica;116989762;103700222
-98;Pesquisa Generica;9.2;Extensao;116970558;195745842
-=======
-0;Pesquisa Generica;8.7;Extensao;116989208;106763677
-1;Pesquisa Generica;9.4;Extensao;116990129;152930735
-2;Pesquisa Generica;6.6;Extensao;116997642;137652797
-3;Pesquisa Generica;6.2;Extensao;110553016;153155555
-4;Pesquisa Generica;8.1;Iniciacao Cientifica;116995881;152930735
-5;Pesquisa Generica;3.8;Iniciacao Cientifica;114134325;106763677
-6;Pesquisa Generica;1;Extensao;116981547;106763677
-7;Pesquisa Generica;8.3;Extensao;116987391;159500557
-8;Pesquisa Generica;1;Iniciacao Cientifica;116984984;156332192
-9;Pesquisa Generica;1.4;Extensao;116986278;159500557
-10;Pesquisa Generica;9.4;Extensao;116981547;156332192
-11;Pesquisa Generica;5.2;Extensao;116999120;151926574
-12;Pesquisa Generica;6.1;Iniciacao Cientifica;116989300;151926574
-13;Pesquisa Generica;1.7;Iniciacao Cientifica;116975708;153155555
-14;Pesquisa Generica;8.7;Extensao;116975708;106763677
-15;Pesquisa Generica;3.9;Extensao;116987391;152930735
-16;Pesquisa Generica;6;Extensao;109275035;159500557
-17;Pesquisa Generica;1.1;Extensao;116984986;151926574
-18;Pesquisa Generica;5.6;Iniciacao Cientifica;116990129;159500557
-19;Pesquisa Generica;4.8;Iniciacao Cientifica;116986768;106763677
-20;Pesquisa Generica;4.2;Extensao;105016291;151926574
-21;Pesquisa Generica;0.3;Extensao;116986278;197183923
-22;Pesquisa Generica;7.7;Iniciacao Cientifica;116990108;102245057
-23;Pesquisa Generica;1.5;Extensao;116980399;151926574
-24;Pesquisa Generica;2.2;Iniciacao Cientifica;116980399;153155555
-25;Pesquisa Generica;3.7;Extensao;116989982;197183923
-26;Pesquisa Generica;3;Extensao;116981735;156332192
-27;Pesquisa Generica;8;Iniciacao Cientifica;116991892;151926574
-28;Pesquisa Generica;0.5;Extensao;116989982;156332192
-29;Pesquisa Generica;8.4;Iniciacao Cientifica;116981322;137652797
-30;Pesquisa Generica;4.5;Iniciacao Cientifica;116980794;106763677
-31;Pesquisa Generica;1;Iniciacao Cientifica;116981735;197183923
-32;Pesquisa Generica;4.3;Extensao;116994294;106763677
-33;Pesquisa Generica;10;Iniciacao Cientifica;116976231;159500557
-34;Pesquisa Generica;9.7;Extensao;116986512;159500557
-35;Pesquisa Generica;4.6;Extensao;116985465;159500557
-36;Pesquisa Generica;0.6;Iniciacao Cientifica;116993123;159500557
-37;Pesquisa Generica;1.4;Extensao;109013087;152930735
-38;Pesquisa Generica;6.3;Extensao;116989010;159500557
-39;Pesquisa Generica;3.6;Iniciacao Cientifica;116996934;159500557
-40;Pesquisa Generica;0.5;Extensao;116998560;151926574
-41;Pesquisa Generica;9.2;Iniciacao Cientifica;116977348;151926574
-42;Pesquisa Generica;6;Extensao;106965020;156332192
-43;Pesquisa Generica;8.5;Iniciacao Cientifica;116998849;156332192
-44;Pesquisa Generica;5.1;Iniciacao Cientifica;116997642;197183923
-45;Pesquisa Generica;0.7;Extensao;116996850;153155555
-46;Pesquisa Generica;4.8;Extensao;110553016;152930735
-47;Pesquisa Generica;2.9;Extensao;116989982;153155555
-48;Pesquisa Generica;4.9;Extensao;116988392;156332192
-49;Pesquisa Generica;7.2;Iniciacao Cientifica;113332386;153155555
-50;Pesquisa Generica;3.8;Extensao;116974137;106763677
-51;Pesquisa Generica;3.2;Iniciacao Cientifica;116976072;156332192
-52;Pesquisa Generica;6.1;Extensao;116996934;152930735
-53;Pesquisa Generica;1.5;Iniciacao Cientifica;109275035;106763677
-54;Pesquisa Generica;0.9;Iniciacao Cientifica;116995636;152930735
-55;Pesquisa Generica;4.2;Iniciacao Cientifica;116990585;156332192
-56;Pesquisa Generica;5.1;Extensao;116996850;152930735
-57;Pesquisa Generica;1.4;Extensao;116980036;151926574
-58;Pesquisa Generica;4.3;Iniciacao Cientifica;116981527;106763677
-59;Pesquisa Generica;5.4;Extensao;116995636;156332192
-60;Pesquisa Generica;6.6;Iniciacao Cientifica;116996917;102245057
-61;Pesquisa Generica;4.6;Iniciacao Cientifica;116996917;106763677
-62;Pesquisa Generica;0.2;Extensao;116998560;156332192
-63;Pesquisa Generica;0.5;Extensao;116990129;102245057
-64;Pesquisa Generica;7.9;Iniciacao Cientifica;116996917;151926574
-65;Pesquisa Generica;3.1;Extensao;110553016;159500557
-66;Pesquisa Generica;2;Iniciacao Cientifica;116984986;151926574
-67;Pesquisa Generica;9.4;Iniciacao Cientifica;116998560;159500557
-68;Pesquisa Generica;8.4;Extensao;116986087;152930735
-69;Pesquisa Generica;4.6;Extensao;113332386;106763677
-70;Pesquisa Generica;3.2;Iniciacao Cientifica;116998525;102245057
-71;Pesquisa Generica;0.9;Extensao;116993046;156332192
-72;Pesquisa Generica;6;Iniciacao Cientifica;116986278;106763677
-73;Pesquisa Generica;7.8;Iniciacao Cientifica;110553016;152930735
-74;Pesquisa Generica;3.2;Extensao;116983389;153155555
-75;Pesquisa Generica;9.8;Extensao;116981527;197183923
-76;Pesquisa Generica;4.1;Iniciacao Cientifica;116997953;106763677
-77;Pesquisa Generica;0.4;Extensao;116993658;106763677
-78;Pesquisa Generica;3.8;Iniciacao Cientifica;116984984;153155555
-79;Pesquisa Generica;2.5;Iniciacao Cientifica;116990533;151926574
-80;Pesquisa Generica;0;Extensao;116977348;159500557
-81;Pesquisa Generica;6;Extensao;116995636;197183923
-82;Pesquisa Generica;0.5;Extensao;116986768;137652797
-83;Pesquisa Generica;9.3;Iniciacao Cientifica;116977348;106763677
-84;Pesquisa Generica;7.9;Extensao;116977138;151926574
-85;Pesquisa Generica;0.8;Extensao;116994781;159500557
-86;Pesquisa Generica;1.6;Iniciacao Cientifica;116980036;106763677
-87;Pesquisa Generica;9.3;Extensao;116997893;197183923
-88;Pesquisa Generica;6.6;Extensao;116992258;151926574
-89;Pesquisa Generica;7.3;Extensao;108653278;152930735
-90;Pesquisa Generica;10;Iniciacao Cientifica;108653278;159500557
-91;Pesquisa Generica;3.4;Extensao;116993123;152930735
-92;Pesquisa Generica;3;Iniciacao Cientifica;116982953;159500557
-93;Pesquisa Generica;9.8;Iniciacao Cientifica;116986512;137652797
-94;Pesquisa Generica;6;Extensao;113247300;159500557
-95;Pesquisa Generica;1;Iniciacao Cientifica;116997412;156332192
-96;Pesquisa Generica;5.8;Iniciacao Cientifica;116993123;197183923
-97;Pesquisa Generica;0.6;Iniciacao Cientifica;116977138;152930735
-98;Pesquisa Generica;7.9;Iniciacao Cientifica;116983795;156332192
->>>>>>> 936742337747dc20da4cf9a8cc2cd4974eac4da3
+0;Pesquisa Generica;1.2;Iniciacao Cientifica;115581668;161717579
+1;Pesquisa Generica;5.5;Extensao;116995434;161717579
+2;Pesquisa Generica;7;Extensao;116999877;161717579
+3;Pesquisa Generica;10;Iniciacao Cientifica;105022791;161717579
+4;Pesquisa Generica;3;Extensao;105010342;128458585
+5;Pesquisa Generica;1.2;Extensao;116999705;139415030
+6;Pesquisa Generica;2.9;Iniciacao Cientifica;116998615;134206113
+7;Pesquisa Generica;6.5;Iniciacao Cientifica;116979135;139415030
+8;Pesquisa Generica;5.4;Extensao;116988262;162282134
+9;Pesquisa Generica;9.7;Extensao;116986050;134206113
+10;Pesquisa Generica;10;Iniciacao Cientifica;116998432;134206113
+11;Pesquisa Generica;7.6;Iniciacao Cientifica;116979349;122892818
+12;Pesquisa Generica;4.5;Iniciacao Cientifica;116972699;187973351
+13;Pesquisa Generica;6.6;Iniciacao Cientifica;116989267;128458585
+14;Pesquisa Generica;1.2;Extensao;116973845;187973351
+15;Pesquisa Generica;3.2;Iniciacao Cientifica;116989396;118460095
+16;Pesquisa Generica;2.2;Iniciacao Cientifica;116988025;162282134
+17;Pesquisa Generica;0;Iniciacao Cientifica;107516412;139415030
+18;Pesquisa Generica;7.9;Iniciacao Cientifica;116994488;162282134
+19;Pesquisa Generica;0.9;Extensao;116990412;162282134
+20;Pesquisa Generica;6;Extensao;116999705;100687766
+21;Pesquisa Generica;6.7;Extensao;116999205;139415030
+22;Pesquisa Generica;0.3;Iniciacao Cientifica;116992351;100687766
+23;Pesquisa Generica;5;Extensao;116972699;122892818
+24;Pesquisa Generica;2.6;Iniciacao Cientifica;116983116;122892818
+25;Pesquisa Generica;5.9;Extensao;116997080;122892818
+26;Pesquisa Generica;8.2;Extensao;116998993;122892818
+27;Pesquisa Generica;5;Iniciacao Cientifica;112728109;161717579
+28;Pesquisa Generica;5.5;Iniciacao Cientifica;116998615;128458585
+29;Pesquisa Generica;8.7;Iniciacao Cientifica;116999877;161717579
+30;Pesquisa Generica;4.3;Extensao;116982018;118460095
+31;Pesquisa Generica;4;Iniciacao Cientifica;116983116;134206113
+32;Pesquisa Generica;8.8;Extensao;116981657;122892818
+33;Pesquisa Generica;8.4;Extensao;116999877;162282134
+34;Pesquisa Generica;4.1;Extensao;105016490;162282134
+35;Pesquisa Generica;4.7;Extensao;116986220;100687766
+36;Pesquisa Generica;9.6;Extensao;116998615;122892818
+37;Pesquisa Generica;4.9;Extensao;116982018;139415030
+38;Pesquisa Generica;6.8;Iniciacao Cientifica;116995434;128458585
+39;Pesquisa Generica;5.8;Extensao;116988254;128458585
+40;Pesquisa Generica;5.6;Iniciacao Cientifica;116970697;118460095
+41;Pesquisa Generica;0.4;Extensao;105009136;161717579
+42;Pesquisa Generica;5.9;Iniciacao Cientifica;116998587;128458585
+43;Pesquisa Generica;6.5;Iniciacao Cientifica;116997285;187973351
+44;Pesquisa Generica;4.6;Extensao;116983506;187973351
+45;Pesquisa Generica;9.5;Extensao;105022791;128458585
+46;Pesquisa Generica;8.7;Iniciacao Cientifica;116990862;187973351
+47;Pesquisa Generica;10;Extensao;116983918;100687766
+48;Pesquisa Generica;2.6;Extensao;116998078;139415030
+49;Pesquisa Generica;0.5;Iniciacao Cientifica;116970610;122892818
+50;Pesquisa Generica;9.4;Extensao;114111751;100687766
+51;Pesquisa Generica;8.4;Iniciacao Cientifica;116988025;162282134
+52;Pesquisa Generica;5.6;Iniciacao Cientifica;116988025;187973351
+53;Pesquisa Generica;4.5;Extensao;116987064;162282134
+54;Pesquisa Generica;2.3;Extensao;116978411;161717579
+55;Pesquisa Generica;0.4;Iniciacao Cientifica;116998615;161717579
+56;Pesquisa Generica;3.2;Iniciacao Cientifica;116984187;139415030
+57;Pesquisa Generica;8.9;Extensao;116991103;162282134
+58;Pesquisa Generica;3.2;Extensao;116994488;118460095
+59;Pesquisa Generica;0.5;Extensao;116977898;161717579
+60;Pesquisa Generica;1.7;Iniciacao Cientifica;116984862;100687766
+61;Pesquisa Generica;5.6;Extensao;116999213;161717579
+62;Pesquisa Generica;1.4;Iniciacao Cientifica;116986050;162282134
+63;Pesquisa Generica;5.1;Iniciacao Cientifica;116998560;100687766
+64;Pesquisa Generica;3.8;Iniciacao Cientifica;105003542;122892818
+65;Pesquisa Generica;7.6;Iniciacao Cientifica;116982018;162282134
+66;Pesquisa Generica;1.8;Iniciacao Cientifica;116986050;134206113
+67;Pesquisa Generica;2.6;Extensao;116999870;139415030
+68;Pesquisa Generica;5.1;Iniciacao Cientifica;105009136;118460095
+69;Pesquisa Generica;3.3;Extensao;116994947;161717579
+70;Pesquisa Generica;9.7;Extensao;116983506;128458585
+71;Pesquisa Generica;5.1;Iniciacao Cientifica;116999705;122892818
+72;Pesquisa Generica;0.6;Extensao;105007308;118460095
+73;Pesquisa Generica;10;Extensao;116973845;161717579
+74;Pesquisa Generica;9.6;Iniciacao Cientifica;116972699;122892818
+75;Pesquisa Generica;3.3;Extensao;116985895;161717579
+76;Pesquisa Generica;7.8;Iniciacao Cientifica;112728109;122892818
+77;Pesquisa Generica;1.6;Extensao;116989396;122892818
+78;Pesquisa Generica;0.4;Iniciacao Cientifica;116990412;161717579
+79;Pesquisa Generica;0.9;Iniciacao Cientifica;116992444;187973351
+80;Pesquisa Generica;4.3;Extensao;116998615;162282134
+81;Pesquisa Generica;5.3;Iniciacao Cientifica;105007308;139415030
+82;Pesquisa Generica;4.8;Extensao;116970697;100687766
+83;Pesquisa Generica;9.2;Extensao;116987199;118460095
+84;Pesquisa Generica;4.4;Iniciacao Cientifica;116979349;139415030
+85;Pesquisa Generica;7;Extensao;116994947;139415030
+86;Pesquisa Generica;4.6;Iniciacao Cientifica;116984862;118460095
+87;Pesquisa Generica;2.5;Iniciacao Cientifica;116998560;100687766
+88;Pesquisa Generica;6.6;Extensao;116991103;100687766
+89;Pesquisa Generica;9.5;Iniciacao Cientifica;116987061;162282134
+90;Pesquisa Generica;0.5;Iniciacao Cientifica;109977360;122892818
+91;Pesquisa Generica;7.3;Iniciacao Cientifica;116995822;128458585
+92;Pesquisa Generica;1.2;Extensao;116970697;187973351
+93;Pesquisa Generica;7.4;Iniciacao Cientifica;116998587;128458585
+94;Pesquisa Generica;2.7;Extensao;116986220;134206113
+95;Pesquisa Generica;7.3;Extensao;106019241;161717579
+96;Pesquisa Generica;2.4;Extensao;116993704;118460095
+97;Pesquisa Generica;4.6;Iniciacao Cientifica;105018106;187973351
+98;Pesquisa Generica;6.7;Extensao;109966857;118460095
