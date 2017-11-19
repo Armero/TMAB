@@ -44,6 +44,17 @@ GeradorDeDados::GeradorDeDados()
     CLASSE.push_back("Substituto");
     CLASSE.push_back("Adjunto");
     CLASSE.push_back("Titular");
+    CURSOS.push_back("Engenharia Eletrônica");
+    CURSOS.push_back("Engenharia Quimica");
+    CURSOS.push_back("Engenharia Eletrica");
+    CURSOS.push_back("Engenharia Mecanica");
+    CURSOS.push_back("Matematica Aplicada");
+    CURSOS.push_back("Fisica Medica");
+    CURSOS.push_back("Direito Civil");
+    CURSOS.push_back("Direito Trabalhista");
+    CURSOS.push_back("Medicina Geriatrica");
+    CURSOS.push_back("Letras Ingles");
+    CURSOS.push_back("Letras Espanhol");
 }
 
 unsigned GeradorDeDados::gerarNumeros (unsigned numeroElementos,
@@ -249,11 +260,11 @@ void GeradorDeDados::gerarPessoas (string nomeArquivo, unsigned qtdPessoas)
 }
 
 
-void GeradorDeDados::gerarProfessor (string nomeArquivo, unsigned qtdPessoas)
+void GeradorDeDados::gerarProfessor (string nomeArquivo, unsigned qtdProf)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    for (unsigned numP = 0; numP <(qtdPessoas - 1); numP++)
+    for (unsigned numP = 0; numP <(qtdProf - 1); numP++)
     {
         string email, enweb;
         gerarEmaileEnWeb(pessoas[rand()%pessoas.size()].Get_Nm_NomePessoa(), email,enweb);
@@ -283,4 +294,39 @@ void GeradorDeDados::gerarEmaileEnWeb (string nome, string &email, string &enWeb
 string GeradorDeDados::gerarLocalGabinete ()
 {
     return GerarTelefone(BLOCOS[rand()%BLOCOS.size()], (rand ()%400)+ 1);
+}
+
+void GeradorDeDados::gerarCoordenacao (string nomeArquivo, unsigned qtdCoord)
+{
+    ofstream arquivo;
+    arquivo.open (nomeArquivo.c_str());
+    for (unsigned numP = 0; numP <(qtdCoord - 1); numP++)
+    {
+        coord.push_back(Coordenacao(numP, prof[rand() % prof.size()].Get_Nu_SIAPE()));
+        arquivo <<  coord[numP].Get_Cd_Coordenacao() << SEP  << coord[numP].Get_Nu_Siape() << endl;
+    }
+    arquivo.close();
+}
+
+void GeradorDeDados::gerarCursos (string nomeArquivo, unsigned qtdCursos)
+{
+    ofstream arquivo;
+    arquivo.open (nomeArquivo.c_str());
+    if (qtdCursos > CURSOS.size())
+        qtdCursos = CURSOS.size();
+
+    for (unsigned numP = 0; numP <(qtdCursos - 1); numP++)
+    {
+        istringstream iss(CURSOS[rand()%CURSOS.size()]);
+        vector<string> nomes;
+        copy(istream_iterator<string>(iss),
+        istream_iterator<string>(),
+        back_inserter(nomes));
+        cursos.push_back(Curso(numP, nomes[1], coord[rand() % coord.size()].Get_Cd_Coordenacao(), nomes[0]));
+        arquivo << cursos[numP].Get_Cd_Curso() << SEP <<
+                   cursos[numP].Get_Nm_Curso() << SEP <<
+                   cursos[numP].Get_Cd_Coordenacao() << SEP <<
+                   cursos[numP].Get_Nm_Area() << endl;
+    }
+    arquivo.close();
 }

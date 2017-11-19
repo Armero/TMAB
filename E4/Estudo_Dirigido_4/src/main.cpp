@@ -181,6 +181,8 @@ int main (void)
     GeradorDeDados g1;
     g1.gerarPessoas("pessoas.csv", 1000);
     g1.gerarProfessor("professores.csv", 10);
+    g1.gerarCoordenacao("coordenacoes.csv", 5);
+    g1.gerarCursos("cursos.csv", 10);
 
     return (0);
 }

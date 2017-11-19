@@ -22,7 +22,7 @@
 1510785810 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e4\estudo_dirigido_4\include\professor.h
 	"Pessoa.h"
 
-1511054410 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\geradordedados.cpp
+1511060291 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\geradordedados.cpp
 	"GeradorDeDados.h"
 	<fstream>
 	<iostream>
@@ -33,7 +33,7 @@
 	<stdlib.h>
 	<time.h>
 
-1511054672 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\geradordedados.h
+1511059868 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\geradordedados.h
 	<vector>
 	<string>
 	<string>
@@ -46,6 +46,8 @@
 	<vector>
 	"Pessoa.h"
 	"Professor.h"
+	"Coordenacao.h"
+	"Curso.h"
 	<fstream>
 	<iterator>
 
@@ -62,7 +64,7 @@
 1511022442 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\professor.h
 	"Pessoa.h"
 
-1511054444 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\main.cpp
+1511059839 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\main.cpp
 	<iostream>
 	"Pessoa.h"
 	"Professor.h"
@@ -71,12 +73,12 @@
 1511017247 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\coordenacao.cpp
 	"Coordenacao.h"
 
-1511017226 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\coordenacao.h
+1511056242 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\coordenacao.h
 
 1511017583 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\curso.cpp
 	"Curso.h"
 
-1511018122 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\curso.h
+1511022591 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\curso.h
 	<string>
 
 1511018276 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\aluno.cpp
