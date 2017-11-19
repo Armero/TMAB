@@ -33,7 +33,7 @@ vector <vector <string> > data;
 string alphabet[26] = { "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z" };
 string materias[17] = {"TMAB","Calculo I","Calculo II","Calculo III","Calculo IV","Fisica I","Fisica II","Fisica III","Fisica IV", "Modelos Probabilisticos", "Computacao I", "Computacao II",
                         "Circuitos Eletricos", "Eletronica I","Eletronica II","Eletronica III", "Eletronica IV"};
-string bibliografias[4] = {"Stack Overflow", "The C++ Programming Language","Fundamentals of Database Systems","Effective C++"}
+string bibliografias[4] = {"Stack Overflow", "The C++ Programming Language","Fundamentals of Database Systems","Effective C++"};
 
 GeradorDeDados::GeradorDeDados()
 {
