@@ -12,16 +12,13 @@ typedef std::vector <std::string> Nome;
 #include <math.h>
 #include <vector>
 #include "Pessoa.h"
-<<<<<<< HEAD
 #include "Periodo.h"
-=======
 #include "Professor.h"
 #include "Coordenacao.h"
 #include "Curso.h"
 #include "Aluno.h"
 #include "Inscricao.h"
 #include "Atividade.h"
->>>>>>> Felipe
 #include <fstream>
 #include <iterator>
 
@@ -86,17 +83,13 @@ class GeradorDeDados
     vector <string> CLASSE;
     vector <string> TIPO_ATV;
     vector <Pessoa> pessoas;
-<<<<<<< HEAD
     vector <Periodo> periodos;
-
-=======
     vector <Professor> prof;
     vector <Coordenacao> coord;
     vector <Curso> cursos;
     vector <Aluno> alunos;
     vector <Inscricao> inscricoes;
     vector <Atividade> atividades;
->>>>>>> Felipe
 };
 
 #endif // GERADORDEDADOS_H
