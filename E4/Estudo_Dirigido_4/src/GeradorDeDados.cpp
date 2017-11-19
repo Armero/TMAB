@@ -407,7 +407,7 @@ void GeradorDeDados :: gerarGrade(string nomeArquivo, unsigned qtdGrades)
     arquivo.open(nomeArquivo.c_str());
     for(unsigned index = 0;index < qtdGrades; index ++)
     {
-        unsigned dre = 111111111;                           //TODO: MUDAR COMO PEGA O DRE
+        unsigned dre = alunos[rand() % alunos.size()].Get_Nu_Dre();                        //TODO: MUDAR COMO PEGA O DRE
         unsigned cdPeriodo = periodos[rand() % periodos.size()].Get_Cd_Periodo();
         grades.push_back(Grade_Curricular(index+1,dre,cdPeriodo));
         arquivo << grades[index].Get_Cd_Grade() << SEP << grades[index].Get_Nu_Dre() << SEP << grades[index].Get_Cd_Periodo() << endl;
