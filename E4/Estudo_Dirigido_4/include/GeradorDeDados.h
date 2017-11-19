@@ -12,9 +12,10 @@ typedef std::vector <std::string> Nome;
 #include <math.h>
 #include <vector>
 #include "Pessoa.h"
+#include "Periodo.h"
 #include <fstream>
 
-#define SEP ";" //Separador do arquivo CSV
+#define SEP "," //Separador do arquivo CSV
 
 #define EOS		'\0'
 
@@ -28,7 +29,8 @@ class GeradorDeDados
         std::string NometoString(Nome);
         std::vector < std::string > LerNomes(bool);
         std::vector < std::string > LerSobrenomes();
-
+        int DatetoNumber(int,int,int);
+        string NumbertoDate(long);
 
         //numeroElementos eh o numero de total de elementos no vetor que sera gerado
         //numeroInicial eh o numero minimo permitido
@@ -42,10 +44,12 @@ class GeradorDeDados
         //Adiciona o prefixo ao numero de entrada e retorna tudo como string
         string GerarTelefone (string prefixo, unsigned numero);
         void gerarPessoas (string nomeArquivo, unsigned qtdPessoas);
+        void gerarPeriodo(string nomeArquivo, unsigned qtdPeriodos);
 
     private:
     vector <string> CURSOS;
     vector <Pessoa> pessoas;
+    vector <Periodo> periodos;
 
 };
 

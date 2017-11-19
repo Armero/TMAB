@@ -18,5 +18,5 @@ class Pre_Requisitos
         unsigned _Cd_Disciplina_Dependente;
         unsigned _Cd_Pre_Requisito;
 };
-
+typedef std::vector<Pre_Requisitos> preRequisitosVect;
 #endif // PRE_REQUISITOS_H

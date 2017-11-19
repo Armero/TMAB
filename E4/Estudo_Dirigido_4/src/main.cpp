@@ -186,5 +186,9 @@ int main (void)
 
     g1.gerarPessoas("pessoas.csv", 1000);
 
+    g1.gerarPeriodo("periodos.csv",1000);
+
+
+
     return (0);
 }
