@@ -42,6 +42,8 @@ GeradorDeDados::GeradorDeDados()
     BLOCOS.push_back("H-");
     BLOCOS.push_back("I-");
     CLASSE.push_back("Substituto");
+    CLASSE.push_back("Associado");
+    CLASSE.push_back("Assistente");
     CLASSE.push_back("Adjunto");
     CLASSE.push_back("Titular");
     CURSOS.push_back("Engenharia Eletrônica");
@@ -55,6 +57,8 @@ GeradorDeDados::GeradorDeDados()
     CURSOS.push_back("Medicina Geriatrica");
     CURSOS.push_back("Letras Ingles");
     CURSOS.push_back("Letras Espanhol");
+    TIPO_ATV.push_back("Iniciacao Cientifica");
+    TIPO_ATV.push_back("Extensao");
 }
 
 unsigned GeradorDeDados::gerarNumeros (unsigned numeroElementos,
@@ -337,11 +341,11 @@ void GeradorDeDados::gerarCursos (string nomeArquivo, unsigned qtdCursos)
     arquivo.close();
 }
 
-void GeradorDeDados::gerarAlunos (string nomeArquivo, unsigned qtdCoord)
+void GeradorDeDados::gerarAlunos (string nomeArquivo, unsigned qtdAlunos)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    for (unsigned numP = 0; numP <(qtdCoord - 1); numP++)
+    for (unsigned numP = 0; numP <(qtdAlunos - 1); numP++)
     {
         alunos.push_back(Aluno( gerarNumeros(9, 105000000, 117000000), numP,
                                 prof[rand() % prof.size()].Get_Cd_Professor(),
@@ -354,17 +358,38 @@ void GeradorDeDados::gerarAlunos (string nomeArquivo, unsigned qtdCoord)
     arquivo.close();
 }
 
-void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned qtdCoord)
+void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned qtdInscricoes)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    for (unsigned numP = 0; numP <(qtdCoord - 1); numP++)
+    for (unsigned numP = 0; numP <(qtdInscricoes - 1); numP++)
     {
         inscricoes.push_back(Inscricao(numP, 10 * ((float) (rand() % 101) / 100),
                                         alunos[rand() % alunos.size()].Get_Nu_Dre()));
         arquivo << inscricoes[numP].Get_Cd_Inscricao() << SEP <<
                    inscricoes[numP].Get_Nu_Grau() << SEP <<
                    inscricoes[numP].Get_Nu_Dre() << SEP << endl;
+    }
+    arquivo.close();
+}
+
+void GeradorDeDados::gerarAtividades (string nomeArquivo, unsigned qtdAtividades)
+{
+    ofstream arquivo;
+    arquivo.open (nomeArquivo.c_str());
+    string titulo = "Pesquisa Generica";
+    for (unsigned numP = 0; numP <(qtdAtividades - 1); numP++)
+    {
+        atividades.push_back (Atividade (numP, titulo, 10 * ((float) (rand() % 101) / 100),
+                                    TIPO_ATV[rand() % TIPO_ATV.size()],
+                                    alunos[rand() % alunos.size()].Get_Nu_Dre(),
+                                    prof[rand() % prof.size()].Get_Nu_SIAPE() ) );
+        arquivo << atividades[numP].Get_Cd_Atividade() << SEP <<
+                   atividades[numP].Get_Nm_Titulo_JIE() << SEP <<
+                   atividades[numP].Get_Nu_Nota() << SEP <<
+                   atividades[numP].Get_Ic_Tipo_Atividade() << SEP <<
+                   atividades[numP].Get_Nu_Dre() << SEP <<
+                   atividades[numP].Get_Nu_Orientador() << endl;
     }
     arquivo.close();
 }

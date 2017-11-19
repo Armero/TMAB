@@ -17,6 +17,7 @@ typedef std::vector <std::string> Nome;
 #include "Curso.h"
 #include "Aluno.h"
 #include "Inscricao.h"
+#include "Atividade.h"
 #include <fstream>
 #include <iterator>
 
@@ -62,7 +63,10 @@ class GeradorDeDados
         void gerarAlunos (string nomeArquivo, unsigned qtdAlunos);
 
         //gera o arquivo .csv com o numero de inscricoes desejadas
-        void gerarIncricoes (string nomeArquivo, unsigned qtdAlunos);
+        void gerarIncricoes (string nomeArquivo, unsigned qtdInscricoes);
+
+        //gera o arquivo .csv com o numero de inscricoes desejadas
+        void gerarAtividades (string nomeArquivo, unsigned qtdAtividades);
 
     private:
     string GerarTelefone (string prefixo, unsigned numero); //Adiciona o prefixo ao numero de entrada e retorna tudo como string
@@ -74,12 +78,14 @@ class GeradorDeDados
     vector <string> DOMINIOS;
     vector <string> BLOCOS;
     vector <string> CLASSE;
+    vector <string> TIPO_ATV;
     vector <Pessoa> pessoas;
     vector <Professor> prof;
     vector <Coordenacao> coord;
     vector <Curso> cursos;
     vector <Aluno> alunos;
     vector <Inscricao> inscricoes;
+    vector <Atividade> atividades;
 };
 
 #endif // GERADORDEDADOS_H

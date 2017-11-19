@@ -171,6 +171,7 @@ int main (void)
     g1.gerarCursos("cursos.csv", 10);
     g1.gerarAlunos("alunos.csv", 100);
     g1.gerarIncricoes("inscricoes.csv", 100);
+    g1.gerarAtividades("atividades.csv", 100);
 
     return (0);
 }
