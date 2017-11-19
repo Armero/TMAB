@@ -42,4 +42,5 @@ class Disciplina
         unsigned _Cd_Grade;
 };
 
+typedef std::vector<Disciplina> disciplinaVect;
 #endif // DISCIPLINA_H
