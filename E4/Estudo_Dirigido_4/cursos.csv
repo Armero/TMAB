@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 0;Aplicada;1;Matematica
 1;Aplicada;1;Matematica
 2;Espanhol;2;Letras
@@ -7,3 +8,14 @@
 6;Aplicada;1;MEDICINA
 7;Trabalhista;1;Direito
 8;Geriatrica;2;Medicina
+=======
+0;937612545;0;MEDICINA
+1;Geriatrica;0;Medicina
+2;152930735;3;MEDICINA
+3;Eletrônica;3;Engenharia
+4;Geriatrica;2;Medicina
+5;937612545;1;DIREITO
+6;H-398;3;ENGENHARIA
+7;Eletrônica;0;Engenharia
+8;H-398;1;MEDICINA
+>>>>>>> 936742337747dc20da4cf9a8cc2cd4974eac4da3
