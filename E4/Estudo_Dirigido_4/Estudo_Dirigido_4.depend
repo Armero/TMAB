@@ -22,7 +22,7 @@
 1510785810 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e4\estudo_dirigido_4\include\professor.h
 	"Pessoa.h"
 
-1511062036 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\geradordedados.cpp
+1511065440 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\geradordedados.cpp
 	"GeradorDeDados.h"
 	<fstream>
 	<iostream>
@@ -32,8 +32,9 @@
 	<iterator>
 	<stdlib.h>
 	<time.h>
+	<math.h>
 
-1511062992 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\geradordedados.h
+1511065571 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\geradordedados.h
 	<vector>
 	<string>
 	<string>
@@ -45,11 +46,13 @@
 	<math.h>
 	<vector>
 	"Pessoa.h"
+	"Periodo.h"
 	"Professor.h"
 	"Coordenacao.h"
 	"Curso.h"
 	"Aluno.h"
 	"Inscricao.h"
+	"Atividade.h"
 	<fstream>
 	<iterator>
 
@@ -63,10 +66,10 @@
 	"Professor.h"
 	<iostream>
 
-1511062070 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\professor.h
+1511065440 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\professor.h
 	"Pessoa.h"
 
-1511062969 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\main.cpp
+1511065440 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\main.cpp
 	<iostream>
 	"Pessoa.h"
 	"Professor.h"
@@ -75,7 +78,7 @@
 1511017247 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\coordenacao.cpp
 	"Coordenacao.h"
 
-1511056242 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\coordenacao.h
+1511065440 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\coordenacao.h
 
 1511017583 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\curso.cpp
 	"Curso.h"
@@ -143,6 +146,7 @@
 	"Pessoa.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 1511055968 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\periodo.h
 
 1511059254 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\grade_curricular.h
@@ -155,9 +159,22 @@
 1511065050 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\turma.h
 =======
 <<<<<<< HEAD
-1511052015 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\periodo.h
 =======
+1511038719 D
+
+>>>>>>> master
+1511052015 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\periodo.h
+
 1511022937 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\inscricao.h
+<<<<<<< HEAD
 >>>>>>> Felipe
+>>>>>>> master
+=======
+
+1511022937 ipe
+
+1511065434 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\periodo.h
+
+1511023738 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\atividade.h
 >>>>>>> master
 

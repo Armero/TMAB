@@ -12,8 +12,8 @@ typedef std::vector <std::string> Nome;
 #include <math.h>
 #include <vector>
 #include "Pessoa.h"
-<<<<<<< HEAD
 #include "Periodo.h"
+<<<<<<< HEAD
 <<<<<<< HEAD
 #include "Grade_Curricular.h"
 #include "Disciplina.h"
@@ -21,13 +21,18 @@ typedef std::vector <std::string> Nome;
 #include "Turma.h"
 =======
 =======
+=======
+>>>>>>> master
 #include "Professor.h"
 #include "Coordenacao.h"
 #include "Curso.h"
 #include "Aluno.h"
 #include "Inscricao.h"
 #include "Atividade.h"
+<<<<<<< HEAD
 >>>>>>> Felipe
+>>>>>>> master
+=======
 >>>>>>> master
 #include <fstream>
 #include <iterator>
@@ -97,21 +102,22 @@ class GeradorDeDados
     vector <string> CLASSE;
     vector <string> TIPO_ATV;
     vector <Pessoa> pessoas;
-<<<<<<< HEAD
     vector <Periodo> periodos;
+<<<<<<< HEAD
     vector <Grade_Curricular> grades;
     vector <Disciplina> disciplinas;
     vector <Pre_Requisitos> preRequisitos;
     vector <Turma> turmas;
 
 =======
+=======
+>>>>>>> master
     vector <Professor> prof;
     vector <Coordenacao> coord;
     vector <Curso> cursos;
     vector <Aluno> alunos;
     vector <Inscricao> inscricoes;
     vector <Atividade> atividades;
->>>>>>> Felipe
 };
 
 #endif // GERADORDEDADOS_H

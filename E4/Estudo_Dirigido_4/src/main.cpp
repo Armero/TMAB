@@ -172,9 +172,9 @@ int main (void)
     g1.gerarAlunos("alunos.csv", 100);
     g1.gerarIncricoes("inscricoes.csv", 100);
     g1.gerarAtividades("atividades.csv", 100);
-
     g1.gerarPeriodo("periodos.csv",1000);
 
+<<<<<<< HEAD
     g1.gerarGrade("grades.csv",1000);
 
     g1.gerarDisciplina("disciplinas.csv",1000);
@@ -183,5 +183,7 @@ int main (void)
 
     g1.gerarTurmas("turmas.csv",1000);
 
+=======
+>>>>>>> master
     return (0);
 }

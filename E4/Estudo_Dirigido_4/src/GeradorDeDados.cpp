@@ -268,8 +268,6 @@ void GeradorDeDados::gerarPessoas (string nomeArquivo, unsigned qtdPessoas)
     arquivo.close();
 }
 
-
-<<<<<<< HEAD
 void GeradorDeDados::gerarPeriodo(string nomeArquivo, unsigned qtdPeriodo)
 {
 
@@ -287,7 +285,10 @@ void GeradorDeDados::gerarPeriodo(string nomeArquivo, unsigned qtdPeriodo)
 
         periodos.push_back(Periodo (index + 1,dataInicio,dataFim));
         arquivo << periodos[index].Get_Cd_Periodo() << SEP <<  periodos[index].Get_Dt_Inicio() << SEP << periodos[index].Get_Dt_Fim() << endl;
-=======
+    }
+    arquivo.close();
+}
+
 void GeradorDeDados::gerarProfessor (string nomeArquivo, unsigned qtdProf)
 {
     ofstream arquivo;
@@ -378,14 +379,11 @@ void GeradorDeDados::gerarAlunos (string nomeArquivo, unsigned qtdAlunos)
                     alunos[numP].Get_Cd_Pessoa() << SEP <<
                     alunos[numP].Get_Nu_Coordenador() << SEP <<
                     alunos[numP].Get_Cd_Curso() << SEP << endl;
->>>>>>> Felipe
     }
     arquivo.close();
 }
 
-<<<<<<< HEAD
 
-=======
 void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned qtdInscricoes)
 {
     ofstream arquivo;
@@ -500,5 +498,8 @@ void GeradorDeDados::gerarAtividades (string nomeArquivo, unsigned qtdAtividades
     }
     arquivo.close();
 }
+<<<<<<< HEAD
 >>>>>>> Felipe
+>>>>>>> master
+=======
 >>>>>>> master
