@@ -35,10 +35,6 @@ class GeradorDeDados
 {
     public:
         GeradorDeDados();
-        Nome GerarNome(bool,int,bool);
-        std::string NometoString(Nome);
-        std::vector < std::string > LerNomes(bool);
-        std::vector < std::string > LerSobrenomes();
 
         //numeroElementos eh o numero de total de elementos no vetor que sera gerado
         //numeroInicial eh o numero minimo permitido
@@ -49,7 +45,7 @@ class GeradorDeDados
                                unsigned numeroInicial,
                                unsigned numeroFinal);
 
-        //Adiciona o prefixo ao numero de entrada e retorna tudo como string
+
 
         void gerarPessoas (string nomeArquivo, unsigned qtdPessoas);
         void gerarPeriodo(string nomeArquivo, unsigned qtdPeriodos);
@@ -77,8 +73,15 @@ class GeradorDeDados
     void gerarAtividades (string nomeArquivo, unsigned qtdAtividades);
 
     private:
+
+    //Adiciona o prefixo ao numero de entrada e retorna tudo como string
     string GerarTelefone (string prefixo, unsigned numero); //Adiciona o prefixo ao numero de entrada e retorna tudo como string
     void gerarEmaileEnWeb (string nome, string &email, string &enWeb);
+    Nome GerarNome(bool,int,bool);
+    std::string NometoString(Nome);
+    std::vector < std::string > LerNomes(bool);
+    std::vector < std::string > LerSobrenomes();
+
     string gerarLocalGabinete ();
     vector <string> CURSOS;
     vector <string> TITULOS;

@@ -159,23 +159,19 @@ using namespace std;
 
 int main (void)
 {
-    GeradorDeDados g1;
-    g1.gerarPessoas("pessoas.csv", 1000);
-    g1.gerarProfessor("professores.csv", 10);
-    g1.gerarCoordenacao("coordenacoes.csv", 5);
-    g1.gerarCursos("cursos.csv", 10);
-    g1.gerarAlunos("alunos.csv", 100);
-    g1.gerarIncricoes("inscricoes.csv", 100);
-    g1.gerarAtividades("atividades.csv", 100);
-    g1.gerarPeriodo("periodos.csv",1000);
-
-    g1.gerarGrade("grades.csv",1000);
-
-    g1.gerarDisciplina("disciplinas.csv",1000);
-
-    g1.gerarPreRequisito("pre_requisitos.csv",1000);
-
-    g1.gerarTurmas("turmas.csv",1000);
+    GeradorDeDados gerador;
+    gerador.gerarPessoas("pessoas.csv", 1000);
+    gerador.gerarProfessor("professores.csv", 20);
+    gerador.gerarCoordenacao("coordenacoes.csv", 10);
+    gerador.gerarCursos("cursos.csv", 10);
+    gerador.gerarAlunos("alunos.csv", 900);
+    gerador.gerarIncricoes("inscricoes.csv", 300);
+    gerador.gerarAtividades("atividades.csv", 100);
+    gerador.gerarPeriodo("periodos.csv",300);
+    gerador.gerarGrade("grades.csv",300);
+    gerador.gerarDisciplina("disciplinas.csv",300);
+    gerador.gerarPreRequisito("pre_requisitos.csv",50);
+    gerador.gerarTurmas("turmas.csv",30);
 
 
     return (0);

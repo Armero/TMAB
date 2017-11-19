@@ -5,3 +5,8 @@ drop table Curso;
 drop table Aluno;
 drop table Inscricao;
 drop table Atividade;
+drop table periodo;
+drop table grade_curricular;
+drop table disciplina;
+drop table pre_requisitos;
+drop table turma;
