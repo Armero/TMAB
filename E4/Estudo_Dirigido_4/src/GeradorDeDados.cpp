@@ -26,6 +26,7 @@
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>
 #include<math.h>
+#include<windows.h>
 
 
 using namespace std;
@@ -519,3 +520,10 @@ void GeradorDeDados::gerarAtividades (string nomeArquivo, unsigned qtdAtividades
     arquivo.close();
 }
 
+void GeradorDeDados::criarPasta(const char * path)
+{
+    if(!CreateDirectory(path,NULL))
+    {
+        return;
+    }
+}

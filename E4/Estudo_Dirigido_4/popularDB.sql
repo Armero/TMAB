@@ -1,20 +1,20 @@
-LOAD DATA INFILE 'C:/Users/felip/Documents/Materias/2017_2/TMAB/Estudos_Dirigidos/TMAB/E4/Estudo_Dirigido_4/pessoas.csv' INTO TABLE Pessoa
+LOAD DATA LOCAL INFILE 'C:/TMAB4/pessoas.csv' INTO TABLE Pessoa
 FIELDS TERMINATED BY ';' 
 LINES TERMINATED BY '\r\n';
 
-LOAD DATA INFILE 'C:/Users/felip/Documents/Materias/2017_2/TMAB/Estudos_Dirigidos/TMAB/E4/Estudo_Dirigido_4/professores.csv' INTO TABLE Professor
+LOAD DATA LOCAL INFILE 'C:/TMAB4/professores.csv' INTO TABLE Professor
 FIELDS TERMINATED BY ';' 
 LINES TERMINATED BY '\r\n';
 
-LOAD DATA INFILE 'C:/Users/felip/Documents/Materias/2017_2/TMAB/Estudos_Dirigidos/TMAB/E4/Estudo_Dirigido_4/coordenacoes.csv' INTO TABLE Coordenacao
+LOAD DATA LOCAL INFILE 'C:/TMAB4/coordenacoes.csv' INTO TABLE Coordenacao
 FIELDS TERMINATED BY ';' 
 LINES TERMINATED BY '\r\n';
  
-LOAD DATA INFILE 'C:/Users/felip/Documents/Materias/2017_2/TMAB/Estudos_Dirigidos/TMAB/E4/Estudo_Dirigido_4/cursos.csv' INTO TABLE Curso
+LOAD DATA LOCAL INFILE 'C:/TMAB4/cursos.csv' INTO TABLE Curso
 FIELDS TERMINATED BY ';' 
 LINES TERMINATED BY '\r\n';
 
-LOAD DATA INFILE 'C:/Users/felip/Documents/Materias/2017_2/TMAB/Estudos_Dirigidos/TMAB/E4/Estudo_Dirigido_4/alunos.csv' INTO TABLE Aluno
+LOAD DATA LOCAL INFILE 'C:/TMAB4/alunos.csv' INTO TABLE Aluno
 FIELDS TERMINATED BY ';' 
 LINES TERMINATED BY '\r\n';
 
@@ -25,7 +25,7 @@ CREATE TABLE aux
 	Dt_F           CHAR(20) NOT NULL
 );
 
-LOAD DATA INFILE 'C:/Users/felip/Documents/Materias/2017_2/TMAB/Estudos_Dirigidos/TMAB/E4/Estudo_Dirigido_4/periodos.csv' INTO TABLE aux
+LOAD DATA LOCAL INFILE 'C:/TMAB4/periodos.csv' INTO TABLE aux
 FIELDS TERMINATED BY ';'
 LINES TERMINATED BY '\r\n';
 
@@ -37,30 +37,30 @@ FROM   aux;
 
 drop table aux;
 
-LOAD DATA INFILE 'C:/Users/felip/Documents/Materias/2017_2/TMAB/Estudos_Dirigidos/TMAB/E4/Estudo_Dirigido_4/periodos.csv' INTO TABLE periodo
+LOAD DATA LOCAL INFILE 'C:/TMAB4/periodos.csv' INTO TABLE periodo
 FIELDS TERMINATED BY ';' 
 LINES TERMINATED BY '\r\n';
 
-LOAD DATA INFILE 'C:/Users/felip/Documents/Materias/2017_2/TMAB/Estudos_Dirigidos/TMAB/E4/Estudo_Dirigido_4/grades.csv' INTO TABLE Grade_Curricular
+LOAD DATA LOCAL INFILE 'C:/TMAB4/grades.csv' INTO TABLE Grade_Curricular
 FIELDS TERMINATED BY ';' 
 LINES TERMINATED BY '\r\n';
 
-LOAD DATA INFILE 'C:/Users/felip/Documents/Materias/2017_2/TMAB/Estudos_Dirigidos/TMAB/E4/Estudo_Dirigido_4/disciplinas.csv' INTO TABLE Disciplina
+LOAD DATA LOCAL INFILE 'C:/TMAB4/disciplinas.csv' INTO TABLE Disciplina
 FIELDS TERMINATED BY ';' 
 LINES TERMINATED BY '\r\n';
 
-LOAD DATA INFILE 'C:/Users/felip/Documents/Materias/2017_2/TMAB/Estudos_Dirigidos/TMAB/E4/Estudo_Dirigido_4/pre_requisitos.csv' INTO TABLE Pre_Requisitos
+LOAD DATA LOCAL INFILE 'C:/TMAB4/pre_requisitos.csv' INTO TABLE Pre_Requisitos
 FIELDS TERMINATED BY ';' 
 LINES TERMINATED BY '\r\n';
 
-LOAD DATA INFILE 'C:/Users/felip/Documents/Materias/2017_2/TMAB/Estudos_Dirigidos/TMAB/E4/Estudo_Dirigido_4/inscricoes.csv' INTO TABLE Inscricao
+LOAD DATA LOCAL INFILE 'C:/TMAB4/inscricoes.csv' INTO TABLE Inscricao
 FIELDS TERMINATED BY ';' 
 LINES TERMINATED BY '\r\n';
 
-LOAD DATA INFILE 'C:/Users/felip/Documents/Materias/2017_2/TMAB/Estudos_Dirigidos/TMAB/E4/Estudo_Dirigido_4/turmas.csv' INTO TABLE Turma
+LOAD DATA LOCAL INFILE 'C:/TMAB4/turmas.csv' INTO TABLE Turma
 FIELDS TERMINATED BY ';' 
 LINES TERMINATED BY '\r\n';
 
-LOAD DATA INFILE 'C:/Users/felip/Documents/Materias/2017_2/TMAB/Estudos_Dirigidos/TMAB/E4/Estudo_Dirigido_4/atividades.csv' INTO TABLE Atividade
+LOAD DATA LOCAL INFILE 'C:/TMAB4/atividades.csv' INTO TABLE Atividade
 FIELDS TERMINATED BY ';' 
 LINES TERMINATED BY '\r\n';

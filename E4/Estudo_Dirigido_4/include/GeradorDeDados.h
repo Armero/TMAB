@@ -64,6 +64,7 @@ class GeradorDeDados
                                unsigned numeroFinal);
 
 
+        void criarPasta(const char *);
 
         void gerarPessoas (string nomeArquivo, unsigned qtdPessoas);
         void gerarPeriodo(string nomeArquivo, unsigned qtdPeriodos);
