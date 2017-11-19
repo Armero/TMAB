@@ -8,7 +8,7 @@ using namespace std;
 class Disciplina
 {
     public:
-        Disciplina(unsigned Cd_Disciplina, string Nm_Disciplina,
+        Disciplina(string Cd_Disciplina, string Nm_Disciplina,
                    unsigned Qt_Creditos, string Ds_Ementa,
                    string Ds_Bibliografia, unsigned Cd_Grade):
                    _Cd_Disciplina (Cd_Disciplina),
@@ -18,8 +18,8 @@ class Disciplina
                    _Ds_Bibliografia (Ds_Bibliografia),
                    _Cd_Grade (Cd_Grade) {};
 
-        unsigned Get_Cd_Disciplina() { return _Cd_Disciplina; }
-        void Set_Cd_Disciplina(unsigned val) { _Cd_Disciplina = val; }
+        string Get_Cd_Disciplina() { return _Cd_Disciplina; }
+        void Set_Cd_Disciplina(string val) { _Cd_Disciplina = val; }
 
         string Get_Nm_Disciplina() { return _Nm_Disciplina; }
         void Set_Nm_Disciplina(string val) { _Nm_Disciplina = val; }
@@ -39,7 +39,7 @@ class Disciplina
     protected:
 
     private:
-        unsigned _Cd_Disciplina;
+        string _Cd_Disciplina;
         string _Nm_Disciplina;
         string _Ds_Ementa;
         unsigned _Qt_Creditos;
@@ -47,5 +47,4 @@ class Disciplina
         unsigned _Cd_Grade;
 };
 
-typedef std::vector<Disciplina> disciplinaVect;
 #endif // DISCIPLINA_H

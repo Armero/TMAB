@@ -194,5 +194,7 @@ int main (void)
 
     g1.gerarPreRequisito("pre_requisitos.csv",1000);
 
+    g1.gerarTurmas("turmas.csv",1000);
+
     return (0);
 }

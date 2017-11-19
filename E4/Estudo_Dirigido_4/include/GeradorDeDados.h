@@ -16,6 +16,7 @@ typedef std::vector <std::string> Nome;
 #include "Grade_Curricular.h"
 #include "Disciplina.h"
 #include "Pre_Requisitos.h"
+#include "Turma.h"
 #include <fstream>
 
 #define SEP "," //Separador do arquivo CSV
@@ -51,6 +52,7 @@ class GeradorDeDados
         void gerarGrade(string nomeArquivo, unsigned qtdGrades);
         void gerarDisciplina(string nomeArquivo,unsigned qtdGrades);
         void gerarPreRequisito(string nomeArquivo,unsigned qtdPreReq);
+        void gerarTurmas(string nomeArquivo,unsigned qtdTurmas);
 
     private:
     vector <string> CURSOS;
@@ -59,6 +61,7 @@ class GeradorDeDados
     vector <Grade_Curricular> grades;
     vector <Disciplina> disciplinas;
     vector <Pre_Requisitos> preRequisitos;
+    vector <Turma> turmas;
 
 };
 
