@@ -269,11 +269,17 @@ void GeradorDeDados::gerarProfessor (string nomeArquivo, unsigned qtdProf)
         string email, enweb;
         gerarEmaileEnWeb(pessoas[rand()%pessoas.size()].Get_Nm_NomePessoa(), email,enweb);
         prof.push_back(Professor(gerarNumeros(9, 100000000, 900000000), TITULOS[rand()%TITULOS.size()], gerarLocalGabinete(),
-                                             GerarTelefone("021", gerarNumeros(9,900000000, 999999999)), email, enweb, CLASSE[rand ()%CLASSE.size()]));
-        arquivo << prof[numP].Get_Nu_SIAPE() << SEP << prof[numP].Get_Ds_Titulo() <<
-                SEP << prof[numP].Get_Local_Gabinete() << SEP << prof[numP].Get_Nu_Telefone() <<
-                SEP << prof[numP].Get_En_Email() << SEP << prof[numP].Get_En_Web() <<
-                SEP << prof[numP].Get_Cd_Professor() << SEP << prof[numP].Get_Ic_Classe()<< endl;
+                                             GerarTelefone("021", gerarNumeros(9,900000000, 999999999)),
+                                             email, enweb, CLASSE[rand ()%CLASSE.size()],
+                                             numP));
+        arquivo << prof[numP].Get_Nu_SIAPE() << SEP <<
+                prof[numP].Get_Ds_Titulo() << SEP <<
+                prof[numP].Get_Local_Gabinete() << SEP <<
+                prof[numP].Get_Nu_Telefone() << SEP <<
+                prof[numP].Get_En_Email() << SEP <<
+                prof[numP].Get_En_Web() << SEP <<
+                prof[numP].Get_Cd_Professor() << SEP <<
+                prof[numP].Get_Ic_Classe()<< endl;
     }
     arquivo.close();
 }
@@ -327,6 +333,23 @@ void GeradorDeDados::gerarCursos (string nomeArquivo, unsigned qtdCursos)
                    cursos[numP].Get_Nm_Curso() << SEP <<
                    cursos[numP].Get_Cd_Coordenacao() << SEP <<
                    cursos[numP].Get_Nm_Area() << endl;
+    }
+    arquivo.close();
+}
+
+void GeradorDeDados::gerarAlunos (string nomeArquivo, unsigned qtdCoord)
+{
+    ofstream arquivo;
+    arquivo.open (nomeArquivo.c_str());
+    for (unsigned numP = 0; numP <(qtdCoord - 1); numP++)
+    {
+        alunos.push_back(Aluno( gerarNumeros(9, 105000000, 117000000), numP,
+                                prof[rand() % prof.size()].Get_Cd_Professor(),
+                                cursos[rand() % cursos.size()].Get_Cd_Curso()) );
+        arquivo <<  alunos[numP].Get_Nu_Dre()<< SEP <<
+                    alunos[numP].Get_Cd_Pessoa() << SEP <<
+                    alunos[numP].Get_Nu_Coordenador() << SEP <<
+                    alunos[numP].Get_Cd_Curso() << SEP << endl;
     }
     arquivo.close();
 }

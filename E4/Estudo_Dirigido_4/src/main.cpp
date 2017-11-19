@@ -164,25 +164,12 @@ int main (void)
     bool nomeComposto = false;
     int qtdeSobrenomes = 1;
 
-    Nome nome = gerador.GerarNome(nomeComposto,qtdeSobrenomes,masculino);
-
-    cout << gerador.NometoString(nome);
-
-
-    cout << "Funciona!" << endl;
-    Pessoa p1 (1, "Fulano");
-    Professor pr1 (829, "abc", "Bloco H", "2197619-2847", "professor@poli.ufrj.br", "professor.poli.ufrj", "Doutor");
-    cout << p1.Get_Nm_NomePessoa()<< " " << pr1.Get_Local_Gabinete() << " "<< pr1.Get_En_Email() << " " << pr1.Get_Cd_Professor() << endl;
-
-    Pessoa p2 (2, "Cicrano");
-    Professor pr2 (964, "kdl", "Bloco G", "1197619-2847", "professor2@poli.ufrj.br", "professor2.poli.ufrj", "PHD");
-    cout << p2.Get_Nm_NomePessoa()<< " " << pr2.Get_Local_Gabinete() << " "<< pr2.Get_En_Email() << " " << pr2.Get_Cd_Professor() << endl;
-
     GeradorDeDados g1;
     g1.gerarPessoas("pessoas.csv", 1000);
     g1.gerarProfessor("professores.csv", 10);
     g1.gerarCoordenacao("coordenacoes.csv", 5);
     g1.gerarCursos("cursos.csv", 10);
+    g1.gerarAlunos("alunos.csv", 100);
 
     return (0);
 }
