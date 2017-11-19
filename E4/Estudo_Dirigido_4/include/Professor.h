@@ -9,11 +9,12 @@ class Professor
         Professor(unsigned Nu_Siape, string Ds_Titulo,
                   string Local_Gabinete, string Nu_Telefone,
                   string En_Email, string En_Web,
-                  string Ic_Classe):
+                  string Ic_Classe, unsigned Cd_Professor):
                   _Nu_SIAPE (Nu_Siape), _Ds_Titulo (Ds_Titulo),
                   _Local_Gabinete (Local_Gabinete),
                   _Nu_Telefone (Nu_Telefone), _En_Email (En_Email),
-                  _En_Web (En_Web), _Ic_Classe (Ic_Classe) {};
+                  _En_Web (En_Web), _Ic_Classe (Ic_Classe),
+                  _Cd_Professor (Cd_Professor) {};
 
         unsigned Get_Nu_SIAPE() { return _Nu_SIAPE; }
         void Set_Nu_SIAPE(unsigned val) { _Nu_SIAPE = val; }

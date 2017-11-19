@@ -21,6 +21,47 @@ GeradorDeDados::GeradorDeDados()
     CURSOS.push_back("ENGENHARIA");
     CURSOS.push_back("MEDICINA");
     CURSOS.push_back("DIREITO");
+    TITULOS.push_back("Licenciatura");
+    TITULOS.push_back("Bacharelado");
+    TITULOS.push_back("Mestrado");
+    TITULOS.push_back("Doutorado");
+    TITULOS.push_back("PHD");
+    EMAILS.push_back("@poli.ufrj.br");
+    EMAILS.push_back("@hotmail.com");
+    EMAILS.push_back("@gmail.com");
+    EMAILS.push_back("@yahoo.com");
+    EMAILS.push_back("@outlook.com");
+    DOMINIOS.push_back(".ufrj.br");
+    DOMINIOS.push_back(".com.br");
+    DOMINIOS.push_back(".com");
+    DOMINIOS.push_back(".org");
+    BLOCOS.push_back("A-");
+    BLOCOS.push_back("B-");
+    BLOCOS.push_back("C-");
+    BLOCOS.push_back("D-");
+    BLOCOS.push_back("E-");
+    BLOCOS.push_back("F-");
+    BLOCOS.push_back("G-");
+    BLOCOS.push_back("H-");
+    BLOCOS.push_back("I-");
+    CLASSE.push_back("Substituto");
+    CLASSE.push_back("Associado");
+    CLASSE.push_back("Assistente");
+    CLASSE.push_back("Adjunto");
+    CLASSE.push_back("Titular");
+    CURSOS.push_back("Engenharia Eletrônica");
+    CURSOS.push_back("Engenharia Quimica");
+    CURSOS.push_back("Engenharia Eletrica");
+    CURSOS.push_back("Engenharia Mecanica");
+    CURSOS.push_back("Matematica Aplicada");
+    CURSOS.push_back("Fisica Medica");
+    CURSOS.push_back("Direito Civil");
+    CURSOS.push_back("Direito Trabalhista");
+    CURSOS.push_back("Medicina Geriatrica");
+    CURSOS.push_back("Letras Ingles");
+    CURSOS.push_back("Letras Espanhol");
+    TIPO_ATV.push_back("Iniciacao Cientifica");
+    TIPO_ATV.push_back("Extensao");
 }
 
 unsigned GeradorDeDados::gerarNumeros (unsigned numeroElementos,
@@ -203,10 +244,7 @@ Nome GeradorDeDados::GerarNome(bool nomeComposto,int qtdSobrenome, bool masculin
             if(i < 1)
                 nome[i] = nomes[rand()% nomes.size()];
             else
-            {
                 nome[i] = sobrenomes[rand() % sobrenomes.size()];
-                cout << "AQUI" << " " << "rand: " << rand() <<  endl;
-            }
 
         }
 
@@ -231,6 +269,7 @@ void GeradorDeDados::gerarPessoas (string nomeArquivo, unsigned qtdPessoas)
 }
 
 
+<<<<<<< HEAD
 void GeradorDeDados::gerarPeriodo(string nomeArquivo, unsigned qtdPeriodo)
 {
 
@@ -248,11 +287,121 @@ void GeradorDeDados::gerarPeriodo(string nomeArquivo, unsigned qtdPeriodo)
 
         periodos.push_back(Periodo (index + 1,dataInicio,dataFim));
         arquivo << periodos[index].Get_Cd_Periodo() << SEP <<  periodos[index].Get_Dt_Inicio() << SEP << periodos[index].Get_Dt_Fim() << endl;
+=======
+void GeradorDeDados::gerarProfessor (string nomeArquivo, unsigned qtdProf)
+{
+    ofstream arquivo;
+    arquivo.open (nomeArquivo.c_str());
+    for (unsigned numP = 0; numP <(qtdProf - 1); numP++)
+    {
+        string email, enweb;
+        gerarEmaileEnWeb(pessoas[rand()%pessoas.size()].Get_Nm_NomePessoa(), email,enweb);
+        prof.push_back(Professor(gerarNumeros(9, 100000000, 900000000), TITULOS[rand()%TITULOS.size()], gerarLocalGabinete(),
+                                             GerarTelefone("021", gerarNumeros(9,900000000, 999999999)),
+                                             email, enweb, CLASSE[rand ()%CLASSE.size()],
+                                             numP));
+        arquivo << prof[numP].Get_Nu_SIAPE() << SEP <<
+                prof[numP].Get_Ds_Titulo() << SEP <<
+                prof[numP].Get_Local_Gabinete() << SEP <<
+                prof[numP].Get_Nu_Telefone() << SEP <<
+                prof[numP].Get_En_Email() << SEP <<
+                prof[numP].Get_En_Web() << SEP <<
+                prof[numP].Get_Cd_Professor() << SEP <<
+                prof[numP].Get_Ic_Classe()<< endl;
     }
     arquivo.close();
 }
 
+//os emails e enderecos gerados serao no formato nome.sobrenome+algo
+void GeradorDeDados::gerarEmaileEnWeb (string nome, string &email, string &enWeb)
+{
+    istringstream iss(nome);
+    vector<string> nomes;
+    copy(istream_iterator<string>(iss),
+         istream_iterator<string>(),
+         back_inserter(nomes));
 
+    email = nomes[0] + '.' + nomes[nomes.size()-1] + EMAILS [rand()% EMAILS.size()];
+    enWeb = nomes[0] + '.' + nomes[nomes.size()-1] + DOMINIOS [rand()% DOMINIOS.size()];;
+}
+
+string GeradorDeDados::gerarLocalGabinete ()
+{
+    return GerarTelefone(BLOCOS[rand()%BLOCOS.size()], (rand ()%400)+ 1);
+}
+
+void GeradorDeDados::gerarCoordenacao (string nomeArquivo, unsigned qtdCoord)
+{
+    ofstream arquivo;
+    arquivo.open (nomeArquivo.c_str());
+    for (unsigned numP = 0; numP <(qtdCoord - 1); numP++)
+    {
+        coord.push_back(Coordenacao(numP, prof[rand() % prof.size()].Get_Nu_SIAPE()));
+        arquivo <<  coord[numP].Get_Cd_Coordenacao() << SEP  << coord[numP].Get_Nu_Siape() << endl;
+    }
+    arquivo.close();
+}
+
+void GeradorDeDados::gerarCursos (string nomeArquivo, unsigned qtdCursos)
+{
+    ofstream arquivo;
+    arquivo.open (nomeArquivo.c_str());
+    if (qtdCursos > CURSOS.size())
+        qtdCursos = CURSOS.size();
+
+    for (unsigned numP = 0; numP <(qtdCursos - 1); numP++)
+    {
+        istringstream iss(CURSOS[rand()%CURSOS.size()]);
+        vector<string> nomes;
+        copy(istream_iterator<string>(iss),
+        istream_iterator<string>(),
+        back_inserter(nomes));
+        cursos.push_back(Curso(numP, nomes[1], coord[rand() % coord.size()].Get_Cd_Coordenacao(), nomes[0]));
+        arquivo << cursos[numP].Get_Cd_Curso() << SEP <<
+                   cursos[numP].Get_Nm_Curso() << SEP <<
+                   cursos[numP].Get_Cd_Coordenacao() << SEP <<
+                   cursos[numP].Get_Nm_Area() << endl;
+    }
+    arquivo.close();
+}
+
+void GeradorDeDados::gerarAlunos (string nomeArquivo, unsigned qtdAlunos)
+{
+    ofstream arquivo;
+    arquivo.open (nomeArquivo.c_str());
+    for (unsigned numP = 0; numP <(qtdAlunos - 1); numP++)
+    {
+        alunos.push_back(Aluno( gerarNumeros(9, 105000000, 117000000), numP,
+                                prof[rand() % prof.size()].Get_Cd_Professor(),
+                                cursos[rand() % cursos.size()].Get_Cd_Curso()) );
+        arquivo <<  alunos[numP].Get_Nu_Dre()<< SEP <<
+                    alunos[numP].Get_Cd_Pessoa() << SEP <<
+                    alunos[numP].Get_Nu_Coordenador() << SEP <<
+                    alunos[numP].Get_Cd_Curso() << SEP << endl;
+>>>>>>> Felipe
+    }
+    arquivo.close();
+}
+
+<<<<<<< HEAD
+
+=======
+void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned qtdInscricoes)
+{
+    ofstream arquivo;
+    arquivo.open (nomeArquivo.c_str());
+    for (unsigned numP = 0; numP <(qtdInscricoes - 1); numP++)
+    {
+        inscricoes.push_back(Inscricao(numP, 10 * ((float) (rand() % 101) / 100),
+                                        alunos[rand() % alunos.size()].Get_Nu_Dre()));
+        arquivo << inscricoes[numP].Get_Cd_Inscricao() << SEP <<
+                   inscricoes[numP].Get_Nu_Grau() << SEP <<
+                   inscricoes[numP].Get_Nu_Dre() << SEP << endl;
+    }
+    arquivo.close();
+}
+
+<<<<<<< HEAD
 
 void GeradorDeDados :: gerarGrade(string nomeArquivo, unsigned qtdGrades)
 {
@@ -330,3 +479,26 @@ void GeradorDeDados :: gerarTurmas(string nomeArquivo, unsigned qtdTurmas)
 
     arquivo.close();
 }
+=======
+void GeradorDeDados::gerarAtividades (string nomeArquivo, unsigned qtdAtividades)
+{
+    ofstream arquivo;
+    arquivo.open (nomeArquivo.c_str());
+    string titulo = "Pesquisa Generica";
+    for (unsigned numP = 0; numP <(qtdAtividades - 1); numP++)
+    {
+        atividades.push_back (Atividade (numP, titulo, 10 * ((float) (rand() % 101) / 100),
+                                    TIPO_ATV[rand() % TIPO_ATV.size()],
+                                    alunos[rand() % alunos.size()].Get_Nu_Dre(),
+                                    prof[rand() % prof.size()].Get_Nu_SIAPE() ) );
+        arquivo << atividades[numP].Get_Cd_Atividade() << SEP <<
+                   atividades[numP].Get_Nm_Titulo_JIE() << SEP <<
+                   atividades[numP].Get_Nu_Nota() << SEP <<
+                   atividades[numP].Get_Ic_Tipo_Atividade() << SEP <<
+                   atividades[numP].Get_Nu_Dre() << SEP <<
+                   atividades[numP].Get_Nu_Orientador() << endl;
+    }
+    arquivo.close();
+}
+>>>>>>> Felipe
+>>>>>>> master
