@@ -12,6 +12,7 @@
 
 using namespace std;
 vector <vector <string> > data;
+string alphabet[26] = { "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z" };
 
 
 GeradorDeDados::GeradorDeDados()
@@ -398,6 +399,85 @@ void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned qtdInscricoes)
     arquivo.close();
 }
 
+<<<<<<< HEAD
+
+void GeradorDeDados :: gerarGrade(string nomeArquivo, unsigned qtdGrades)
+{
+    ofstream arquivo;
+    arquivo.open(nomeArquivo.c_str());
+    for(unsigned index = 0;index < qtdGrades; index ++)
+    {
+        unsigned dre = 111111111;                           //TODO: MUDAR COMO PEGA O DRE
+        unsigned cdPeriodo = periodos[rand() % periodos.size()].Get_Cd_Periodo();
+        grades.push_back(Grade_Curricular(index+1,dre,cdPeriodo));
+        arquivo << grades[index].Get_Cd_Grade() << SEP << grades[index].Get_Nu_Dre() << SEP << grades[index].Get_Cd_Periodo() << endl;
+    }
+
+    arquivo.close();
+}
+
+
+void GeradorDeDados :: gerarDisciplina(string nomeArquivo,unsigned qtdDisciplina)
+{
+    ofstream arquivo;
+    char buffer [30];
+    arquivo.open(nomeArquivo.c_str());
+    for(unsigned index = 0; index < qtdDisciplina;index ++)
+    {
+        string cdDisciplina = alphabet[rand() % 26] + alphabet[rand() % 26] + alphabet[rand() % 26] +
+                                itoa(rand() % 200 + 100,buffer,10);
+        string nomeDisciplina = "TMAB";
+        unsigned qtdCred = rand() % 6 + 1;
+        string ementa = "Ementa da disciplina, uma breve descrição";
+        string bibliografia = "stack overflow";
+        unsigned cdGrade = grades[rand() % grades.size()].Get_Cd_Grade();
+        disciplinas.push_back(Disciplina(cdDisciplina,nomeDisciplina,qtdCred,ementa,bibliografia,cdGrade));
+        arquivo << disciplinas[index].Get_Cd_Disciplina() << SEP << disciplinas[index].Get_Nm_Disciplina()
+            << SEP << disciplinas[index].Get_Qt_Creditos() << SEP << disciplinas[index].Get_Ds_Ementa()
+            << SEP << disciplinas[index].Get_Ds_Bibliografia() << SEP << disciplinas[index].GetCd_Grade() << endl;
+    }
+    arquivo.close();
+}
+
+
+void GeradorDeDados :: gerarPreRequisito(string nomeArquivo,unsigned qtdPreReq)
+{
+    ofstream arquivo;
+    arquivo.open(nomeArquivo.c_str());
+    for(unsigned index = 0;index < qtdPreReq;index++)
+    {
+        preRequisitos.push_back(Pre_Requisitos(disciplinas[rand() % disciplinas.size()].Get_Cd_Disciplina(),index + 1));
+        arquivo << preRequisitos[index].Get_Cd_Disciplina_Dependente() << SEP << preRequisitos[index].Get_Cd_Pre_Requisito() << endl;
+    }
+    arquivo.close();
+}
+
+
+
+
+void GeradorDeDados :: gerarTurmas(string nomeArquivo, unsigned qtdTurmas)
+{
+    char buffer [20];
+    ofstream arquivo;
+    arquivo.open(nomeArquivo.c_str());
+    for(unsigned index = 0; index < qtdTurmas; index++)
+    {
+        int nuTurma = rand()%1000 + 1;
+        string nmLocal = "Sala " + (string) itoa(rand()%300 + 100,buffer,10);
+        int vagas = rand() % 70 + 1;
+        string cdDisciplina = disciplinas[rand() % disciplinas.size()].Get_Cd_Disciplina();
+        string horario = (string) itoa(rand()%10 + 7,buffer,10) + ":00";
+        int siape = gerarNumeros(9, 100000000, 900000000);
+        turmas.push_back(Turma(nuTurma,nmLocal,vagas,cdDisciplina,horario,siape,index + 1));
+        arquivo << turmas[index].Get_Nu_Turma() << SEP << turmas[index].Get_Nm_Local() << SEP << turmas[index].Get_Nu_Vagas()
+            << SEP << turmas[index].Get_Cd_Disciplina() << SEP << turmas[index].Get_Ds_Horario() << SEP << turmas[index].Get_Nu_Siape()
+            << SEP << turmas[index].Get_Cd_Inscricao() << endl;
+
+    }
+
+    arquivo.close();
+}
+=======
 void GeradorDeDados::gerarAtividades (string nomeArquivo, unsigned qtdAtividades)
 {
     ofstream arquivo;
@@ -418,3 +498,8 @@ void GeradorDeDados::gerarAtividades (string nomeArquivo, unsigned qtdAtividades
     }
     arquivo.close();
 }
+<<<<<<< HEAD
+>>>>>>> Felipe
+>>>>>>> master
+=======
+>>>>>>> master

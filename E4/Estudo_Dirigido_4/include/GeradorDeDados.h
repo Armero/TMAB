@@ -13,12 +13,27 @@ typedef std::vector <std::string> Nome;
 #include <vector>
 #include "Pessoa.h"
 #include "Periodo.h"
+<<<<<<< HEAD
+<<<<<<< HEAD
+#include "Grade_Curricular.h"
+#include "Disciplina.h"
+#include "Pre_Requisitos.h"
+#include "Turma.h"
+=======
+=======
+=======
+>>>>>>> master
 #include "Professor.h"
 #include "Coordenacao.h"
 #include "Curso.h"
 #include "Aluno.h"
 #include "Inscricao.h"
 #include "Atividade.h"
+<<<<<<< HEAD
+>>>>>>> Felipe
+>>>>>>> master
+=======
+>>>>>>> master
 #include <fstream>
 #include <iterator>
 
@@ -52,6 +67,10 @@ class GeradorDeDados
         //gera o arquivo .csv com o numero de pessoas desejadas
         void gerarPessoas (string nomeArquivo, unsigned qtdPessoas);
         void gerarPeriodo(string nomeArquivo, unsigned qtdPeriodos);
+        void gerarGrade(string nomeArquivo, unsigned qtdGrades);
+        void gerarDisciplina(string nomeArquivo,unsigned qtdGrades);
+        void gerarPreRequisito(string nomeArquivo,unsigned qtdPreReq);
+        void gerarTurmas(string nomeArquivo,unsigned qtdTurmas);
 
         //gera o arquivo .csv com o numero de professores desejados
         void gerarProfessor (string nomeArquivo, unsigned qtdProfessores);
@@ -84,6 +103,15 @@ class GeradorDeDados
     vector <string> TIPO_ATV;
     vector <Pessoa> pessoas;
     vector <Periodo> periodos;
+<<<<<<< HEAD
+    vector <Grade_Curricular> grades;
+    vector <Disciplina> disciplinas;
+    vector <Pre_Requisitos> preRequisitos;
+    vector <Turma> turmas;
+
+=======
+=======
+>>>>>>> master
     vector <Professor> prof;
     vector <Coordenacao> coord;
     vector <Curso> cursos;
