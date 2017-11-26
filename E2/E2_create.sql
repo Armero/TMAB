@@ -76,9 +76,9 @@ CREATE TABLE Professor (
     Nu_SIAPE int NOT NULL,
     Ds_Titulo char(255) NOT NULL,
     Nm_local char(60) NOT NULL,
-    Nu_Telefone int NOT NULL,
+    Nu_Telefone char (11) NOT NULL,
     En_email char(60) NOT NULL,
-    En_web int NULL,
+    En_web char (60) NULL,
     Pessoa_Cd_Pessoa int NOT NULL,
     CONSTRAINT Professor_pk PRIMARY KEY (Nu_SIAPE)
 );

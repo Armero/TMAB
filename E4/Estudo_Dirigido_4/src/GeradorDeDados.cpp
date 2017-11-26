@@ -1,3 +1,21 @@
+/**
+* UFRJ - Universidade Federal do Rio de Janeiro
+* IM - Instituto de Matemática
+* DMA - Departamento de Matemática Aplicada
+*
+* TMAB - Programação C/C++ & Banco de Dados
+* ParteII - Programação OO em C++
+*
+* Descrição do Estudo Dirigido 04
+* Prazo de Entrega: 21 de novembro de 2017
+*
+* Prof. Milton Ramirez (milton@labma.ufrj.br)
+* Rio de Janeiro, 13 de novembro de 2017
+* Grupo K
+* Felipe Claudio
+* Thiago Koster Lago
+**/
+
 #include "GeradorDeDados.h"
 #include <fstream>
 #include <iostream>
@@ -8,19 +26,19 @@
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>
 #include<math.h>
+#include<windows.h>
 
 
 using namespace std;
 vector <vector <string> > data;
 string alphabet[26] = { "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z" };
-
+string materias[17] = {"TMAB","Calculo I","Calculo II","Calculo III","Calculo IV","Fisica I","Fisica II","Fisica III","Fisica IV", "Modelos Probabilisticos", "Computacao I", "Computacao II",
+                        "Circuitos Eletricos", "Eletronica I","Eletronica II","Eletronica III", "Eletronica IV"};
+string bibliografias[4] = {"Stack Overflow", "The C++ Programming Language","Fundamentals of Database Systems","Effective C++"};
 
 GeradorDeDados::GeradorDeDados()
 {
     srand (time(NULL));
-    CURSOS.push_back("ENGENHARIA");
-    CURSOS.push_back("MEDICINA");
-    CURSOS.push_back("DIREITO");
     TITULOS.push_back("Licenciatura");
     TITULOS.push_back("Bacharelado");
     TITULOS.push_back("Mestrado");
@@ -49,19 +67,24 @@ GeradorDeDados::GeradorDeDados()
     CLASSE.push_back("Assistente");
     CLASSE.push_back("Adjunto");
     CLASSE.push_back("Titular");
-    CURSOS.push_back("Engenharia Eletrônica");
-    CURSOS.push_back("Engenharia Quimica");
-    CURSOS.push_back("Engenharia Eletrica");
-    CURSOS.push_back("Engenharia Mecanica");
-    CURSOS.push_back("Matematica Aplicada");
-    CURSOS.push_back("Fisica Medica");
-    CURSOS.push_back("Direito Civil");
-    CURSOS.push_back("Direito Trabalhista");
-    CURSOS.push_back("Medicina Geriatrica");
+    CURSOS.push_back("Poli Engenharia Eletrônica");
+    CURSOS.push_back("Poli Engenharia Quimica");
+    CURSOS.push_back("Poli Engenharia Elétrica");
+    CURSOS.push_back("Poli Engenharia Mecânica");
+    CURSOS.push_back("IM Aplicada");
+    CURSOS.push_back("IF Física");
+    CURSOS.push_back("FND Direito");
+    CURSOS.push_back("IFCS Filosofia");
+    CURSOS.push_back("CCS Medicina");
+    CURSOS.push_back("CCS Enfermagem");
     CURSOS.push_back("Letras Ingles");
     CURSOS.push_back("Letras Espanhol");
-    TIPO_ATV.push_back("Iniciacao Cientifica");
-    TIPO_ATV.push_back("Extensao");
+    TIPO_ATV.push_back("Iniciacao Científica");
+    TIPO_ATV.push_back("Extensão");
+    for (unsigned i = 0; i < CURSOS.size(); i++)
+    {
+        cursosUtilizados.push_back(false);
+    }
 }
 
 unsigned GeradorDeDados::gerarNumeros (unsigned numeroElementos,
@@ -90,10 +113,10 @@ unsigned GeradorDeDados::gerarNumeros (unsigned numeroElementos,
     while ( (valor > numeroFinal) || (valor < numeroInicial))
     {
         if ( valor > numeroFinal)
-            valor -= rand();
+            valor -= rand()% numeroFinal;
 
         if ( valor < numeroInicial)
-            valor += rand ();
+            valor += rand ()% numeroFinal;
     }
     return valor;
 }
@@ -254,27 +277,54 @@ Nome GeradorDeDados::GerarNome(bool nomeComposto,int qtdSobrenome, bool masculin
 
 }
 
+//Separa a string dada em um vetor de strings
+Nome GeradorDeDados::separarString (string texto)
+{
+    istringstream iss(texto);
+    Nome nomes;
+    copy(istream_iterator<string>(iss),
+    istream_iterator<string>(),
+    back_inserter(nomes));
 
+    return nomes;
+}
 
 void GeradorDeDados::gerarPessoas (string nomeArquivo, unsigned qtdPessoas)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    for (unsigned numP = 0; numP <(qtdPessoas - 1); numP++)
+    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    for (unsigned numP = 0; numP < qtdPessoas; numP++)
     {
-        pessoas.push_back(Pessoa (numP + 1, NometoString(GerarNome(rand()%2,rand()%2 + 1,rand()%2))));
-        arquivo <<  pessoas[numP].Get_Cd_Pessoa()  << SEP  << pessoas[numP].Get_Nm_NomePessoa() << endl;
+        string sexo = "";
+        bool masculino = true;
+        unsigned idade = rand() %80 + 15;
+        if (rand() % 2 == 0)
+        {
+            sexo = "Masculino";
+            masculino = true;
+        }
+
+        else
+        {
+            sexo = "Feminino";
+            masculino = false;
+        }
+
+        pessoas.push_back(Pessoa (numP, NometoString(GerarNome(rand()%2,rand()%2 + 1, masculino)),sexo,idade));
+        arquivo <<  pessoas[numP].Get_Cd_Pessoa()  << SEP  << pessoas[numP].Get_Nm_NomePessoa() << SEP
+        << pessoas[numP].Get_Ds_SexPessoa()<< SEP << pessoas[numP].Get_Nu_IdadePessoa() << endl;
     }
     arquivo.close();
 }
 
 void GeradorDeDados::gerarPeriodo(string nomeArquivo, unsigned qtdPeriodo)
 {
-
     char buffer [33];
     ofstream arquivo;
     arquivo.open(nomeArquivo.c_str());
-    for (unsigned index = 0; index < (qtdPeriodo -1); index++)
+    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    for (unsigned index = 0; index < qtdPeriodo; index++)
     {
         int ano = 1960 + index/2;
         int mes = 3 + index % 2 * 4;
@@ -293,7 +343,8 @@ void GeradorDeDados::gerarProfessor (string nomeArquivo, unsigned qtdProf)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    for (unsigned numP = 0; numP <(qtdProf - 1); numP++)
+    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    for (unsigned numP = 0; numP <qtdProf; numP++)
     {
         string email, enweb;
         gerarEmaileEnWeb(pessoas[rand()%pessoas.size()].Get_Nm_NomePessoa(), email,enweb);
@@ -316,11 +367,7 @@ void GeradorDeDados::gerarProfessor (string nomeArquivo, unsigned qtdProf)
 //os emails e enderecos gerados serao no formato nome.sobrenome+algo
 void GeradorDeDados::gerarEmaileEnWeb (string nome, string &email, string &enWeb)
 {
-    istringstream iss(nome);
-    vector<string> nomes;
-    copy(istream_iterator<string>(iss),
-         istream_iterator<string>(),
-         back_inserter(nomes));
+    Nome nomes = separarString(nome);
 
     email = nomes[0] + '.' + nomes[nomes.size()-1] + EMAILS [rand()% EMAILS.size()];
     enWeb = nomes[0] + '.' + nomes[nomes.size()-1] + DOMINIOS [rand()% DOMINIOS.size()];;
@@ -335,7 +382,8 @@ void GeradorDeDados::gerarCoordenacao (string nomeArquivo, unsigned qtdCoord)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    for (unsigned numP = 0; numP <(qtdCoord - 1); numP++)
+    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    for (unsigned numP = 0; numP < qtdCoord; numP++)
     {
         coord.push_back(Coordenacao(numP, prof[rand() % prof.size()].Get_Nu_SIAPE()));
         arquivo <<  coord[numP].Get_Cd_Coordenacao() << SEP  << coord[numP].Get_Nu_Siape() << endl;
@@ -347,21 +395,42 @@ void GeradorDeDados::gerarCursos (string nomeArquivo, unsigned qtdCursos)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
+
+    //limita o numero de cursos gerados ao maximo de cursos
+    //existentes na database
+    arquivo << "\"sep=" << SEP <<"\"" << endl;
     if (qtdCursos > CURSOS.size())
         qtdCursos = CURSOS.size();
 
-    for (unsigned numP = 0; numP <(qtdCursos - 1); numP++)
+    unsigned valor = 0;
+
+    for (unsigned numP = 0; numP <qtdCursos; numP++)
     {
-        istringstream iss(CURSOS[rand()%CURSOS.size()]);
-        vector<string> nomes;
-        copy(istream_iterator<string>(iss),
-        istream_iterator<string>(),
-        back_inserter(nomes));
-        cursos.push_back(Curso(numP, nomes[1], coord[rand() % coord.size()].Get_Cd_Coordenacao(), nomes[0]));
+        //Faz com que todos os cursos gerados sejam diferentes
+        valor = rand() % CURSOS.size();
+        while (cursosUtilizados[valor])
+            valor = rand() % CURSOS.size();
+
+        Nome nomes = separarString(CURSOS[valor]);
+        cursosUtilizados[valor] = true;
+        string nmCurso;
+
+        //possibilita que um curso tenha nome composto
+        if (nomes.size() > 2)
+            nmCurso = nomes[1] + " " + nomes[2];
+        else
+            nmCurso = nomes[1];
+
+        cursos.push_back(Curso(numP, nmCurso,
+                               coord[rand() % coord.size()].Get_Cd_Coordenacao(),
+                               nomes[0],
+                               (rand()% 7 + 4) )) ;
+
         arquivo << cursos[numP].Get_Cd_Curso() << SEP <<
                    cursos[numP].Get_Nm_Curso() << SEP <<
                    cursos[numP].Get_Cd_Coordenacao() << SEP <<
-                   cursos[numP].Get_Nm_Area() << endl;
+                   cursos[numP].Get_Nm_Area() << SEP <<
+                   cursos[numP].Get_Nu_Semestres()<< endl;
     }
     arquivo.close();
 }
@@ -370,7 +439,8 @@ void GeradorDeDados::gerarAlunos (string nomeArquivo, unsigned qtdAlunos)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    for (unsigned numP = 0; numP <(qtdAlunos - 1); numP++)
+    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    for (unsigned numP = 0; numP <qtdAlunos; numP++)
     {
         alunos.push_back(Aluno( gerarNumeros(9, 105000000, 117000000), numP,
                                 prof[rand() % prof.size()].Get_Cd_Professor(),
@@ -388,26 +458,29 @@ void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned qtdInscricoes)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    for (unsigned numP = 0; numP <(qtdInscricoes - 1); numP++)
+    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    for (unsigned numP = 0; numP <qtdInscricoes; numP++)
     {
         inscricoes.push_back(Inscricao(numP, 10 * ((float) (rand() % 101) / 100),
-                                        alunos[rand() % alunos.size()].Get_Nu_Dre()));
+                                        alunos[rand() % alunos.size()].Get_Nu_Dre(), turmas[rand() % turmas.size()].Get_Nu_Turma()));
         arquivo << inscricoes[numP].Get_Cd_Inscricao() << SEP <<
                    inscricoes[numP].Get_Nu_Grau() << SEP <<
-                   inscricoes[numP].Get_Nu_Dre() << SEP << endl;
+                   inscricoes[numP].Get_Nu_Dre() << SEP <<
+                   inscricoes[numP].Get_Nu_Turma()<< endl;
     }
     arquivo.close();
 }
 
-<<<<<<< HEAD
+
 
 void GeradorDeDados :: gerarGrade(string nomeArquivo, unsigned qtdGrades)
 {
     ofstream arquivo;
     arquivo.open(nomeArquivo.c_str());
+    arquivo << "\"sep=" << SEP <<"\"" << endl;
     for(unsigned index = 0;index < qtdGrades; index ++)
     {
-        unsigned dre = 111111111;                           //TODO: MUDAR COMO PEGA O DRE
+        unsigned dre = alunos[rand() % alunos.size()].Get_Nu_Dre();                        //TODO: MUDAR COMO PEGA O DRE
         unsigned cdPeriodo = periodos[rand() % periodos.size()].Get_Cd_Periodo();
         grades.push_back(Grade_Curricular(index+1,dre,cdPeriodo));
         arquivo << grades[index].Get_Cd_Grade() << SEP << grades[index].Get_Nu_Dre() << SEP << grades[index].Get_Cd_Periodo() << endl;
@@ -422,14 +495,15 @@ void GeradorDeDados :: gerarDisciplina(string nomeArquivo,unsigned qtdDisciplina
     ofstream arquivo;
     char buffer [30];
     arquivo.open(nomeArquivo.c_str());
+    arquivo << "\"sep=" << SEP <<"\"" << endl;
     for(unsigned index = 0; index < qtdDisciplina;index ++)
     {
         string cdDisciplina = alphabet[rand() % 26] + alphabet[rand() % 26] + alphabet[rand() % 26] +
                                 itoa(rand() % 200 + 100,buffer,10);
-        string nomeDisciplina = "TMAB";
+        string nomeDisciplina = materias[rand() % 17];
         unsigned qtdCred = rand() % 6 + 1;
-        string ementa = "Ementa da disciplina, uma breve descrição";
-        string bibliografia = "stack overflow";
+        string ementa = "Ementa da disciplina uma breve descrição";
+        string bibliografia = bibliografias[rand() % 4];
         unsigned cdGrade = grades[rand() % grades.size()].Get_Cd_Grade();
         disciplinas.push_back(Disciplina(cdDisciplina,nomeDisciplina,qtdCred,ementa,bibliografia,cdGrade));
         arquivo << disciplinas[index].Get_Cd_Disciplina() << SEP << disciplinas[index].Get_Nm_Disciplina()
@@ -444,6 +518,7 @@ void GeradorDeDados :: gerarPreRequisito(string nomeArquivo,unsigned qtdPreReq)
 {
     ofstream arquivo;
     arquivo.open(nomeArquivo.c_str());
+    arquivo << "\"sep=" << SEP <<"\"" << endl;
     for(unsigned index = 0;index < qtdPreReq;index++)
     {
         preRequisitos.push_back(Pre_Requisitos(disciplinas[rand() % disciplinas.size()].Get_Cd_Disciplina(),index + 1));
@@ -453,13 +528,12 @@ void GeradorDeDados :: gerarPreRequisito(string nomeArquivo,unsigned qtdPreReq)
 }
 
 
-
-
 void GeradorDeDados :: gerarTurmas(string nomeArquivo, unsigned qtdTurmas)
 {
     char buffer [20];
     ofstream arquivo;
     arquivo.open(nomeArquivo.c_str());
+    arquivo << "\"sep=" << SEP <<"\"" << endl;
     for(unsigned index = 0; index < qtdTurmas; index++)
     {
         int nuTurma = rand()%1000 + 1;
@@ -468,22 +542,22 @@ void GeradorDeDados :: gerarTurmas(string nomeArquivo, unsigned qtdTurmas)
         string cdDisciplina = disciplinas[rand() % disciplinas.size()].Get_Cd_Disciplina();
         string horario = (string) itoa(rand()%10 + 7,buffer,10) + ":00";
         int siape = gerarNumeros(9, 100000000, 900000000);
-        turmas.push_back(Turma(nuTurma,nmLocal,vagas,cdDisciplina,horario,siape,index + 1));
+        turmas.push_back(Turma(nuTurma,nmLocal,vagas,cdDisciplina,horario,siape));
         arquivo << turmas[index].Get_Nu_Turma() << SEP << turmas[index].Get_Nm_Local() << SEP << turmas[index].Get_Nu_Vagas()
             << SEP << turmas[index].Get_Cd_Disciplina() << SEP << turmas[index].Get_Ds_Horario() << SEP << turmas[index].Get_Nu_Siape()
-            << SEP << turmas[index].Get_Cd_Inscricao() << endl;
+            << SEP << endl;
 
     }
-
     arquivo.close();
 }
-=======
+
 void GeradorDeDados::gerarAtividades (string nomeArquivo, unsigned qtdAtividades)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
+    arquivo << "\"sep=" << SEP <<"\"" << endl;
     string titulo = "Pesquisa Generica";
-    for (unsigned numP = 0; numP <(qtdAtividades - 1); numP++)
+    for (unsigned numP = 0; numP <qtdAtividades; numP++)
     {
         atividades.push_back (Atividade (numP, titulo, 10 * ((float) (rand() % 101) / 100),
                                     TIPO_ATV[rand() % TIPO_ATV.size()],
@@ -498,8 +572,11 @@ void GeradorDeDados::gerarAtividades (string nomeArquivo, unsigned qtdAtividades
     }
     arquivo.close();
 }
-<<<<<<< HEAD
->>>>>>> Felipe
->>>>>>> master
-=======
->>>>>>> master
+
+void GeradorDeDados::criarPasta(const char * path)
+{
+    if(!CreateDirectory(path,NULL))
+    {
+        return;
+    }
+}

@@ -1,3 +1,21 @@
+/**
+* UFRJ - Universidade Federal do Rio de Janeiro
+* IM - Instituto de Matemática
+* DMA - Departamento de Matemática Aplicada
+*
+* TMAB - Programação C/C++ & Banco de Dados
+* ParteII - Programação OO em C++
+*
+* Descrição do Estudo Dirigido 04
+* Prazo de Entrega: 21 de novembro de 2017
+*
+* Prof. Milton Ramirez (milton@labma.ufrj.br)
+* Rio de Janeiro, 13 de novembro de 2017
+* Grupo K
+* Felipe Claudio
+* Thiago Koster Lago
+**/
+
 #ifndef TURMA_H
 #define TURMA_H
 
@@ -7,12 +25,10 @@ class Turma
     public:
         Turma(unsigned Nu_Turma, string Nm_Local,
               unsigned Nu_Vagas, string Cd_Disciplina,
-              string Ds_Horario, unsigned Nu_Siape,
-              unsigned Cd_Inscricao):
+              string Ds_Horario, unsigned Nu_Siape):
               _Nu_Turma(Nu_Turma), _Nm_Local (Nm_Local),
               _Nu_Vagas (Nu_Vagas), _Cd_Disciplina (Cd_Disciplina),
-              _Ds_Horario (Ds_Horario), _Nu_Siape (Nu_Siape),
-              _Cd_Inscricao (Cd_Inscricao) {};
+              _Ds_Horario (Ds_Horario), _Nu_Siape (Nu_Siape){};
 
         unsigned Get_Nu_Turma() { return _Nu_Turma; }
         void Set_Nu_Turma(unsigned val) { _Nu_Turma = val; }
@@ -32,8 +48,7 @@ class Turma
         unsigned Get_Nu_Siape() { return _Nu_Siape; }
         void Set_Nu_Siape(unsigned val) { _Nu_Siape = val; }
 
-        unsigned Get_Cd_Inscricao() { return _Cd_Inscricao; }
-        void Set_Cd_Inscricao(unsigned val) { _Cd_Inscricao = val; }
+
 
     protected:
 
@@ -44,7 +59,6 @@ class Turma
         string _Cd_Disciplina;
         string _Ds_Horario;
         unsigned _Nu_Siape;
-        unsigned _Cd_Inscricao;
 };
 
 #endif // TURMA_H
