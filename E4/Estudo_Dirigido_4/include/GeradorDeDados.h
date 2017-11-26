@@ -74,7 +74,7 @@ class GeradorDeDados
         void gerarPreRequisito(string nomeArquivo,unsigned qtdPreReq);
         void gerarTurmas(string nomeArquivo,unsigned qtdMaxAlunos, unsigned qtdMinAlunos);
 
-                //gera o arquivo .csv com o numero de professores desejados
+        //gera o arquivo .csv com o numero de professores desejados
         void gerarProfessor (string nomeArquivo, unsigned qtdProfessores);
 
         //gera o arquivo .csv com o numero de coordenacoes desejados
@@ -84,15 +84,20 @@ class GeradorDeDados
         void gerarCursos (string nomeArquivo, unsigned qtdCursos);
 
         //gera o arquivo .csv com o numero de aluno desejados
+        //OBS: deve ser chamado depois de gerarProfessor por causa
+        // dos codigos de pessoa
         void gerarAlunos (string nomeArquivo, unsigned qtdAlunos);
 
         //gera o arquivo .csv com o numero de inscricoes desejadas
+        //OBS: deve ser chamado apos gerarTurma, pois depende de turma
         void gerarIncricoes (string nomeArquivo, unsigned minAlunosInscritos);
 
         //gera o arquivo .csv com o numero de inscricoes desejadas
         void gerarAtividades (string nomeArquivo, unsigned qtdAtividades);
 
         //gera grades para cada curso com numero de materias aleatorias por periodo
+        //OBS: deve ser chamado depois de gerarDisciplina pois referencia
+        //disciplinas
         void gerarGradeCurso (string nomeArquivo);
 
     private:
