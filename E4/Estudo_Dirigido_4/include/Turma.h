@@ -25,10 +25,10 @@ class Turma
     public:
         Turma(unsigned Nu_Turma, string Nm_Local,
               unsigned Nu_Vagas, string Cd_Disciplina,
-              string Ds_Horario, unsigned Nu_Siape):
+              string Ds_Horario, unsigned Nu_Siape, unsigned Cd_Periodo):
               _Nu_Turma(Nu_Turma), _Nm_Local (Nm_Local),
               _Nu_Vagas (Nu_Vagas), _Cd_Disciplina (Cd_Disciplina),
-              _Ds_Horario (Ds_Horario), _Nu_Siape (Nu_Siape){};
+              _Ds_Horario (Ds_Horario), _Nu_Siape (Nu_Siape), _Cd_Periodo (Cd_Periodo){};
 
         unsigned Get_Nu_Turma() { return _Nu_Turma; }
         void Set_Nu_Turma(unsigned val) { _Nu_Turma = val; }
@@ -48,7 +48,8 @@ class Turma
         unsigned Get_Nu_Siape() { return _Nu_Siape; }
         void Set_Nu_Siape(unsigned val) { _Nu_Siape = val; }
 
-
+        unsigned Get_Cd_Periodo(){return _Cd_Periodo;}
+        void Set_Cd_Periodo(unsigned val) {_Cd_Periodo = val;}
 
 
     private:
@@ -58,6 +59,7 @@ class Turma
         string _Cd_Disciplina;
         string _Ds_Horario;
         unsigned _Nu_Siape;
+        unsigned _Cd_Periodo;
 };
 
 #endif // TURMA_H

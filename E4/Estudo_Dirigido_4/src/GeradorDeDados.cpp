@@ -573,10 +573,10 @@ void GeradorDeDados :: gerarTurmas(string nomeArquivo, unsigned qtdTurmas)
         string cdDisciplina = disciplinas[rand() % disciplinas.size()].Get_Cd_Disciplina();
         string horario = (string) itoa(rand()%10 + 7,buffer,10) + ":00";
         int siape = prof[rand() % prof.size()].Get_Nu_SIAPE();
-        turmas.push_back(Turma(nuTurma,nmLocal,vagas,cdDisciplina,horario,siape));
+        turmas.push_back(Turma(nuTurma,nmLocal,vagas,cdDisciplina,horario,siape,periodos[rand() % periodos.size()].Get_Cd_Periodo()));
         arquivo << turmas[index].Get_Nu_Turma() << SEP << turmas[index].Get_Nm_Local() << SEP << turmas[index].Get_Nu_Vagas()
             << SEP << turmas[index].Get_Cd_Disciplina() << SEP << turmas[index].Get_Ds_Horario() << SEP << turmas[index].Get_Nu_Siape()
-            << SEP << endl;
+            << SEP << turmas[index].Get_Cd_Periodo() << endl;
 
     }
     arquivo.close();

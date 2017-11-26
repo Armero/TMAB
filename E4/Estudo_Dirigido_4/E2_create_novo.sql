@@ -159,9 +159,12 @@ CREATE TABLE Turma
 	Cd_Disciplina        CHAR(6) NOT NULL,
 	Ds_Horario           CHAR(60) NULL,
 	Nu_SIAPE             INTEGER NOT NULL,
+	Cd_Periodo			 INTEGER NOT NULL,
+	
 	PRIMARY KEY (Nu_Turma),
 	FOREIGN KEY R_22 (Cd_Disciplina) REFERENCES Disciplina (Cd_Disciplina),
-	FOREIGN KEY R_26 (Nu_SIAPE) REFERENCES Professor (Nu_SIAPE)
+	FOREIGN KEY R_26 (Nu_SIAPE) REFERENCES Professor (Nu_SIAPE),
+	FOREIGN KEY (Cd_Periodo) REFERENCES Periodo (Cd_Periodo)
 );
 
 
