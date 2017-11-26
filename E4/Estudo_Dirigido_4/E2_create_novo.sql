@@ -19,6 +19,8 @@ CREATE TABLE Pessoa
 (
 	Cd_Pessoa            INTEGER NOT NULL,
 	Nm_Pessoa            CHAR(60) NOT NULL,
+	Ic_Sexo			 	 CHAR(60) NOT NULL,
+	Nu_Idade		     INTEGER NOT NULL,
 	PRIMARY KEY (Cd_Pessoa)
 );
 
@@ -56,6 +58,7 @@ CREATE TABLE Curso
 	Nm_Curso             CHAR(60) NOT NULL,
 	Cd_Coordenacao       INTEGER NOT NULL,
 	Nm_Area              CHAR(60) NULL,
+	Nu_Semestres		 INTEGER NOT NULL,
 	PRIMARY KEY (Cd_Curso),
 	FOREIGN KEY R_9 (Cd_Coordenacao) REFERENCES Coordenacao (Cd_Coordenacao)
 );

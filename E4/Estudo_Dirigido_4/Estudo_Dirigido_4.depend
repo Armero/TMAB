@@ -22,7 +22,7 @@
 1510785810 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\e4\estudo_dirigido_4\include\professor.h
 	"Pessoa.h"
 
-1511106968 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\geradordedados.cpp
+1511707084 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\geradordedados.cpp
 	"GeradorDeDados.h"
 	<fstream>
 	<iostream>
@@ -33,8 +33,9 @@
 	<stdlib.h>
 	<time.h>
 	<math.h>
+	<windows.h>
 
-1511107212 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\geradordedados.h
+1511706365 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\geradordedados.h
 	<vector>
 	<string>
 	<string>
@@ -62,17 +63,17 @@
 1511017259 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\pessoa.cpp
 	"Pessoa.h"
 
-1511038886 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\pessoa.h
+1511702541 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\pessoa.h
 	<string>
 
 1511021726 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\professor.cpp
 	"Professor.h"
 	<iostream>
 
-1511065440 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\professor.h
+1511702541 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\professor.h
 	"Pessoa.h"
 
-1511107138 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\main.cpp
+1511702541 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\main.cpp
 	<iostream>
 	"Pessoa.h"
 	"Professor.h"
@@ -81,28 +82,28 @@
 1511017247 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\coordenacao.cpp
 	"Coordenacao.h"
 
-1511065440 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\coordenacao.h
+1511702541 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\coordenacao.h
 
 1511017583 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\curso.cpp
 	"Curso.h"
 
-1511022591 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\curso.h
+1511703726 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\curso.h
 	<string>
 
 1511018276 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\aluno.cpp
 	"Aluno.h"
 
-1511022534 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\aluno.h
+1511702541 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\aluno.h
 
 1511019205 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\grade_curricular.cpp
 	"Grade_Curricular.h"
 
-1511104346 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\grade_curricular.h
+1511702541 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\grade_curricular.h
 
 1511019634 source:c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\src\disciplina.cpp
 	"Disciplina.h"
 
-1511104346 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\disciplina.h
+1511702541 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\disciplina.h
 	<string>
 
 1511659732 source:c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\src\geradordedados.cpp
@@ -170,13 +171,13 @@
 
 1511023738 ter
 
-1511022937 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\inscricao.h
+1511702541 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\inscricao.h
 
 1511022937 ipe
 
-1511104346 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\periodo.h
+1511702541 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\periodo.h
 
-1511023738 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\atividade.h
+1511702541 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\atividade.h
 
 1511055968 source:c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\main.cpp
 	<iostream>
@@ -192,7 +193,7 @@
 
 1511635557 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\atividade.h
 
-1511104346 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\pre_requisitos.h
+1511702541 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\pre_requisitos.h
 
-1511104346 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\turma.h
+1511702541 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\turma.h
 
