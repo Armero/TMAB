@@ -1,12 +1,12 @@
 /**
 * UFRJ - Universidade Federal do Rio de Janeiro
-* IM - Instituto de Matem·tica
-* DMA - Departamento de Matem·tica Aplicada
+* IM - Instituto de Matem√°tica
+* DMA - Departamento de Matem√°tica Aplicada
 *
-* TMAB - ProgramaÁ„o C/C++ & Banco de Dados
-* ParteII - ProgramaÁ„o OO em C++
+* TMAB - Programa√ß√£o C/C++ & Banco de Dados
+* ParteII - Programa√ß√£o OO em C++
 *
-* DescriÁ„o do Estudo Dirigido 04
+* Descri√ß√£o do Estudo Dirigido 04
 * Prazo de Entrega: 21 de novembro de 2017
 *
 * Prof. Milton Ramirez (milton@labma.ufrj.br)
@@ -189,7 +189,7 @@ int main (void)
 
     cout << "Criando pasta em \"C:\\TMAB\"" << endl;
 
-    gerador.criarPasta("C:\\TMAB ...");
+    gerador.criarPasta("C:\\TMAB");
 
     cout << "Criando arquivos .csv na pasta criada..." << endl;
 
