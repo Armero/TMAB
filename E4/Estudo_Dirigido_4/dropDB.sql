@@ -10,3 +10,4 @@ drop table grade_curricular;
 drop table disciplina;
 drop table pre_requisitos;
 drop table turma;
+drop table grade_curso;

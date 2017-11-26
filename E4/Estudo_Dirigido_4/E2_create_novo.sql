@@ -66,14 +66,14 @@ CREATE TABLE Curso
 CREATE TABLE Grade_Curso
 (
 	Cd_Curso						INTEGER NOT NULL,
-	Cd_Disciplina					INTEGER	NOT NULL,
+	Cd_Disciplina					CHAR(6) NOT NULL,
 	Ic_Periodo						INTEGER NOT NULL,
 	Qt_Creditos						INTEGER NOT NULL,
 	
-	PRIMARY KEY (Cd_Curso)			INTEGER NOT	NULL,
-	FOREIGN KEY (Cd_Curso) 			INTEGER NOT NULL,
-	FOREIGN KEY (Cd_Disciplina) 	INTEGER NOT NULL,
-	FOREIGN KEY (Qt_Creditos)		INTEGER NOT NULL
+	PRIMARY KEY (Cd_Curso),
+	FOREIGN KEY (Cd_Curso) 			REFERENCES Curso (Cd_Curso),
+	FOREIGN KEY (Cd_Disciplina) 	REFERENCES Disciplina (Cd_Disciplina),
+	FOREIGN KEY (Qt_Creditos)		REFERENCES Disciplina (Qt_Creditos)
 );
 
 CREATE TABLE Aluno
