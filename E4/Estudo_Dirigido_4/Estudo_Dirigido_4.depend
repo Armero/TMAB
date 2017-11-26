@@ -119,7 +119,7 @@
 	<math.h>
 	<windows.h>
 
-1511635557 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\geradordedados.h
+1511714505 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\geradordedados.h
 	<vector>
 	<string>
 	<string>
@@ -144,30 +144,30 @@
 	"Atividade.h"
 	<fstream>
 
-1511659712 source:c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\src\main.cpp
+1511714505 source:c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\src\main.cpp
 	<iostream>
 	"Pessoa.h"
 	"Professor.h"
 	"GeradorDeDados.h"
 
-1511659769 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\pessoa.h
+1511714505 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\pessoa.h
 	<string>
 
-1511635557 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\professor.h
+1511714505 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\professor.h
 	"Pessoa.h"
 
 1511022937 D
 
-1511635557 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\periodo.h
+1511714505 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\periodo.h
 
-1511635557 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\grade_curricular.h
+1511714505 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\grade_curricular.h
 
-1511635557 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\disciplina.h
+1511714505 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\disciplina.h
 	<string>
 
-1511635557 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\pre_requisitos.h
+1511714505 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\pre_requisitos.h
 
-1511635557 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\turma.h
+1511714505 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\turma.h
 
 1511023738 ter
 
@@ -182,16 +182,16 @@
 1511055968 source:c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\main.cpp
 	<iostream>
 
-1511635557 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\coordenacao.h
+1511714505 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\coordenacao.h
 
-1511635557 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\curso.h
+1511714505 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\curso.h
 	<string>
 
-1511635557 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\aluno.h
+1511714505 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\aluno.h
 
-1511635557 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\inscricao.h
+1511714505 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\inscricao.h
 
-1511635557 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\atividade.h
+1511714505 c:\users\loki\documents\github\tmab\e4\estudo_dirigido_4\include\atividade.h
 
 1511702541 c:\users\felip\documents\materias\2017_2\tmab\estudos_dirigidos\tmab\e4\estudo_dirigido_4\include\pre_requisitos.h
 
