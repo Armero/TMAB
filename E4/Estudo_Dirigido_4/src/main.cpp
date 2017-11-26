@@ -179,10 +179,21 @@ using namespace std;
 
 int main (void)
 {
+    cout << "#################### Estudo dirigido 04 #################" << endl;
+    cout << "Grupo K" << endl;
+    cout <<  "Felipe Claudio e Thiago Koster Lago" << endl;
+    cout <<  endl;
+    cout <<  endl;
 
     GeradorDeDados gerador;
 
-    gerador.criarPasta("C:\\TMAB");
+    cout << "Criando pasta em \"C:\\TMAB\"" << endl;
+
+    gerador.criarPasta("C:\\TMAB ...");
+
+    cout << "Criando arquivos .csv na pasta criada..." << endl;
+
+
 
     gerador.gerarPessoas("C:\\TMAB\\pessoas.csv", 1000);
     gerador.gerarProfessor("C:\\TMAB\\professores.csv", 20);
@@ -198,5 +209,6 @@ int main (void)
     gerador.gerarTurmas("C:\\TMAB\\turmas.csv",30);
 
 
+    cout << "Execucao finalizada" << endl;
     return (0);
 }
