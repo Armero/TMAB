@@ -1,3 +1,23 @@
+/**
+* UFRJ - Universidade Federal do Rio de Janeiro
+* IM - Instituto de Matemática
+* DMA - Departamento de Matemática Aplicada
+*
+* TMAB - Programação C/C++ & Banco de Dados
+* ParteII - Programação OO em C++
+*
+* Descrição do Estudo Dirigido 04
+* Prazo de Entrega: 21 de novembro de 2017
+*
+* Prof. Milton Ramirez (milton@labma.ufrj.br)
+* Rio de Janeiro, 13 de novembro de 2017
+* Grupo K
+* Felipe Claudio
+* Thiago Koster Lago
+**/
+
+
+
 /*
 
 CREATE TABLE Pessoa
@@ -159,20 +179,36 @@ using namespace std;
 
 int main (void)
 {
+    cout << "#################### Estudo dirigido 04 #################" << endl;
+    cout << "Grupo K" << endl;
+    cout <<  "Felipe Claudio e Thiago Koster Lago" << endl;
+    cout <<  endl;
+    cout <<  endl;
+
     GeradorDeDados gerador;
-    gerador.gerarPessoas("pessoas.csv", 1000);
-    gerador.gerarProfessor("professores.csv", 20);
-    gerador.gerarCoordenacao("coordenacoes.csv", 10);
-    gerador.gerarCursos("cursos.csv", 10);
-    gerador.gerarAlunos("alunos.csv", 900);
-    gerador.gerarIncricoes("inscricoes.csv", 300);
-    gerador.gerarAtividades("atividades.csv", 100);
-    gerador.gerarPeriodo("periodos.csv",300);
-    gerador.gerarGrade("grades.csv",300);
-    gerador.gerarDisciplina("disciplinas.csv",300);
-    gerador.gerarPreRequisito("pre_requisitos.csv",50);
-    gerador.gerarTurmas("turmas.csv",30);
+
+    cout << "Criando pasta em \"C:\\TMAB\"" << endl;
+
+    gerador.criarPasta("C:\\TMAB");
+
+    cout << "Criando arquivos .csv na pasta criada..." << endl;
 
 
+
+    gerador.gerarPessoas("C:\\TMAB\\pessoas.csv", 1000);
+    gerador.gerarProfessor("C:\\TMAB\\professores.csv", 20);
+    gerador.gerarCoordenacao("C:\\TMAB\\coordenacoes.csv", 10);
+    gerador.gerarCursos("C:\\TMAB\\cursos.csv", 10);
+    gerador.gerarAlunos("C:\\TMAB\\alunos.csv", 900);
+    gerador.gerarIncricoes("C:\\TMAB\\inscricoes.csv", 300);
+    gerador.gerarAtividades("C:\\TMAB\\atividades.csv", 100);
+    gerador.gerarPeriodo("C:\\TMAB\\periodos.csv",300);
+    gerador.gerarGrade("C:\\TMAB\\grades.csv",300);
+    gerador.gerarDisciplina("C:\\TMAB\\disciplinas.csv",300);
+    gerador.gerarPreRequisito("C:\\TMAB\\pre_requisitos.csv",50);
+    gerador.gerarTurmas("C:\\TMAB\\turmas.csv",30);
+
+
+    cout << "Execucao finalizada" << endl;
     return (0);
 }
