@@ -35,7 +35,6 @@ class Disciplina
                    _Qt_Creditos (Qt_Creditos),
                    _Ds_Ementa (Ds_Ementa),
                    _Ds_Bibliografia (Ds_Bibliografia),
-                   _Cd_Grade (Cd_Grade),
                    _Ic_Disciplina(Ic_Disciplina) {};
 
         string Get_Cd_Disciplina() { return _Cd_Disciplina; }
@@ -53,9 +52,6 @@ class Disciplina
         string Get_Ds_Bibliografia() { return _Ds_Bibliografia; }
         void Set_Ds_Bibliografia(string val) { _Ds_Bibliografia = val; }
 
-        unsigned GetCd_Grade() { return _Cd_Grade; }
-        void SetCd_Grade(unsigned val) { _Cd_Grade = val; }
-
         string Get_Ic_Disciplina () {return _Ic_Disciplina;}
         void Set_Ic_Disciplina (string val) { _Ic_Disciplina = val; }
 
@@ -66,7 +62,6 @@ class Disciplina
         string _Ds_Ementa;
         unsigned _Qt_Creditos;
         string _Ds_Bibliografia;
-        unsigned _Cd_Grade;
         string _Ic_Disciplina; //Indicador de tipo de disciplina
 };
 

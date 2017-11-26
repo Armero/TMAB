@@ -98,20 +98,6 @@ CREATE TABLE Periodo
 	PRIMARY KEY (Cd_Periodo)
 );
 
-
-
-CREATE TABLE Grade_Curricular
-(
-	Cd_Grade             INTEGER NOT NULL,
-	Nu_Dre               CHAR(9) NOT NULL,
-	Cd_Periodo           DECIMAL(5,1) NOT NULL,
-	PRIMARY KEY (Cd_Grade),
-	FOREIGN KEY R_14 (Nu_Dre) REFERENCES Aluno (Nu_Dre),
-	FOREIGN KEY R_36 (Cd_Periodo) REFERENCES Periodo (Cd_Periodo)
-);
-
-
-
 CREATE TABLE Disciplina
 (
 	Cd_Disciplina        CHAR(6) NOT NULL,
@@ -119,11 +105,22 @@ CREATE TABLE Disciplina
 	Qt_Creditos          INTEGER NOT NULL,
 	Ds_Ementa            CHAR(255) NOT NULL,
 	Ds_Bibilografia      CHAR(255) NOT NULL,
-	Cd_Grade             INTEGER NOT NULL,
 	Ic_Disciplina		 CHAR (60) NOT NULL,
-	PRIMARY KEY (Cd_Disciplina),
-	FOREIGN KEY R_5 (Cd_Grade) REFERENCES Grade_Curricular (Cd_Grade)
+	PRIMARY KEY (Cd_Disciplina)
 );
+
+CREATE TABLE Grade_Curricular
+(
+	Cd_Grade             INTEGER NOT NULL,
+	Cd_Disciplina        CHAR(6) NOT NULL,
+	Nu_Dre               CHAR(9) NOT NULL,
+	Cd_Periodo           INTEGER NOT NULL,
+	
+	FOREIGN KEY R_14 (Nu_Dre) REFERENCES Aluno (Nu_Dre),
+	FOREIGN KEY R_36 (Cd_Periodo) REFERENCES Periodo (Cd_Periodo),
+	FOREIGN KEY (Cd_Disciplina) REFERENCES Disciplina (Cd_Disciplina)
+);
+
 
 
 

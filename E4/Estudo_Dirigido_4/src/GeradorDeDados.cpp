@@ -353,12 +353,13 @@ void GeradorDeDados::gerarPessoas (string nomeArquivo, unsigned qtdPessoas)
 void GeradorDeDados::gerarPeriodo(string nomeArquivo, unsigned qtdPeriodo)
 {
     char buffer [33];
+    const unsigned ANO_INICIAL = 2014;
     ofstream arquivo;
     arquivo.open(nomeArquivo.c_str());
     //arquivo << "\"sep=" << SEP <<"\"" << endl;
     for (unsigned index = 0; index < qtdPeriodo; index++)
     {
-        int ano = 1960 + index/2;
+        int ano = ANO_INICIAL + index/2;
         int mes = 3 + index % 2 * 4;
 
         string dataInicio = "01/" + (string) itoa(mes,buffer,10) + "/" + (string) itoa(ano,buffer,10);
@@ -539,13 +540,25 @@ void GeradorDeDados :: gerarGrade(string nomeArquivo, unsigned qtdGrades)
 {
     ofstream arquivo;
     arquivo.open(nomeArquivo.c_str());
-    //arquivo << "\"sep=" << SEP <<"\"" << endl;
+    unsigned contGrades = 0;
     for(unsigned index = 0;index < qtdGrades; index ++)
     {
         unsigned dre = alunos[rand() % alunos.size()].Get_Nu_Dre();                        //TODO: MUDAR COMO PEGA O DRE
         unsigned cdPeriodo = periodos[rand() % periodos.size()].Get_Cd_Periodo();
-        grades.push_back(Grade_Curricular(index+1,dre,cdPeriodo));
-        arquivo << grades[index].Get_Cd_Grade() << SEP << grades[index].Get_Nu_Dre() << SEP << grades[index].Get_Cd_Periodo() << endl;
+
+        //numero de materias em cada grade criada
+        unsigned numMaterias = rand() % 5  + 3;
+
+        for (unsigned i = 0; i < numMaterias; i++)
+        {
+            grades.push_back(Grade_Curricular(index+1,dre,cdPeriodo ,
+                             disciplinas[rand() % disciplinas.size()].Get_Cd_Disciplina()));
+            arquivo << grades[contGrades].Get_Cd_Grade() << SEP
+                    << grades[contGrades].Get_Cd_Disciplina() << SEP
+                    << grades[contGrades].Get_Nu_Dre() << SEP
+                    << grades[contGrades].Get_Cd_Periodo() <<endl;
+            contGrades++;
+        }
     }
 
     arquivo.close();
@@ -571,8 +584,8 @@ void GeradorDeDados :: gerarDisciplina(string nomeArquivo,unsigned qtdDisciplina
                                          cdGrade, TIPO_DISCIPLINAS[rand()% TIPO_DISCIPLINAS.size()]));
         arquivo << disciplinas[index].Get_Cd_Disciplina() << SEP << disciplinas[index].Get_Nm_Disciplina()
             << SEP << disciplinas[index].Get_Qt_Creditos() << SEP << disciplinas[index].Get_Ds_Ementa()
-            << SEP << disciplinas[index].Get_Ds_Bibliografia() << SEP << disciplinas[index].GetCd_Grade()
-            << SEP << disciplinas[index].Get_Ic_Disciplina() << endl;
+            << SEP << disciplinas[index].Get_Ds_Bibliografia() << SEP << disciplinas[index].Get_Ic_Disciplina()
+            << endl;
     }
     arquivo.close();
 }
