@@ -41,6 +41,7 @@ typedef std::vector <std::string> Nome;
 #include "Aluno.h"
 #include "Inscricao.h"
 #include "Atividade.h"
+#include "Grade_Curso.h"
 #include <fstream>
 
 #define SEP ";" //Separador do arquivo CSV
@@ -89,7 +90,10 @@ class GeradorDeDados
         void gerarIncricoes (string nomeArquivo, unsigned qtdInscricoes);
 
         //gera o arquivo .csv com o numero de inscricoes desejadas
-    void gerarAtividades (string nomeArquivo, unsigned qtdAtividades);
+        void gerarAtividades (string nomeArquivo, unsigned qtdAtividades);
+
+        //gera grades para cada curso com numero de materias aleatorias por periodo
+        void gerarGradeCurso (string nomeArquivo);
 
     private:
 
@@ -101,6 +105,7 @@ class GeradorDeDados
     std::vector < std::string > LerNomes(bool);
     std::vector < std::string > LerSobrenomes();
     Nome separarString (string texto);
+    void gerarMaterias (unsigned nObrigatorias, unsigned nProfissionais, unsigned nOptativas); //Gera Materias conforme um padraos
 
     string gerarLocalGabinete ();
     vector <string> CURSOS;
@@ -110,6 +115,8 @@ class GeradorDeDados
     vector <string> BLOCOS;
     vector <string> CLASSE;
     vector <string> TIPO_ATV;
+    vector <string> MATERIAS;
+    vector <string> TIPO_DISCIPLINAS;
     vector <Pessoa> pessoas;
     vector <Periodo> periodos;
     vector <Grade_Curricular> grades;
@@ -120,6 +127,7 @@ class GeradorDeDados
     vector <Coordenacao> coord;
     vector <Curso> cursos;
     vector <Aluno> alunos;
+    vector <Grade_Curso> gradesCursos;
     vector <Inscricao> inscricoes;
     vector <Atividade> atividades;
     vector <bool> cursosUtilizados;
