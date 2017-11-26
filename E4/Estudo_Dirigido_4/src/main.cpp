@@ -202,11 +202,12 @@ int main (void)
     gerador.gerarAlunos("C:\\TMAB\\alunos.csv", 900);
     gerador.gerarIncricoes("C:\\TMAB\\inscricoes.csv", 300);
     gerador.gerarAtividades("C:\\TMAB\\atividades.csv", 100);
-    gerador.gerarPeriodo("C:\\TMAB\\periodos.csv",300);
+    gerador.gerarPeriodo("C:\\TMAB\\periodos.csv",10);
     gerador.gerarGrade("C:\\TMAB\\grades.csv",300);
     gerador.gerarDisciplina("C:\\TMAB\\disciplinas.csv",300);
     gerador.gerarPreRequisito("C:\\TMAB\\pre_requisitos.csv",50);
-    gerador.gerarTurmas("C:\\TMAB\\turmas.csv",30);
+    gerador.gerarTurmas("C:\\TMAB\\turmas.csv",100);
+    gerador.gerarGradeCurso("C:\\TMAB\\gradecursos.csv");
 
 
     cout << "Execucao finalizada" << endl;

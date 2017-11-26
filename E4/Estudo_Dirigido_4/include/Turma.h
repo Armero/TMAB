@@ -53,7 +53,6 @@ class Turma
         unsigned Get_Cd_Inscricao() { return _Cd_Inscricao; }
         void Set_Cd_Inscricao(unsigned val) { _Cd_Inscricao = val; }
 
-    protected:
 
     private:
         unsigned _Nu_Turma;

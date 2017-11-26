@@ -28,13 +28,15 @@ class Disciplina
     public:
         Disciplina(string Cd_Disciplina, string Nm_Disciplina,
                    unsigned Qt_Creditos, string Ds_Ementa,
-                   string Ds_Bibliografia, unsigned Cd_Grade):
+                   string Ds_Bibliografia, unsigned Cd_Grade,
+                   string Ic_Disciplina):
                    _Cd_Disciplina (Cd_Disciplina),
                    _Nm_Disciplina (Nm_Disciplina),
                    _Qt_Creditos (Qt_Creditos),
                    _Ds_Ementa (Ds_Ementa),
                    _Ds_Bibliografia (Ds_Bibliografia),
-                   _Cd_Grade (Cd_Grade) {};
+                   _Cd_Grade (Cd_Grade),
+                   _Ic_Disciplina(Ic_Disciplina) {};
 
         string Get_Cd_Disciplina() { return _Cd_Disciplina; }
         void Set_Cd_Disciplina(string val) { _Cd_Disciplina = val; }
@@ -54,7 +56,9 @@ class Disciplina
         unsigned GetCd_Grade() { return _Cd_Grade; }
         void SetCd_Grade(unsigned val) { _Cd_Grade = val; }
 
-    protected:
+        string Get_Ic_Disciplina () {return _Ic_Disciplina;}
+        void Set_Ic_Disciplina (string val) { _Ic_Disciplina = val; }
+
 
     private:
         string _Cd_Disciplina;
@@ -63,6 +67,7 @@ class Disciplina
         unsigned _Qt_Creditos;
         string _Ds_Bibliografia;
         unsigned _Cd_Grade;
+        string _Ic_Disciplina; //Indicador de tipo de disciplina
 };
 
 #endif // DISCIPLINA_H
