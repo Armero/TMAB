@@ -486,15 +486,11 @@ void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned minAlunosInscr
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-<<<<<<< HEAD
-    //arquivo << "\"sep=" << SEP <<"\"" << endl;
-    for (unsigned numP = 0; numP <qtdInscricoes; numP++)
-=======
+
     arquivo << "\"sep=" << SEP <<"\"" << endl;
     unsigned total = 0;
     unsigned numTurma = 0;
     for (unsigned numP = 0; numP < turmas.size(); numP++)
->>>>>>> Felipe
     {
         //indica se o aluno ja foi inscrito na materia
         vector <bool> alunoInscrito;
@@ -623,17 +619,12 @@ void GeradorDeDados :: gerarTurmas(string nomeArquivo, unsigned qtdMaxAlunos, un
         string nmLocal = "Sala " + (string) itoa(rand()%300 + 100,buffer,10);
         string cdDisciplina = disciplinas[rand() % disciplinas.size()].Get_Cd_Disciplina();
         string horario = (string) itoa(rand()%10 + 7,buffer,10) + ":00";
-<<<<<<< HEAD
-        int siape = prof[rand() % prof.size()].Get_Nu_SIAPE();
-        turmas.push_back(Turma(nuTurma,nmLocal,vagas,cdDisciplina,horario,siape,periodos[rand() % periodos.size()].Get_Cd_Periodo()));
-=======
 
         //obtem o numero do SIAPE do professor
         unsigned siape = prof[numProfessor].Get_Nu_SIAPE();
-        turmas.push_back(Turma(nuTurma,nmLocal,vagas,cdDisciplina,horario,siape));
+        turmas.push_back(Turma(nuTurma,nmLocal,vagas,cdDisciplina,horario,siape,periodos[rand() % periodos.size()].Get_Cd_Periodo()));
 
         //salva os dados no arquivo
->>>>>>> Felipe
         arquivo << turmas[index].Get_Nu_Turma() << SEP << turmas[index].Get_Nm_Local() << SEP << turmas[index].Get_Nu_Vagas()
             << SEP << turmas[index].Get_Cd_Disciplina() << SEP << turmas[index].Get_Ds_Horario() << SEP << turmas[index].Get_Nu_Siape()
             << SEP << turmas[index].Get_Cd_Periodo() << endl;
