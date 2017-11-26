@@ -636,8 +636,9 @@ void GeradorDeDados::gerarGradeCurso(string nomeArquivo)
                     numDisciplina = rand() % disciplinas.size();
 
                 //adiciona uma nova grade no vetor de grades
-                gradesCursos.push_back(Grade_Curso(i, numDisciplina, j+1,
+                gradesCursos.push_back(Grade_Curso(i, disciplinas[numDisciplina].Get_Cd_Disciplina(), j+1,
                                                    disciplinas[numDisciplina].Get_Qt_Creditos()));
+
 
                 //escreve no arquivo a grade
                 arquivo << gradesCursos[ContDisciplinas].Get_Cd_Curso() << SEP
