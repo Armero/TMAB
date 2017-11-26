@@ -50,7 +50,6 @@ class Turma
 
 
 
-    protected:
 
     private:
         unsigned _Nu_Turma;

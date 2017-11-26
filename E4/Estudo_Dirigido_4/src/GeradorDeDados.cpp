@@ -32,8 +32,6 @@
 using namespace std;
 vector <vector <string> > data;
 string alphabet[26] = { "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z" };
-string materias[17] = {"TMAB","Calculo I","Calculo II","Calculo III","Calculo IV","Fisica I","Fisica II","Fisica III","Fisica IV", "Modelos Probabilisticos", "Computacao I", "Computacao II",
-                        "Circuitos Eletricos", "Eletronica I","Eletronica II","Eletronica III", "Eletronica IV"};
 string bibliografias[4] = {"Stack Overflow", "The C++ Programming Language","Fundamentals of Database Systems","Effective C++"};
 
 GeradorDeDados::GeradorDeDados()
@@ -81,10 +79,14 @@ GeradorDeDados::GeradorDeDados()
     CURSOS.push_back("Letras Espanhol");
     TIPO_ATV.push_back("Iniciacao Científica");
     TIPO_ATV.push_back("Extensão");
+    TIPO_DISCIPLINAS.push_back("Básica");
+    TIPO_DISCIPLINAS.push_back("Profissional");
+    TIPO_DISCIPLINAS.push_back("Optativa");
     for (unsigned i = 0; i < CURSOS.size(); i++)
     {
         cursosUtilizados.push_back(false);
     }
+    gerarMaterias(200, 200, 200);
 }
 
 unsigned GeradorDeDados::gerarNumeros (unsigned numeroElementos,
@@ -287,6 +289,32 @@ Nome GeradorDeDados::separarString (string texto)
     back_inserter(nomes));
 
     return nomes;
+}
+
+void GeradorDeDados::gerarMaterias(unsigned nObrigatorias, unsigned nProfissionais, unsigned nOptativas)
+{
+    unsigned cont = 0;
+    for ( ; cont < nObrigatorias; cont++)
+    {
+        char caux [10];
+        sprintf(caux, "%d", cont+1);
+        string saux (caux);
+        MATERIAS.push_back("Diciplina Commum" + saux);
+    }
+    for (; cont < (nObrigatorias + nProfissionais); cont++)
+    {
+        char caux [10];
+        sprintf(caux, "%d", cont+1 - nObrigatorias);
+        string saux (caux);
+        MATERIAS.push_back("Diciplina Profissional" + saux);
+    }
+    for (; cont < (nObrigatorias + nProfissionais + nOptativas); cont++)
+    {
+        char caux [10];
+        sprintf(caux, "%d", cont+1 - nObrigatorias - nProfissionais);
+        string saux (caux);
+        MATERIAS.push_back("Diciplina Optativa" + saux);
+    }
 }
 
 void GeradorDeDados::gerarPessoas (string nomeArquivo, unsigned qtdPessoas)
@@ -500,15 +528,18 @@ void GeradorDeDados :: gerarDisciplina(string nomeArquivo,unsigned qtdDisciplina
     {
         string cdDisciplina = alphabet[rand() % 26] + alphabet[rand() % 26] + alphabet[rand() % 26] +
                                 itoa(rand() % 200 + 100,buffer,10);
-        string nomeDisciplina = materias[rand() % 17];
+//        string nomeDisciplina = materias[rand() % 17];
         unsigned qtdCred = rand() % 6 + 1;
         string ementa = "Ementa da disciplina uma breve descrição";
         string bibliografia = bibliografias[rand() % 4];
         unsigned cdGrade = grades[rand() % grades.size()].Get_Cd_Grade();
-        disciplinas.push_back(Disciplina(cdDisciplina,nomeDisciplina,qtdCred,ementa,bibliografia,cdGrade));
+        disciplinas.push_back(Disciplina(cdDisciplina,MATERIAS[rand() % MATERIAS.size()] ,
+                                         qtdCred, ementa, bibliografia,
+                                         cdGrade, TIPO_DISCIPLINAS[rand()% TIPO_DISCIPLINAS.size()]));
         arquivo << disciplinas[index].Get_Cd_Disciplina() << SEP << disciplinas[index].Get_Nm_Disciplina()
             << SEP << disciplinas[index].Get_Qt_Creditos() << SEP << disciplinas[index].Get_Ds_Ementa()
-            << SEP << disciplinas[index].Get_Ds_Bibliografia() << SEP << disciplinas[index].GetCd_Grade() << endl;
+            << SEP << disciplinas[index].Get_Ds_Bibliografia() << SEP << disciplinas[index].GetCd_Grade()
+            << SEP << disciplinas[index].Get_Ic_Disciplina() << endl;
     }
     arquivo.close();
 }
@@ -573,6 +604,54 @@ void GeradorDeDados::gerarAtividades (string nomeArquivo, unsigned qtdAtividades
     arquivo.close();
 }
 
+void GeradorDeDados::gerarGradeCurso(string nomeArquivo)
+{
+    ofstream arquivo;
+    arquivo.open (nomeArquivo.c_str());
+    arquivo << "\"sep=" << SEP <<"\"" << endl;
+
+    //conta o numero de disciplinas no total de grades
+    //responsavel por contar o numero de grades criadas
+    unsigned ContDisciplinas = 0;
+
+    //popula cada curso ordenadamente
+    for (unsigned i = 0; i < cursos.size(); i++)
+    {
+        //Popula cada semestre de um curso
+        for (unsigned j = 0; j < cursos[i].Get_Nu_Semestres(); j++)
+        {
+            //Vetor que indica quais materias ja estao na grade
+            vector <bool> materiasNaGrade;
+            for (unsigned aux = 0; aux < disciplinas.size(); aux++)
+                materiasNaGrade.push_back(false);
+
+            //numero de materias em um periodo
+            unsigned numMaterias = rand ()%4 + 4;
+            for (unsigned k = 0; k < numMaterias; k++)
+            {
+                unsigned numDisciplina = rand() % disciplinas.size();
+
+                //seleciona uma disciplina aleatoria
+                while (materiasNaGrade[numDisciplina])
+                    numDisciplina = rand() % disciplinas.size();
+
+                //adiciona uma nova grade no vetor de grades
+                gradesCursos.push_back(Grade_Curso(i, numDisciplina, j+1,
+                                                   disciplinas[numDisciplina].Get_Qt_Creditos()));
+
+                //escreve no arquivo a grade
+                arquivo << gradesCursos[ContDisciplinas].Get_Cd_Curso() << SEP
+                        << gradesCursos[ContDisciplinas].Get_Cd_Disciplina() << SEP
+                        << gradesCursos[ContDisciplinas].Get_Ic_Periodo() << SEP
+                        << gradesCursos[ContDisciplinas].Get_Qt_Creditos() << endl;
+
+                materiasNaGrade[numDisciplina] = true;
+                ContDisciplinas++;
+            }
+        }
+    }
+
+}
 void GeradorDeDados::criarPasta(const char * path)
 {
     if(!CreateDirectory(path,NULL))

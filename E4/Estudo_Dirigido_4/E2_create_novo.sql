@@ -63,7 +63,18 @@ CREATE TABLE Curso
 	FOREIGN KEY R_9 (Cd_Coordenacao) REFERENCES Coordenacao (Cd_Coordenacao)
 );
 
-
+CREATE TABLE Grade_Curso
+(
+	Cd_Curso						INTEGER NOT NULL,
+	Cd_Disciplina					INTEGER	NOT NULL,
+	Ic_Periodo						INTEGER NOT NULL,
+	Qt_Creditos						INTEGER NOT NULL,
+	
+	PRIMARY KEY (Cd_Curso)			INTEGER NOT	NULL,
+	FOREIGN KEY (Cd_Curso) 			INTEGER NOT NULL,
+	FOREIGN KEY (Cd_Disciplina) 	INTEGER NOT NULL,
+	FOREIGN KEY (Qt_Creditos)		INTEGER NOT NULL
+);
 
 CREATE TABLE Aluno
 (
@@ -109,6 +120,7 @@ CREATE TABLE Disciplina
 	Ds_Ementa            CHAR(255) NOT NULL,
 	Ds_Bibilografia      CHAR(255) NOT NULL,
 	Cd_Grade             INTEGER NOT NULL,
+	Ic_Disciplina		 CHAR (60) NOT NULL,
 	PRIMARY KEY (Cd_Disciplina),
 	FOREIGN KEY R_5 (Cd_Grade) REFERENCES Grade_Curricular (Cd_Grade)
 );
