@@ -475,11 +475,11 @@ void GeradorDeDados::gerarAlunos (string nomeArquivo, unsigned qtdAlunos)
     //arquivo << "\"sep=" << SEP <<"\"" << endl;
     for (unsigned numP = 0; numP <qtdAlunos; numP++)
     {
-        alunos.push_back(Aluno( gerarNumeros(9, 105000000, 117000000), numP,
+        alunos.push_back(Aluno( gerarNumeros(9, 105000000, 117000000), numP + prof.size(),
                                 prof[rand() % prof.size()].Get_Cd_Professor(),
                                 cursos[rand() % cursos.size()].Get_Cd_Curso()) );
         arquivo <<  alunos[numP].Get_Nu_Dre()<< SEP <<
-                    alunos[numP + prof.size()].Get_Cd_Pessoa() << SEP <<
+                    alunos[numP].Get_Cd_Pessoa() << SEP <<
                     alunos[numP].Get_Nu_Coordenador() << SEP <<
                     alunos[numP].Get_Cd_Curso() << SEP << endl;
     }
