@@ -101,7 +101,7 @@ CREATE TABLE Grade_Curricular
 CREATE TABLE Disciplina
 (
 	Cd_Disciplina        CHAR(6) NOT NULL,
-	Nm_Disciplia         CHAR(60) NOT NULL,
+	Nm_Disciplina         CHAR(60) NOT NULL,
 	Qt_Creditos          INTEGER NOT NULL,
 	Ds_Ementa            CHAR(255) NOT NULL,
 	Ds_Bibilografia      CHAR(255) NOT NULL,
@@ -128,8 +128,10 @@ CREATE TABLE Inscricao
 	Cd_Inscricao         INTEGER NOT NULL,
 	Nu_Grau              DECIMAL(4,2) NULL,
 	Nu_Dre               INTEGER NULL,
+	Nu_Turma			INTEGER NOT NULL,
 	PRIMARY KEY (Cd_Inscricao),
-	FOREIGN KEY R_31 (Nu_Dre) REFERENCES Aluno (Nu_Dre)
+	FOREIGN KEY R_31 (Nu_Dre) REFERENCES Aluno (Nu_Dre),
+	FOREIGN KEY R_32 (Nu_Turma) REFERENCES Turma (Nu_Turma)
 );
 
 
@@ -142,11 +144,9 @@ CREATE TABLE Turma
 	Cd_Disciplina        CHAR(6) NOT NULL,
 	Ds_Horario           CHAR(60) NULL,
 	Nu_SIAPE             INTEGER NOT NULL,
-	Cd_Inscricao         INTEGER NULL,
 	PRIMARY KEY (Nu_Turma),
 	FOREIGN KEY R_22 (Cd_Disciplina) REFERENCES Disciplina (Cd_Disciplina),
-	FOREIGN KEY R_26 (Nu_SIAPE) REFERENCES Professor (Nu_SIAPE),
-	FOREIGN KEY R_32 (Cd_Inscricao) REFERENCES Incricao (Cd_Inscricao)
+	FOREIGN KEY R_26 (Nu_SIAPE) REFERENCES Professor (Nu_SIAPE)
 );
 
 

@@ -23,17 +23,25 @@
 class Inscricao
 {
     public:
-        Inscricao(unsigned Cd_Inscricao, float Nu_Grau, unsigned Nu_Dre)
+        Inscricao(unsigned Cd_Inscricao, float Nu_Grau, unsigned Nu_Dre, unsigned Nu_Turma)
         : _Cd_Inscricao (Cd_Inscricao),
         _Nu_Grau (Nu_Grau),
-        _Nu_Dre (Nu_Dre){};
+        _Nu_Dre (Nu_Dre),
+        _Nu_Turma (Nu_Turma){};
 
         unsigned Get_Cd_Inscricao() { return _Cd_Inscricao; }
         void Set_Cd_Inscricao(unsigned val) { _Cd_Inscricao = val; }
+
         float Get_Nu_Grau() { return _Nu_Grau; }
         void Set_Nu_Grau(float val) { _Nu_Grau = val; }
+
         unsigned Get_Nu_Dre() { return _Nu_Dre; }
         void Set_Nu_Dre(unsigned val) { _Nu_Dre = val; }
+
+        unsigned Get_Nu_Turma() { return _Nu_Turma; }
+        void Set_Nu_Turma(unsigned val) { _Nu_Turma = val; }
+
+
 
     protected:
 
@@ -41,6 +49,7 @@ class Inscricao
         unsigned _Cd_Inscricao;
         float _Nu_Grau;
         unsigned _Nu_Dre;
+        unsigned _Nu_Turma;
 };
 
 #endif // INSCRICAO_H

@@ -198,16 +198,16 @@ int main (void)
     gerador.gerarPessoas("C:\\TMAB\\pessoas.csv", 1000);
     gerador.gerarProfessor("C:\\TMAB\\professores.csv", 20);
     gerador.gerarCoordenacao("C:\\TMAB\\coordenacoes.csv", 10);
-    gerador.gerarCursos("C:\\TMAB\\cursos.csv", 10);
+    gerador.gerarCursos("C:\\TMAB\\cursos.csv", 5);
     gerador.gerarAlunos("C:\\TMAB\\alunos.csv", 900);
-    gerador.gerarIncricoes("C:\\TMAB\\inscricoes.csv", 300);
-    gerador.gerarAtividades("C:\\TMAB\\atividades.csv", 100);
-    gerador.gerarPeriodo("C:\\TMAB\\periodos.csv",300);
-    gerador.gerarGrade("C:\\TMAB\\grades.csv",300);
-    gerador.gerarDisciplina("C:\\TMAB\\disciplinas.csv",300);
-    gerador.gerarPreRequisito("C:\\TMAB\\pre_requisitos.csv",50);
-    gerador.gerarTurmas("C:\\TMAB\\turmas.csv",30);
 
+    gerador.gerarAtividades("C:\\TMAB\\atividades.csv", 100);
+    gerador.gerarPeriodo("C:\\TMAB\\periodos.csv",20);
+    gerador.gerarGrade("C:\\TMAB\\grades.csv",900);
+    gerador.gerarDisciplina("C:\\TMAB\\disciplinas.csv",5);
+    gerador.gerarPreRequisito("C:\\TMAB\\pre_requisitos.csv",1);
+    gerador.gerarTurmas("C:\\TMAB\\turmas.csv",5);
+    gerador.gerarIncricoes("C:\\TMAB\\inscricoes.csv", 900);
 
     cout << "Execucao finalizada" << endl;
     return (0);

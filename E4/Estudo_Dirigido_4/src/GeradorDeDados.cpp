@@ -435,10 +435,11 @@ void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned qtdInscricoes)
     for (unsigned numP = 0; numP <qtdInscricoes; numP++)
     {
         inscricoes.push_back(Inscricao(numP, 10 * ((float) (rand() % 101) / 100),
-                                        alunos[rand() % alunos.size()].Get_Nu_Dre()));
+                                        alunos[rand() % alunos.size()].Get_Nu_Dre(), turmas[rand() % turmas.size()].Get_Nu_Turma()));
         arquivo << inscricoes[numP].Get_Cd_Inscricao() << SEP <<
                    inscricoes[numP].Get_Nu_Grau() << SEP <<
-                   inscricoes[numP].Get_Nu_Dre() << SEP << endl;
+                   inscricoes[numP].Get_Nu_Dre() << SEP <<
+                   inscricoes[numP].Get_Nu_Turma()<< endl;
     }
     arquivo.close();
 }
@@ -516,10 +517,10 @@ void GeradorDeDados :: gerarTurmas(string nomeArquivo, unsigned qtdTurmas)
         string cdDisciplina = disciplinas[rand() % disciplinas.size()].Get_Cd_Disciplina();
         string horario = (string) itoa(rand()%10 + 7,buffer,10) + ":00";
         int siape = gerarNumeros(9, 100000000, 900000000);
-        turmas.push_back(Turma(nuTurma,nmLocal,vagas,cdDisciplina,horario,siape,index + 1));
+        turmas.push_back(Turma(nuTurma,nmLocal,vagas,cdDisciplina,horario,siape));
         arquivo << turmas[index].Get_Nu_Turma() << SEP << turmas[index].Get_Nm_Local() << SEP << turmas[index].Get_Nu_Vagas()
             << SEP << turmas[index].Get_Cd_Disciplina() << SEP << turmas[index].Get_Ds_Horario() << SEP << turmas[index].Get_Nu_Siape()
-            << SEP << turmas[index].Get_Cd_Inscricao() << endl;
+            << SEP << endl;
 
     }
 
