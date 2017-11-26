@@ -42,7 +42,6 @@ int main (void)
     cout << "Criando arquivos .csv na pasta criada..." << endl;
 
 
-
     gerador.gerarPessoas("C:\\TMAB\\pessoas.csv", 1000);
     gerador.gerarProfessor("C:\\TMAB\\professores.csv", 20);
     gerador.gerarCoordenacao("C:\\TMAB\\coordenacoes.csv", 10);

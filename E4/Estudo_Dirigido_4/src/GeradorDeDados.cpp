@@ -327,19 +327,23 @@ void GeradorDeDados::gerarPessoas (string nomeArquivo, unsigned qtdPessoas)
         string sexo = "";
         bool masculino = true;
         unsigned idade = rand() %80 + 15;
+
+        //Seleciona se a pessoa gerada sera do sexo masculino ou feminino
         if (rand() % 2 == 0)
         {
             sexo = "Masculino";
             masculino = true;
         }
-
         else
         {
             sexo = "Feminino";
             masculino = false;
         }
 
+        //cria um objeto do tipo pessoa
         pessoas.push_back(Pessoa (numP, NometoString(GerarNome(rand()%2,rand()%2 + 1, masculino)),sexo,idade));
+
+        //gera o arquivo com as pessoas
         arquivo <<  pessoas[numP].Get_Cd_Pessoa()  << SEP  << pessoas[numP].Get_Nm_NomePessoa() << SEP
         << pessoas[numP].Get_Ds_SexPessoa()<< SEP << pessoas[numP].Get_Nu_IdadePessoa() << endl;
     }
@@ -379,7 +383,7 @@ void GeradorDeDados::gerarProfessor (string nomeArquivo, unsigned qtdProf)
         prof.push_back(Professor(gerarNumeros(9, 100000000, 900000000), TITULOS[rand()%TITULOS.size()], gerarLocalGabinete(),
                                              GerarTelefone("021", gerarNumeros(9,900000000, 999999999)),
                                              email, enweb, CLASSE[rand ()%CLASSE.size()],
-                                             numP));
+                                             numP, numP));
         arquivo << prof[numP].Get_Nu_SIAPE() << SEP <<
                 prof[numP].Get_Ds_Titulo() << SEP <<
                 prof[numP].Get_Local_Gabinete() << SEP <<
@@ -387,7 +391,8 @@ void GeradorDeDados::gerarProfessor (string nomeArquivo, unsigned qtdProf)
                 prof[numP].Get_En_Email() << SEP <<
                 prof[numP].Get_En_Web() << SEP <<
                 prof[numP].Get_Cd_Professor() << SEP <<
-                prof[numP].Get_Ic_Classe()<< endl;
+                prof[numP].Get_Ic_Classe()<< SEP <<
+                prof[numP].Get_Cd_Pessoa() << endl;
     }
     arquivo.close();
 }
@@ -474,7 +479,7 @@ void GeradorDeDados::gerarAlunos (string nomeArquivo, unsigned qtdAlunos)
                                 prof[rand() % prof.size()].Get_Cd_Professor(),
                                 cursos[rand() % cursos.size()].Get_Cd_Curso()) );
         arquivo <<  alunos[numP].Get_Nu_Dre()<< SEP <<
-                    alunos[numP].Get_Cd_Pessoa() << SEP <<
+                    alunos[numP + prof.size()].Get_Cd_Pessoa() << SEP <<
                     alunos[numP].Get_Nu_Coordenador() << SEP <<
                     alunos[numP].Get_Cd_Curso() << SEP << endl;
     }
@@ -695,8 +700,7 @@ void GeradorDeDados::gerarGradeCurso(string nomeArquivo)
                 gradesCursos.push_back(Grade_Curso(i, disciplinas[numDisciplina].Get_Cd_Disciplina(), j+1,
                                                    disciplinas[numDisciplina].Get_Qt_Creditos()));
 
-
-                //escreve no arquivo a grade
+                //escreve no arquivo a grade de cada curso
                 arquivo << gradesCursos[ContDisciplinas].Get_Cd_Curso() << SEP
                         << gradesCursos[ContDisciplinas].Get_Cd_Disciplina() << SEP
                         << gradesCursos[ContDisciplinas].Get_Ic_Periodo() << SEP
@@ -707,7 +711,7 @@ void GeradorDeDados::gerarGradeCurso(string nomeArquivo)
             }
         }
     }
-
+    arquivo.close();
 }
 void GeradorDeDados::criarPasta(const char * path)
 {
