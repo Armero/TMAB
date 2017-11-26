@@ -321,7 +321,7 @@ void GeradorDeDados::gerarPessoas (string nomeArquivo, unsigned qtdPessoas)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    //arquivo << "\"sep=" << SEP <<"\"" << endl;
     for (unsigned numP = 0; numP < qtdPessoas; numP++)
     {
         string sexo = "";
@@ -351,7 +351,7 @@ void GeradorDeDados::gerarPeriodo(string nomeArquivo, unsigned qtdPeriodo)
     char buffer [33];
     ofstream arquivo;
     arquivo.open(nomeArquivo.c_str());
-    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    //arquivo << "\"sep=" << SEP <<"\"" << endl;
     for (unsigned index = 0; index < qtdPeriodo; index++)
     {
         int ano = 1960 + index/2;
@@ -371,7 +371,7 @@ void GeradorDeDados::gerarProfessor (string nomeArquivo, unsigned qtdProf)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    //arquivo << "\"sep=" << SEP <<"\"" << endl;
     for (unsigned numP = 0; numP <qtdProf; numP++)
     {
         string email, enweb;
@@ -410,7 +410,7 @@ void GeradorDeDados::gerarCoordenacao (string nomeArquivo, unsigned qtdCoord)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    //arquivo << "\"sep=" << SEP <<"\"" << endl;
     for (unsigned numP = 0; numP < qtdCoord; numP++)
     {
         coord.push_back(Coordenacao(numP, prof[rand() % prof.size()].Get_Nu_SIAPE()));
@@ -426,7 +426,7 @@ void GeradorDeDados::gerarCursos (string nomeArquivo, unsigned qtdCursos)
 
     //limita o numero de cursos gerados ao maximo de cursos
     //existentes na database
-    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    //arquivo << "\"sep=" << SEP <<"\"" << endl;
     if (qtdCursos > CURSOS.size())
         qtdCursos = CURSOS.size();
 
@@ -467,7 +467,7 @@ void GeradorDeDados::gerarAlunos (string nomeArquivo, unsigned qtdAlunos)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    //arquivo << "\"sep=" << SEP <<"\"" << endl;
     for (unsigned numP = 0; numP <qtdAlunos; numP++)
     {
         alunos.push_back(Aluno( gerarNumeros(9, 105000000, 117000000), numP,
@@ -486,7 +486,7 @@ void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned qtdInscricoes)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    //arquivo << "\"sep=" << SEP <<"\"" << endl;
     for (unsigned numP = 0; numP <qtdInscricoes; numP++)
     {
         inscricoes.push_back(Inscricao(numP, 10 * ((float) (rand() % 101) / 100),
@@ -505,7 +505,7 @@ void GeradorDeDados :: gerarGrade(string nomeArquivo, unsigned qtdGrades)
 {
     ofstream arquivo;
     arquivo.open(nomeArquivo.c_str());
-    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    //arquivo << "\"sep=" << SEP <<"\"" << endl;
     for(unsigned index = 0;index < qtdGrades; index ++)
     {
         unsigned dre = alunos[rand() % alunos.size()].Get_Nu_Dre();                        //TODO: MUDAR COMO PEGA O DRE
@@ -523,7 +523,7 @@ void GeradorDeDados :: gerarDisciplina(string nomeArquivo,unsigned qtdDisciplina
     ofstream arquivo;
     char buffer [30];
     arquivo.open(nomeArquivo.c_str());
-    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    //arquivo << "\"sep=" << SEP <<"\"" << endl;
     for(unsigned index = 0; index < qtdDisciplina;index ++)
     {
         string cdDisciplina = alphabet[rand() % 26] + alphabet[rand() % 26] + alphabet[rand() % 26] +
@@ -549,7 +549,7 @@ void GeradorDeDados :: gerarPreRequisito(string nomeArquivo,unsigned qtdPreReq)
 {
     ofstream arquivo;
     arquivo.open(nomeArquivo.c_str());
-    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    //arquivo << "\"sep=" << SEP <<"\"" << endl;
     for(unsigned index = 0;index < qtdPreReq;index++)
     {
         preRequisitos.push_back(Pre_Requisitos(disciplinas[rand() % disciplinas.size()].Get_Cd_Disciplina(),index + 1));
@@ -564,7 +564,7 @@ void GeradorDeDados :: gerarTurmas(string nomeArquivo, unsigned qtdTurmas)
     char buffer [20];
     ofstream arquivo;
     arquivo.open(nomeArquivo.c_str());
-    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    //arquivo << "\"sep=" << SEP <<"\"" << endl;
     for(unsigned index = 0; index < qtdTurmas; index++)
     {
         int nuTurma = rand()%1000 + 1;
@@ -586,7 +586,7 @@ void GeradorDeDados::gerarAtividades (string nomeArquivo, unsigned qtdAtividades
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    //arquivo << "\"sep=" << SEP <<"\"" << endl;
     string titulo = "Pesquisa Generica";
     for (unsigned numP = 0; numP <qtdAtividades; numP++)
     {
@@ -608,7 +608,7 @@ void GeradorDeDados::gerarGradeCurso(string nomeArquivo)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
-    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    //arquivo << "\"sep=" << SEP <<"\"" << endl;
 
     //conta o numero de disciplinas no total de grades
     //responsavel por contar o numero de grades criadas
