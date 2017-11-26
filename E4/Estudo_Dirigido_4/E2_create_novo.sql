@@ -70,7 +70,7 @@ CREATE TABLE Grade_Curso
 	Ic_Periodo						INTEGER NOT NULL,
 	Qt_Creditos						INTEGER NOT NULL,
 	
-	PRIMARY KEY (Cd_Curso),
+	
 	FOREIGN KEY (Cd_Curso) 			REFERENCES Curso (Cd_Curso),
 	FOREIGN KEY (Cd_Disciplina) 	REFERENCES Disciplina (Cd_Disciplina),
 	FOREIGN KEY (Qt_Creditos)		REFERENCES Disciplina (Qt_Creditos)
