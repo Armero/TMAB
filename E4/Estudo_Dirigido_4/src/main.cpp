@@ -53,8 +53,8 @@ int main (void)
     gerador.gerarGrade("C:\\TMAB\\grades.csv",300);
     gerador.gerarDisciplina("C:\\TMAB\\disciplinas.csv",300);
     gerador.gerarPreRequisito("C:\\TMAB\\pre_requisitos.csv",50);
-    gerador.gerarTurmas("C:\\TMAB\\turmas.csv",100);
-    gerador.gerarIncricoes("C:\\TMAB\\inscricoes.csv", 300);
+    gerador.gerarTurmas("C:\\TMAB\\turmas.csv",70, 10);
+    gerador.gerarIncricoes("C:\\TMAB\\inscricoes.csv", 10);
     gerador.gerarGradeCurso("C:\\TMAB\\gradecursos.csv");
 
 

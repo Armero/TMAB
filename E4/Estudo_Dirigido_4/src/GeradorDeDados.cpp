@@ -482,19 +482,52 @@ void GeradorDeDados::gerarAlunos (string nomeArquivo, unsigned qtdAlunos)
 }
 
 
-void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned qtdInscricoes)
+void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned minAlunosInscritos)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
+<<<<<<< HEAD
     //arquivo << "\"sep=" << SEP <<"\"" << endl;
     for (unsigned numP = 0; numP <qtdInscricoes; numP++)
+=======
+    arquivo << "\"sep=" << SEP <<"\"" << endl;
+    unsigned total = 0;
+    unsigned numTurma = 0;
+    for (unsigned numP = 0; numP < turmas.size(); numP++)
+>>>>>>> Felipe
     {
-        inscricoes.push_back(Inscricao(numP, 10 * ((float) (rand() % 101) / 100),
-                                        alunos[rand() % alunos.size()].Get_Nu_Dre(), turmas[rand() % turmas.size()].Get_Nu_Turma()));
-        arquivo << inscricoes[numP].Get_Cd_Inscricao() << SEP <<
-                   inscricoes[numP].Get_Nu_Grau() << SEP <<
-                   inscricoes[numP].Get_Nu_Dre() << SEP <<
-                   inscricoes[numP].Get_Nu_Turma()<< endl;
+        //indica se o aluno ja foi inscrito na materia
+        vector <bool> alunoInscrito;
+        for (unsigned i = 0; i < alunos.size(); i++)
+            alunoInscrito.push_back(false);
+
+        //preenche uma materia com um numero de alunos aleatorios
+        unsigned numVagas = turmas[numTurma].Get_Nu_Vagas();
+        unsigned numInscricoes = ((numVagas - minAlunosInscritos) % numVagas) + minAlunosInscritos;
+        unsigned numAluno = rand() % alunos.size();
+
+        for (unsigned cont = 0; cont < numInscricoes; cont++)
+        {
+            //procura alunos nao inscritos na materia
+            while (alunoInscrito[numAluno])
+                numAluno = rand() % alunos.size();
+
+            //cria o objeto da inscricao com uma nota randomica entre 0 e 10
+            inscricoes.push_back(Inscricao(total,
+                                           (float) (rand() % 101) /10,
+                                            alunos[numAluno].Get_Nu_Dre(),
+                                            turmas[numTurma].Get_Nu_Turma()));
+
+            //realiza a inscricao do aluno nas materias
+            arquivo << inscricoes[total].Get_Cd_Inscricao() << SEP <<
+                       inscricoes[total].Get_Nu_Grau() << SEP <<
+                       inscricoes[total].Get_Nu_Dre() << SEP <<
+                       inscricoes[total].Get_Nu_Turma()<< endl;
+
+            alunoInscrito[numAluno] = true;
+            total++;
+        }
+        numTurma++;
     }
     arquivo.close();
 }
@@ -528,7 +561,6 @@ void GeradorDeDados :: gerarDisciplina(string nomeArquivo,unsigned qtdDisciplina
     {
         string cdDisciplina = alphabet[rand() % 26] + alphabet[rand() % 26] + alphabet[rand() % 26] +
                                 itoa(rand() % 200 + 100,buffer,10);
-//        string nomeDisciplina = materias[rand() % 17];
         unsigned qtdCred = rand() % 6 + 1;
         string ementa = "Ementa da disciplina uma breve descrição";
         string bibliografia = bibliografias[rand() % 4];
@@ -559,24 +591,58 @@ void GeradorDeDados :: gerarPreRequisito(string nomeArquivo,unsigned qtdPreReq)
 }
 
 
-void GeradorDeDados :: gerarTurmas(string nomeArquivo, unsigned qtdTurmas)
+void GeradorDeDados :: gerarTurmas(string nomeArquivo, unsigned qtdMaxAlunos, unsigned qtdMinAlunos)
 {
     char buffer [20];
+    unsigned qtdTurmas = (double) alunos.size()/qtdMaxAlunos;
     ofstream arquivo;
+    const unsigned MAX_MATERIAS_PROF = 4;
     arquivo.open(nomeArquivo.c_str());
     //arquivo << "\"sep=" << SEP <<"\"" << endl;
     for(unsigned index = 0; index < qtdTurmas; index++)
     {
-        int nuTurma = rand()%1000 + 1;
+
+        //vetor com o numero de materias ministradas por cada professor
+        vector <unsigned> numMateriasProf;
+        for (unsigned i = 0; i < prof.size(); i++)
+            numMateriasProf.push_back(0);
+
+        //Busca ate encontrar um professor que ministre menos que 4 materias
+        unsigned numProfessor = rand() % prof.size();
+        while (numMateriasProf[numProfessor] > (rand () % MAX_MATERIAS_PROF + 1) )
+            numProfessor = rand() % prof.size();
+
+
+        int nuTurma = rand()%qtdTurmas + 1;
+        unsigned numDisciplina = 0;
+
+        //limita o numero minimo e maximo de vagas
+        unsigned vagas = (rand() % (qtdMaxAlunos - qtdMinAlunos)) +  qtdMinAlunos;
+
+        //gera o local, o codigo e o horario da disciplina
         string nmLocal = "Sala " + (string) itoa(rand()%300 + 100,buffer,10);
-        int vagas = rand() % 70 + 1;
         string cdDisciplina = disciplinas[rand() % disciplinas.size()].Get_Cd_Disciplina();
         string horario = (string) itoa(rand()%10 + 7,buffer,10) + ":00";
+<<<<<<< HEAD
         int siape = prof[rand() % prof.size()].Get_Nu_SIAPE();
         turmas.push_back(Turma(nuTurma,nmLocal,vagas,cdDisciplina,horario,siape,periodos[rand() % periodos.size()].Get_Cd_Periodo()));
+=======
+
+        //obtem o numero do SIAPE do professor
+        unsigned siape = prof[numProfessor].Get_Nu_SIAPE();
+        turmas.push_back(Turma(nuTurma,nmLocal,vagas,cdDisciplina,horario,siape));
+
+        //salva os dados no arquivo
+>>>>>>> Felipe
         arquivo << turmas[index].Get_Nu_Turma() << SEP << turmas[index].Get_Nm_Local() << SEP << turmas[index].Get_Nu_Vagas()
             << SEP << turmas[index].Get_Cd_Disciplina() << SEP << turmas[index].Get_Ds_Horario() << SEP << turmas[index].Get_Nu_Siape()
             << SEP << turmas[index].Get_Cd_Periodo() << endl;
+
+        //gera mais uma numero de vagas aleatorio para outra turma
+        vagas = (rand() % (qtdMaxAlunos - qtdMinAlunos)) +  qtdMinAlunos;
+
+        //adiciona mia uma materia para o professor
+        numMateriasProf[numProfessor]++;
 
     }
     arquivo.close();
