@@ -100,6 +100,7 @@ class GeradorDeDados
     std::string NometoString(Nome);
     std::vector < std::string > LerNomes(bool);
     std::vector < std::string > LerSobrenomes();
+    Nome separarString (string texto);
 
     string gerarLocalGabinete ();
     vector <string> CURSOS;
@@ -121,7 +122,7 @@ class GeradorDeDados
     vector <Aluno> alunos;
     vector <Inscricao> inscricoes;
     vector <Atividade> atividades;
-
+    vector <bool> cursosUtilizados;
 };
 
 #endif // GERADORDEDADOS_H
