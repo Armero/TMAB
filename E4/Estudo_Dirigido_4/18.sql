@@ -1,0 +1,4 @@
+SELECT
+	(SELECT COUNT(*) FROM Aluno),
+	(SELECT COUNT(*) FROM Professor),
+	(SELECT COUNT(*) FROM Disciplina)
