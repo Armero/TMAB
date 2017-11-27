@@ -42,15 +42,15 @@ int main (void)
     cout << "Criando arquivos .csv na pasta criada..." << endl;
 
 
-    gerador.gerarPessoas("C:\\TMAB\\pessoas.csv", 1000);
+    gerador.gerarPessoas("C:\\TMAB\\pessoas.csv", 3000);
     gerador.gerarProfessor("C:\\TMAB\\professores.csv", 20);
     gerador.gerarCoordenacao("C:\\TMAB\\coordenacoes.csv", 10);
     gerador.gerarCursos("C:\\TMAB\\cursos.csv", 5);
-    gerador.gerarAlunos("C:\\TMAB\\alunos.csv", 900);
+    gerador.gerarAlunos("C:\\TMAB\\alunos.csv", 2980);
     gerador.gerarAtividades("C:\\TMAB\\atividades.csv", 100);
     gerador.gerarPeriodo("C:\\TMAB\\periodos.csv",8);
-    gerador.gerarDisciplina("C:\\TMAB\\disciplinas.csv",2000);
-    gerador.gerarGrade("C:\\TMAB\\gradecurricular.csv",300);
+    gerador.gerarDisciplina("C:\\TMAB\\disciplinas.csv",80);
+    gerador.gerarGrade("C:\\TMAB\\gradecurricular.csv",2980);
     gerador.gerarPreRequisito("C:\\TMAB\\pre_requisitos.csv",50);
     gerador.gerarTurmas("C:\\TMAB\\turmas.csv",70, 10);
     gerador.gerarIncricoes("C:\\TMAB\\inscricoes.csv", 10);
