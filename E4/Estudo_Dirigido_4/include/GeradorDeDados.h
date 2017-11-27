@@ -88,9 +88,9 @@ class GeradorDeDados
         // dos codigos de pessoa
         void gerarAlunos (string nomeArquivo, unsigned qtdAlunos);
 
-        //gera o arquivo .csv com o numero de inscricoes desejadas
+        //gera o arquivo .csv com as Inscricoes
         //OBS: deve ser chamado apos gerarTurma, pois depende de turma
-        void gerarIncricoes (string nomeArquivo, unsigned minAlunosInscritos);
+        void gerarIncricoes (string nomeArquivo);
 
         //gera o arquivo .csv com o numero de inscricoes desejadas
         void gerarAtividades (string nomeArquivo, unsigned qtdAtividades);

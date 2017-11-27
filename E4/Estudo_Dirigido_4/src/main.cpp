@@ -27,7 +27,7 @@ using namespace std;
 
 int main (void)
 {
-    cout << "#################### Estudo dirigido 04 #################" << endl;
+    cout << "#################### Estudo dirigido 05 #################" << endl;
     cout << "Grupo K" << endl;
     cout <<  "Felipe Claudio e Thiago Koster Lago" << endl;
     cout <<  endl;
@@ -42,18 +42,18 @@ int main (void)
     cout << "Criando arquivos .csv na pasta criada..." << endl;
 
 
-    gerador.gerarPessoas("C:\\TMAB\\pessoas.csv", 3000);
-    gerador.gerarProfessor("C:\\TMAB\\professores.csv", 20);
-    gerador.gerarCoordenacao("C:\\TMAB\\coordenacoes.csv", 10);
-    gerador.gerarCursos("C:\\TMAB\\cursos.csv", 5);
-    gerador.gerarAlunos("C:\\TMAB\\alunos.csv", 2980);
+    gerador.gerarPessoas("C:\\TMAB\\pessoas.csv", 1000);
+    gerador.gerarProfessor("C:\\TMAB\\professores.csv", 40);
+    gerador.gerarCoordenacao("C:\\TMAB\\coordenacoes.csv", 5);
+    gerador.gerarCursos("C:\\TMAB\\cursos.csv",4);
+    gerador.gerarAlunos("C:\\TMAB\\alunos.csv", 990);
     gerador.gerarAtividades("C:\\TMAB\\atividades.csv", 100);
-    gerador.gerarPeriodo("C:\\TMAB\\periodos.csv",8);
-    gerador.gerarDisciplina("C:\\TMAB\\disciplinas.csv",80);
-    gerador.gerarGrade("C:\\TMAB\\gradecurricular.csv",20000);
+    gerador.gerarPeriodo("C:\\TMAB\\periodos.csv", 8);
+    gerador.gerarDisciplina("C:\\TMAB\\disciplinas.csv",200);
+    gerador.gerarGrade("C:\\TMAB\\gradecurricular.csv",1000);
     gerador.gerarPreRequisito("C:\\TMAB\\pre_requisitos.csv",50);
     gerador.gerarTurmas("C:\\TMAB\\turmas.csv",70, 10);
-    gerador.gerarIncricoes("C:\\TMAB\\inscricoes.csv", 10);
+    gerador.gerarIncricoes("C:\\TMAB\\inscricoes.csv");
     gerador.gerarGradeCurso("C:\\TMAB\\gradecursos.csv");
 
 

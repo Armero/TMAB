@@ -69,7 +69,7 @@ GeradorDeDados::GeradorDeDados()
     CURSOS.push_back("Poli Engenharia Quimica");
     CURSOS.push_back("Poli Engenharia Elétrica");
     CURSOS.push_back("Poli Engenharia Mecânica");
-    CURSOS.push_back("IM Aplicada");
+    CURSOS.push_back("IM Matematica Aplicada");
     CURSOS.push_back("IF Física");
     CURSOS.push_back("FND Direito");
     CURSOS.push_back("IFCS Filosofia");
@@ -488,12 +488,12 @@ void GeradorDeDados::gerarAlunos (string nomeArquivo, unsigned qtdAlunos)
 }
 
 
-void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned minAlunosInscritos)
+void GeradorDeDados::gerarIncricoes (string nomeArquivo)
 {
     ofstream arquivo;
     arquivo.open (nomeArquivo.c_str());
 
-    arquivo << "\"sep=" << SEP <<"\"" << endl;
+//    arquivo << "\"sep=" << SEP <<"\"" << endl;
     unsigned total = 0;
     unsigned numTurma = 0;
     for (unsigned numP = 0; numP < turmas.size(); numP++)
@@ -505,7 +505,7 @@ void GeradorDeDados::gerarIncricoes (string nomeArquivo, unsigned minAlunosInscr
 
         //preenche uma materia com um numero de alunos aleatorios
         unsigned numVagas = turmas[numTurma].Get_Nu_Vagas();
-        unsigned numInscricoes = ((numVagas - minAlunosInscritos) % numVagas) + minAlunosInscritos;
+        unsigned numInscricoes = numVagas;
         unsigned numAluno = rand() % alunos.size();
 
         for (unsigned cont = 0; cont < numInscricoes; cont++)
@@ -608,7 +608,7 @@ void GeradorDeDados :: gerarPreRequisito(string nomeArquivo,unsigned qtdPreReq)
 void GeradorDeDados :: gerarTurmas(string nomeArquivo, unsigned qtdMaxAlunos, unsigned qtdMinAlunos)
 {
     char buffer [20];
-    unsigned qtdTurmas = (double) alunos.size()/qtdMaxAlunos;
+    unsigned qtdTurmas =  2 * alunos.size() / (qtdMaxAlunos + qtdMinAlunos);
     ofstream arquivo;
     const unsigned MAX_MATERIAS_PROF = 4;
     arquivo.open(nomeArquivo.c_str());
