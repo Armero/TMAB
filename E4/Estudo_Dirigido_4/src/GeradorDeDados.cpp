@@ -299,21 +299,21 @@ void GeradorDeDados::gerarMaterias(unsigned nObrigatorias, unsigned nProfissiona
         char caux [10];
         sprintf(caux, "%d", cont+1);
         string saux (caux);
-        MATERIAS.push_back("Diciplina Commum" + saux);
+        MATERIAS.push_back("Diciplina Commum " + saux);
     }
     for (; cont < (nObrigatorias + nProfissionais); cont++)
     {
         char caux [10];
         sprintf(caux, "%d", cont+1 - nObrigatorias);
         string saux (caux);
-        MATERIAS.push_back("Diciplina Profissional" + saux);
+        MATERIAS.push_back("Diciplina Profissional " + saux);
     }
     for (; cont < (nObrigatorias + nProfissionais + nOptativas); cont++)
     {
         char caux [10];
         sprintf(caux, "%d", cont+1 - nObrigatorias - nProfissionais);
         string saux (caux);
-        MATERIAS.push_back("Diciplina Optativa" + saux);
+        MATERIAS.push_back("Diciplina Optativa " + saux);
     }
 }
 
