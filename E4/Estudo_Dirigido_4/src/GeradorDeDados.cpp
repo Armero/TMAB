@@ -627,7 +627,7 @@ void GeradorDeDados :: gerarTurmas(string nomeArquivo, unsigned qtdMaxAlunos, un
             numProfessor = rand() % prof.size();
 
 
-        int nuTurma = rand()%qtdTurmas + 1;
+        int nuTurma = index;
         unsigned numDisciplina = 0;
 
         //limita o numero minimo e maximo de vagas

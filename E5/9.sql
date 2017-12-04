@@ -5,6 +5,5 @@ INNER JOIN Inscricao ON Turma.Nu_Turma = Inscricao.Nu_Turma
 INNER JOIN Professor ON Turma.Nu_SIAPE = Professor.Nu_SIAPE
 INNER JOIN Pessoa ON Pessoa.Cd_Pessoa = Professor.Cd_Pessoa
 WHERE Professor.Cd_Pessoa = 2
-/* Comentar esta linha abaixo caso esta query retorne vazia */
-AND Cd_Periodo = 5
+AND Cd_Periodo = 2
 GROUP BY Turma.Nu_Turma;
