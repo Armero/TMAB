@@ -8,57 +8,7 @@ using namespace std;
 
 otl_connect db; // connect object
 
-//void insert()
-//// insert rows into table
-//{
-// otl_stream o(50, // buffer size
-//              "insert into test_tab values(:f1<float>,:f2<char[31]>)",
-//                 // SQL statement
-//              db // connect object
-//             );
-// char tmp[32];
-//
-// for(int i=1;i<=100;++i){
-//  sprintf(tmp,"Name%d",i);
-//  o<<(float)i<<tmp;
-// }
-//}
 
-//void selectPessoa()
-//{
-// otl_stream i(50, // buffer size
-//              "select * from Pessoa;",
-//                 // SELECT statement
-//              db // connect object
-//             );
-//   // create select stream
-//
-// int f1;
-// char f2[60];
-// char f3[60];
-// int f4;
-//
-// //i<<8<<8; // assigning :f = 8; :ff = 8
-//   // SELECT automatically executes when all input variables are
-//   // assigned. First portion of output rows is fetched to the buffer
-//
-// while(!i.eof()){ // while not end-of-data
-//  i>>f1>>f2>>f3>>f4;
-//  cout<<"f1="<<f1<<", f2="<<f2<<", f3="<<f3<<", f4="<<f4<<endl;
-// }
-
-/* i<<4<<4; // assigning :f = 4, :ff = 4
-   // SELECT automatically executes when all input variables are
-   // assigned. First portion of output rows is fetched to the buffer
-
- while(!i.eof()){ // while not end-of-data
-  i>>f1>>f2;
-  cout<<"f1="<<f1<<", f2="<<f2<<endl;
- }
- */
-
-//   cout << i << endl;
-//}
 
 void lancarNotas(int Nu_Turma)
 {
@@ -112,7 +62,7 @@ void listarPauta (unsigned Nu_Siape, unsigned Cd_Periodo)
             INNER JOIN Aluno ON Inscricao.Nu_Dre = Aluno.Nu_Dre\
             INNER JOIN Pessoa ON Aluno.Cd_Pessoa = Pessoa.Cd_Pessoa\
             WHERE Professor.Cd_Pessoa = :f<unsigned> AND\
-            Periodo.Cd_Periodo = :ff<unsigned>;",
+            Periodo.Cd_Periodo = :ff<unsigned>; ",
           db
          );
 
@@ -154,13 +104,145 @@ void listarHistorico (unsigned Nu_Dre)
          i << Nu_Dre;
          while(!i.eof()){ // while not end-of-data
             i>>f1[aux]>>tm1>>tm2;
-            cout << aux + 1 <<  " Disciplina: " << f1[aux] << "Data de Inicio: ";
+            cout << aux + 1 <<  "| Disciplina: " << f1[aux] <<"| "<< "Data de Inicio: ";
             printDate(tm1);
-            cout << "Data de Termino";
+            cout << "|";
+            cout << "Data de Termino: ";
             printDate(tm2) ;
             cout << endl;
             aux++;
         }
+}
+
+void inscreverAluno(unsigned Cd_Periodo,unsigned dre)
+{   unsigned nuTurma;
+
+     otl_stream i(50, // buffer size
+            " SELECT Nm_Disciplina, Ds_Horario,Nm_Local,Pessoa.Nm_Pessoa,Turma.Nu_Turma\
+            FROM Turma\
+            INNER JOIN Disciplina ON Turma.Cd_Disciplina = Disciplina.Cd_Disciplina\
+            INNER JOIN Professor ON Turma.Nu_Siape = Professor.Nu_Siape\
+            INNER JOIN Pessoa ON Professor.Cd_Pessoa = Pessoa.Cd_Pessoa\
+            WHERE Turma.Cd_Periodo = :f<unsigned>;",
+          db
+         );
+
+    char f1 [50][100];
+    char f2 [50][100];
+    char f3 [50][100];
+    char f4 [50][100];
+    unsigned f5[1000];
+    unsigned aux = 0;
+
+    i << Cd_Periodo;
+    while(!i.eof()){ // while not end-of-data
+            i>>f1[aux]>>f2[aux]>>f3[aux]>>f4[aux]>>f5[aux];
+            cout << "Numero turma: " << f5[aux] <<  "| " << f1[aux] << "| "<< f2[aux] <<  "| " << f3[aux] <<  "| " <<f4[aux] << "| " <<endl;
+            aux++;
+        }
+
+    cout<<"Digite o numero da turma que voce quer se inscrever : ";
+    cin >> nuTurma;
+     if (cin.fail()) {
+            //Not an int.
+                cout << "input invalido" << endl;
+                return;
+            }
+
+    otl_stream o(50, // buffer size
+			  "INSERT INTO Inscricao (Nu_Grau, Nu_Dre,Nu_Turma)\
+                VALUES(0,:ff <unsigned>,:fff<unsigned>);",
+				 // SQL statement
+			  db // connect object
+			 );
+
+    o <<  dre << nuTurma;
+    cout << "Inscricao realizada!" << endl;
+}
+
+
+void showMenu()
+{
+    unsigned entrada,nuSiape,cdPeriodo,nuTurma,cdPessoa,dre;
+
+    cout << "Estudo Dirigido 6 - TMAB" << endl;
+    cout << "Grupo K" << endl;
+    cout << "Felipe Claudio da Silva Santos" << endl;
+    cout << "Thiago Koster Lago" << endl;
+    cout << endl;
+
+    cout << endl;
+    cout << "---------------------Menu------------------" << endl;
+    cout << "|1 - Se matricular em turma               |" << endl;
+    cout << "|2 - Listar pauta de turma do professor   |" << endl;
+    cout << "|3 - Lancar notas de turma                |" << endl;
+    cout << "|4 - Listar historico de aluno            |" << endl;
+    cout << "-------------------------------------------" << endl;
+
+    cout << endl;
+    cout << endl;
+    cout << endl;
+
+    cout << "Digite a opcao correspondente a operacao desejada: ";
+
+    cin >> entrada;
+
+    switch(entrada)
+    {
+        case 1 :
+            cout << "Matricular em Turma..." << endl;
+            cout << "Digite o DRE e codigo do periodo separados por espaco: ";
+            cin >> dre >> cdPeriodo;
+            if (cin.fail()) {
+            //Not an int.
+                cout << "input invalido" << endl;
+                break;
+            }
+            inscreverAluno(cdPeriodo,dre);
+            break;
+
+        case 2 :
+            cout << "Listar pauta de turma do professor..." << endl;
+            cout << "Digite o Cd_Pessoa do professor e o codigo do periodo separados por espaco: " << endl;
+            cin >> nuSiape >> cdPeriodo;
+
+            if (cin.fail()) {
+            //Not an int.
+                cout << "input invalido" << endl;
+                break;
+            }
+
+                listarPauta(nuSiape, cdPeriodo);
+                break;
+
+        case 3 :
+            cout << "Lancar notas de turma..." << endl;
+            cout << "Digite o numero da turma: " << endl;
+            cin >> nuTurma;
+            lancarNotas(nuTurma);
+            break;
+
+        case 4 :
+            cout << "Listar historico de aluno..." << endl;
+            cout << "Digite o CD_Pessoa referente ao aluno: " << endl;
+            cin >> cdPessoa;
+
+            if (cin.fail()) {
+            //Not an int.
+                cout << "input invalido" << endl;
+                break;
+            }
+            listarHistorico(cdPessoa);
+            break;
+
+        default:
+
+            cout << "Opcao invalida, tente novamente..." << endl;
+            showMenu();
+            break;
+    }
+
+
 }
 
 int main()
@@ -170,7 +252,7 @@ int main()
 
   db.rlogon("UID=root;PWD=;DSN=E06-K"); // connect to ODBC
 
-  otl_cursor::direct_exec
+otl_cursor::direct_exec
    (
     db,
     "drop table test_tab",
@@ -183,9 +265,7 @@ int main()
     "create table test_tab(f1 int, f2 varchar(30))"
     );  // create table
 
-    lancarNotas(1);
-    listarPauta(4, 4);
-    listarHistorico(356);
+    showMenu();
  }
 
  catch(otl_exception& p){ // intercept OTL exceptions

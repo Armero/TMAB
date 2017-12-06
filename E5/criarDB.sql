@@ -137,11 +137,11 @@ CREATE TABLE Pre_Requisitos
 
 CREATE TABLE Inscricao
 (
-	Cd_Inscricao         INTEGER NOT NULL,
+	Cd_Inscricao         INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	Nu_Grau              DECIMAL(4,2) NULL,
 	Nu_Dre               INTEGER NULL,
 	Nu_Turma			INTEGER NOT NULL,
-	PRIMARY KEY (Cd_Inscricao),
+	 
 	FOREIGN KEY R_31 (Nu_Dre) REFERENCES Aluno (Nu_Dre),
 	FOREIGN KEY R_32 (Nu_Turma) REFERENCES Turma (Nu_Turma)
 );
