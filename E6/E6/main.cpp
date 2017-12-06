@@ -24,19 +24,30 @@ void insert()
  }
 }
 
-void select()
+void selectPessoa()
 {
  otl_stream i(50, // buffer size
-              "select * from test_tab where f1>=:f<int> and f1<=:ff<int>*2",
+              "select * from Pessoa;",
                  // SELECT statement
               db // connect object
              );
    // create select stream
 
- float f1;
- char f2[31];
+ int f1;
+ char f2[60];
+ char f3[60];
+ int f4;
 
- i<<8<<8; // assigning :f = 8; :ff = 8
+ //i<<8<<8; // assigning :f = 8; :ff = 8
+   // SELECT automatically executes when all input variables are
+   // assigned. First portion of output rows is fetched to the buffer
+
+ while(!i.eof()){ // while not end-of-data
+  i>>f1>>f2>>f3>>f4;
+  cout<<"f1="<<f1<<", f2="<<f2<<", f3="<<f3<<", f4="<<f4<<endl;
+ }
+
+/* i<<4<<4; // assigning :f = 4, :ff = 4
    // SELECT automatically executes when all input variables are
    // assigned. First portion of output rows is fetched to the buffer
 
@@ -44,17 +55,51 @@ void select()
   i>>f1>>f2;
   cout<<"f1="<<f1<<", f2="<<f2<<endl;
  }
-
- i<<4<<4; // assigning :f = 4, :ff = 4
-   // SELECT automatically executes when all input variables are
-   // assigned. First portion of output rows is fetched to the buffer
-
- while(!i.eof()){ // while not end-of-data
-  i>>f1>>f2;
-  cout<<"f1="<<f1<<", f2="<<f2<<endl;
- }
+ */
 
 }
+
+void lancarNotas(int Nu_Turma)
+{
+    otl_stream i(50, // buffer size
+                "SELECT D.Nm_Pessoa, A.Nu_Dre, A.Nu_Grau\
+                FROM Inscricao as A\
+                INNER JOIN Turma as B ON B.Nu_Turma = A.Nu_Turma\
+                INNER JOIN Aluno as C ON A.Nu_Dre = C.Nu_Dre\
+                INNER JOIN Pessoa as D ON D.Cd_Pessoa = C.Cd_Pessoa\
+                where B.Nu_Turma =:f<int>",
+				 // SELECT statement
+			  db // connect object
+			 );
+
+    char f1[60][100];
+    int f2[60];
+    float f3;
+    int aux = 0;
+
+    i << Nu_Turma;
+
+    while(!i.eof()){ // while not end-of-data
+		i>>f1[aux]>>f2[aux]>>f3;
+		aux++;
+	}
+
+    otl_stream o(50, // buffer size
+			  "update Inscricao SET Nu_Grau =:f1<int> where Nu_Turma=:f2<int> AND Nu_Dre=:f3<int>",
+				 // SQL statement
+			  db // connect object
+			 );
+
+    for (int k=0; k<aux; k++)
+	{
+		int nu_grau;
+		cout << "Digite a nota do aluno: " << f1[k] << endl;
+		cin >> nu_grau;
+
+		o<<nu_grau<<Nu_Turma<<f2[k];
+	}
+}
+
 
 int main()
 {
@@ -77,8 +122,8 @@ int main()
     );  // create table
 
   insert(); // insert records into table
-  select(); // select records from table
-
+  //selectPessoa(); // select records from table
+  lancarNotas(1);
  }
 
  catch(otl_exception& p){ // intercept OTL exceptions
