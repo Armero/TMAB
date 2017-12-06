@@ -1,4 +1,4 @@
-SELECT D.Nm_Pessoa, A.Nu_Dre, B.Nu_Turma
+SELECT D.Nm_Pessoa, A.Nu_Dre, A.Nu_Grau
 		FROM Inscricao as A
 
 		INNER JOIN Turma as B ON B.Nu_Turma = A.Nu_Turma

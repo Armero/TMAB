@@ -18,6 +18,8 @@
 					<Add option="-lodbc32" />
 					<Add library="C:/Program Files (x86)/MySQL/Connector ODBC 5.3" />
 					<Add directory="C:/Program Files (x86)/MySQL/Connector ODBC 5.3" />
+					<Add library="../../../../../../../Program Files (x86)/MySQL/Connector ODBC 5.3/myodbc5a.lib" />
+					<Add directory="../../../../../../../Program Files (x86)/MySQL/Connector ODBC 5.3" />
 				</Linker>
 			</Target>
 			<Target title="Release">
