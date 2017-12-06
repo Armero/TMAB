@@ -27,34 +27,14 @@ void insert()
 void select()
 {
  otl_stream i(50, // buffer size
-              "select * from test_tab where f1>=:f<int> and f1<=:ff<int>*2",
+              "select * from curso",
                  // SELECT statement
               db // connect object
              );
    // create select stream
 
- float f1;
- char f2[31];
 
- i<<8<<10; // assigning :f = 8; :ff = 8
-   // SELECT automatically executes when all input variables are
-   // assigned. First portion of output rows is fetched to the buffer
-
- while(!i.eof()){ // while not end-of-data
-  i>>f1>>f2;
-  cout<<"f1="<<f1<<", f2="<<f2<<endl;
-  cout << "AQUI" <<endl;
- }
-
- i<<4<<4; // assigning :f = 4, :ff = 4
-   // SELECT automatically executes when all input variables are
-   // assigned. First portion of output rows is fetched to the buffer
-
- while(!i.eof()){ // while not end-of-data
-  i>>f1>>f2;
-  cout<<"f1="<<f1<<", f2="<<f2<<endl;
- }
-
+   cout << i << endl;
 }
 
 int main()
@@ -62,22 +42,6 @@ int main()
  otl_connect::otl_initialize(); // initialize ODBC environment
  try{
 
-  db.rlogon("UID=root;PWD=;DSN=E06-K"); // connect to ODBC
-
-  otl_cursor::direct_exec
-   (
-    db,
-    "drop table test_tab",
-    otl_exception::disabled // disable OTL exceptions
-   ); // drop table
-
-  otl_cursor::direct_exec
-   (
-    db,
-    "create table test_tab(f1 int, f2 varchar(30))"
-    );  // create table
-
-  insert(); // insert records into table
   select(); // select records from table
 
  }
