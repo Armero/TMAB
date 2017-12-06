@@ -15,8 +15,7 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
-					<Add library="../../../../../../../Program Files (x86)/MySQL/Connector ODBC 5.3/myodbc5a.lib" />
-					<Add directory="../../../../../../../Program Files (x86)/MySQL/Connector ODBC 5.3" />
+					<Add option="-lodbc32" />
 				</Linker>
 			</Target>
 			<Target title="Release">
