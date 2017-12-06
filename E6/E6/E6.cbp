@@ -16,10 +16,6 @@
 				</Compiler>
 				<Linker>
 					<Add option="-lodbc32" />
-					<Add library="C:/Program Files (x86)/MySQL/Connector ODBC 5.3" />
-					<Add directory="C:/Program Files (x86)/MySQL/Connector ODBC 5.3" />
-					<Add library="../../../../../../../Program Files (x86)/MySQL/Connector ODBC 5.3/myodbc5a.lib" />
-					<Add directory="../../../../../../../Program Files (x86)/MySQL/Connector ODBC 5.3" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -39,10 +35,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Linker>
-			<Add option="-lodbc32" />
-			<Add library="C:/Program Files (x86)/MySQL/Connector ODBC 5.3" />
-		</Linker>
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
