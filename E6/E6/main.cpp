@@ -8,21 +8,21 @@ using namespace std;
 
 otl_connect db; // connect object
 
-void insert()
-// insert rows into table
-{
- otl_stream o(50, // buffer size
-              "insert into test_tab values(:f1<float>,:f2<char[31]>)",
-                 // SQL statement
-              db // connect object
-             );
- char tmp[32];
-
- for(int i=1;i<=100;++i){
-  sprintf(tmp,"Name%d",i);
-  o<<(float)i<<tmp;
- }
-}
+//void insert()
+//// insert rows into table
+//{
+// otl_stream o(50, // buffer size
+//              "insert into test_tab values(:f1<float>,:f2<char[31]>)",
+//                 // SQL statement
+//              db // connect object
+//             );
+// char tmp[32];
+//
+// for(int i=1;i<=100;++i){
+//  sprintf(tmp,"Name%d",i);
+//  o<<(float)i<<tmp;
+// }
+//}
 
 //void selectPessoa()
 //{
@@ -101,6 +101,7 @@ void lancarNotas(int Nu_Turma)
 	}
 }
 
+//Mudar o Where para que o professor seja identificado pelo numero do SIAPE
 void listarPauta (unsigned Nu_Siape, unsigned Cd_Periodo)
 {
     otl_stream i(50, // buffer size
@@ -127,11 +128,12 @@ void listarPauta (unsigned Nu_Siape, unsigned Cd_Periodo)
         }
 }
 
-void printDate (otl_datetime t)
+void inline printDate (otl_datetime t)
 {
     cout << t.day << "/" << t.month << "/" << t.year;
 }
 
+//Mudar o Where para que o numero do DRE identifique o aluno efetivamente
 void listarHistorico (unsigned Nu_Dre)
 {
   otl_stream i(50, // buffer size
@@ -181,11 +183,8 @@ int main()
     "create table test_tab(f1 int, f2 varchar(30))"
     );  // create table
 
-  insert(); // insert records into table
-  //selectPessoa(); // select records from table
-  //selectPessoa(); // select records from table
-  //lancarNotas(1);
-//  listarPauta(4, 4);
+    lancarNotas(1);
+    listarPauta(4, 4);
     listarHistorico(356);
  }
 
