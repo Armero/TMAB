@@ -23,27 +23,28 @@ void lancarNotas(int Nu_Turma)
 			  db // connect object
 			 );
 
-    char f1[60][100];
-    int f2[60];
-    float f3;
+    char f1[1000][60];
+    int f2[1000];
+    float f3[1000];
     int aux = 0;
 
     i << Nu_Turma;
 
     while(!i.eof()){ // while not end-of-data
-		i>>f1[aux]>>f2[aux]>>f3;
+		i>>f1[aux]>>f2[aux]>>f3[aux];
 		aux++;
 	}
 
     otl_stream o(50, // buffer size
-			  "update Inscricao SET Nu_Grau =:f1<int> where Nu_Turma=:f2<int> AND Nu_Dre=:f3<int>",
+			  "update Inscricao SET Nu_Grau =:f1<float> where Nu_Turma=:f2<int> AND Nu_Dre=:f3<int>",
 				 // SQL statement
 			  db // connect object
 			 );
 
+
     for (int k=0; k<aux; k++)
 	{
-		int nu_grau;
+		float nu_grau;
 		cout << "Digite a nota do aluno: " << f1[k] << endl;
 		cin >> nu_grau;
 
@@ -61,13 +62,13 @@ void listarPauta (unsigned Nu_Siape, unsigned Cd_Periodo)
             INNER JOIN Periodo ON Turma.Cd_Periodo = Periodo.Cd_Periodo\
             INNER JOIN Aluno ON Inscricao.Nu_Dre = Aluno.Nu_Dre\
             INNER JOIN Pessoa ON Aluno.Cd_Pessoa = Pessoa.Cd_Pessoa\
-            WHERE Professor.Cd_Pessoa = :f<unsigned> AND\
+            WHERE Professor.Nu_SIAPE = :f<unsigned> AND\
             Periodo.Cd_Periodo = :ff<unsigned>; ",
           db
          );
 
          unsigned f1[1000];
-         char f2 [60][1000];
+         char f2 [1000][60];
          unsigned aux = 0;
 
          i << Nu_Siape << Cd_Periodo;
@@ -92,11 +93,11 @@ void listarHistorico (unsigned Nu_Dre)
             INNER JOIN Aluno ON Grade_Curricular.Nu_Dre = Aluno.Nu_Dre\
             INNER JOIN Disciplina ON Grade_Curricular.Cd_Disciplina = Disciplina.Cd_Disciplina\
             INNER JOIN Periodo ON Grade_Curricular.Cd_Periodo = Periodo.Cd_Periodo\
-            WHERE Aluno.Cd_Pessoa = :f<unsigned>;",
+            WHERE Aluno.Nu_DRE = :f<unsigned>;",
           db
          );
 
-         char f1 [60][100];
+         char f1 [1000][60];
          otl_datetime tm1;
          otl_datetime tm2;
          unsigned aux = 0;
@@ -127,10 +128,10 @@ void inscreverAluno(unsigned Cd_Periodo,unsigned dre)
           db
          );
 
-    char f1 [50][100];
-    char f2 [50][100];
-    char f3 [50][100];
-    char f4 [50][100];
+    char f1 [1000][50];
+    char f2 [1000][50];
+    char f3 [1000][50];
+    char f4 [1000][50];
     unsigned f5[1000];
     unsigned aux = 0;
 
@@ -164,6 +165,7 @@ void inscreverAluno(unsigned Cd_Periodo,unsigned dre)
 void showMenu()
 {
     unsigned entrada,nuSiape,cdPeriodo,nuTurma,cdPessoa,dre;
+    bool sair = false;
 
     cout << "Estudo Dirigido 6 - TMAB" << endl;
     cout << "Grupo K" << endl;
@@ -171,77 +173,83 @@ void showMenu()
     cout << "Thiago Koster Lago" << endl;
     cout << endl;
 
-    cout << endl;
-    cout << "---------------------Menu------------------" << endl;
-    cout << "|1 - Se matricular em turma               |" << endl;
-    cout << "|2 - Listar pauta de turma do professor   |" << endl;
-    cout << "|3 - Lancar notas de turma                |" << endl;
-    cout << "|4 - Listar historico de aluno            |" << endl;
-    cout << "-------------------------------------------" << endl;
-
-    cout << endl;
-    cout << endl;
-    cout << endl;
-
-    cout << "Digite a opcao correspondente a operacao desejada: ";
-
-    cin >> entrada;
-
-    switch(entrada)
+    while (!sair)
     {
-        case 1 :
-            cout << "Matricular em Turma..." << endl;
-            cout << "Digite o DRE e codigo do periodo separados por espaco: ";
-            cin >> dre >> cdPeriodo;
-            if (cin.fail()) {
-            //Not an int.
-                cout << "input invalido" << endl;
+        cout << endl;
+        cout << "---------------------Menu------------------" << endl;
+        cout << "|1 - Se matricular em turma               |" << endl;
+        cout << "|2 - Listar pauta de turma do professor   |" << endl;
+        cout << "|3 - Lancar notas de turma                |" << endl;
+        cout << "|4 - Listar historico de aluno            |" << endl;
+        cout << "|0 - Sair do sistema                      |" << endl;
+        cout << "-------------------------------------------" << endl;
+
+        cout << endl;
+        cout << endl;
+        cout << endl;
+
+        cout << "Digite a opcao correspondente a operacao desejada: ";
+
+        cin >> entrada;
+
+        switch(entrada)
+        {
+            case 1 :
+                cout << "Matricular em Turma..." << endl;
+                cout << "Digite o DRE e codigo do periodo separados por espaco: ";
+                cin >> dre >> cdPeriodo;
+                if (cin.fail()) {
+                //Not an int.
+                    cout << "input invalido" << endl;
+                    break;
+                }
+                inscreverAluno(cdPeriodo,dre);
                 break;
-            }
-            inscreverAluno(cdPeriodo,dre);
-            break;
 
-        case 2 :
-            cout << "Listar pauta de turma do professor..." << endl;
-            cout << "Digite o Cd_Pessoa do professor e o codigo do periodo separados por espaco: " << endl;
-            cin >> nuSiape >> cdPeriodo;
+            case 2 :
+                cout << "Listar pauta de turma do professor..." << endl;
+                cout << "Digite o Numero do SIAPE do professor e o codigo do periodo separados por espaco: " << endl;
+                cin >> nuSiape >> cdPeriodo;
 
-            if (cin.fail()) {
-            //Not an int.
-                cout << "input invalido" << endl;
+                if (cin.fail()) {
+                //Not an int.
+                    cout << "input invalido" << endl;
+                    break;
+                }
+
+                    listarPauta(nuSiape, cdPeriodo);
+                    break;
+
+            case 3 :
+                cout << "Lancar notas de turma..." << endl;
+                cout << "Digite o numero da turma: " << endl;
+                cin >> nuTurma;
+                lancarNotas(nuTurma);
                 break;
-            }
 
-                listarPauta(nuSiape, cdPeriodo);
+            case 4 :
+                cout << "Listar historico de aluno..." << endl;
+                cout << "Digite o DRE referente ao aluno: " << endl;
+                cin >> cdPessoa;
+
+                if (cin.fail()) {
+                //Not an int.
+                    cout << "input invalido" << endl;
+                    break;
+                }
+                listarHistorico(cdPessoa);
                 break;
 
-        case 3 :
-            cout << "Lancar notas de turma..." << endl;
-            cout << "Digite o numero da turma: " << endl;
-            cin >> nuTurma;
-            lancarNotas(nuTurma);
-            break;
-
-        case 4 :
-            cout << "Listar historico de aluno..." << endl;
-            cout << "Digite o CD_Pessoa referente ao aluno: " << endl;
-            cin >> cdPessoa;
-
-            if (cin.fail()) {
-            //Not an int.
-                cout << "input invalido" << endl;
+            case 0 :
+                sair = true;
                 break;
-            }
-            listarHistorico(cdPessoa);
-            break;
+            default:
 
-        default:
-
-            cout << "Opcao invalida, tente novamente..." << endl;
-            showMenu();
-            break;
+                cout << "Opcao invalida, tente novamente..." << endl;
+                showMenu();
+                break;
+        }
     }
-
 
 }
 
