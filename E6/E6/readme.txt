@@ -1,3 +1,17 @@
+Os arquivos .csv utilizados para popular o banco de dados estão na pasta TMAB.
+IMPORTANTE! : Esta pasta não deve ser renomeada, pois seu caminho é utilizado nos scripts de criação
+
+Para criar o banco de dados,execute os seguintes passos:
+1-Mova a pasta TMAB para o disco C. Criando o caminho C:\TMAB
+2-Na linha de comando do mysql, execute os comandos onde "nomeDB" deve ser substituido pelo nome do banco de dados:
+  2-1 - create database nomeDB;
+  2-2 - use nomeDB;
+3 - Agora utilize os scripts SQLs de criação do banco:
+ 3-1 - source C:/Caminho-dos-scripts/criarDB.sql;
+ 3-2 - source C:/Caminho-dos-scripts/popularDB.sql;
+ 
+Para excluir o banco de dados, utilize o script dropDB.sql.
+
 Dados úteis para utilizar no programa
 Entrar na pasta sql/csv e copiar todos os csv para a pastar C:/TMAB/
 
