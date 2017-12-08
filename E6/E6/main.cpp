@@ -26,8 +26,6 @@ using namespace std;
 
 otl_connect db; // connect object
 
-
-
 void lancarNotas(int Nu_Turma)
 {
     otl_stream i(50, // buffer size
@@ -40,6 +38,7 @@ void lancarNotas(int Nu_Turma)
 				 // SELECT statement
 			  db // connect object
 			 );
+
 
     char f1[1000][60];
     int f2[1000];
@@ -177,6 +176,17 @@ void inscreverAluno(unsigned Cd_Periodo,unsigned dre)
 
     o <<  dre << nuTurma;
     cout << "Inscricao realizada!" << endl;
+    otl_stream i2 (50,
+           "select Pessoa.Nm_Pessoa, Aluno.Nu_Dre from Pessoa\
+            inner join Aluno on Pessoa.Cd_Pessoa = Aluno.Cd_Pessoa\
+            where Aluno.Nu_Dre = :f<unsigned>",
+            db);
+    char nome [60];
+    unsigned DRE;
+    i2 << dre;
+    i2 >> nome >> DRE;
+
+    cout << "Aluno: " << nome << " Dre: " << DRE << " Inscrito na turma: " << nuTurma << endl;
 }
 
 
@@ -234,9 +244,8 @@ void showMenu()
                     cout << "input invalido" << endl;
                     break;
                 }
-
-                    listarPauta(nuSiape, cdPeriodo);
-                    break;
+                listarPauta(nuSiape, cdPeriodo);
+                break;
 
             case 3 :
                 cout << "Lancar notas de turma..." << endl;
@@ -258,9 +267,10 @@ void showMenu()
                 listarHistorico(cdPessoa);
                 break;
 
-            case 0 :
+            case 0:
                 sair = true;
                 break;
+
             default:
 
                 cout << "Opcao invalida, tente novamente..." << endl;
@@ -277,21 +287,7 @@ int main()
  try{
 
   db.rlogon("UID=root;PWD=;DSN=E06-K"); // connect to ODBC
-
-otl_cursor::direct_exec
-   (
-    db,
-    "drop table test_tab",
-    otl_exception::disabled // disable OTL exceptions
-   ); // drop table
-
-  otl_cursor::direct_exec
-   (
-    db,
-    "create table test_tab(f1 int, f2 varchar(30))"
-    );  // create table
-
-    showMenu();
+  showMenu();
  }
 
  catch(otl_exception& p){ // intercept OTL exceptions
@@ -304,5 +300,4 @@ otl_cursor::direct_exec
  db.logoff(); // disconnect from Oracle
 
  return 0;
-
 }
