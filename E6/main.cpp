@@ -52,7 +52,7 @@ void lancarNotas(int Nu_Turma)
 		aux++;
 	}
 
-    otl_stream o(50, // buffer size
+    otl_stream o(100, // buffer size
 			  "update Inscricao SET Nu_Grau =:f1<float> where Nu_Turma=:f2<int> AND Nu_Dre=:f3<int>",
 				 // SQL statement
 			  db // connect object
@@ -91,7 +91,7 @@ void listarPauta (unsigned Nu_Siape, unsigned Cd_Periodo)
          i << Nu_Siape << Cd_Periodo;
          while(!i.eof()){ // while not end-of-data
             i>>f1[aux]>>f2[aux];
-            cout << aux + 1 <<  " Dre: " << f1[aux] << "Nome: "<< f2[aux] << endl;
+            cout << aux + 1 <<  " Dre: " << f1[aux] << " Nome: "<< f2[aux] << endl;
             aux++;
         }
 }
@@ -110,6 +110,7 @@ void listarHistorico (unsigned Nu_Dre)
             INNER JOIN Aluno ON Grade_Curricular.Nu_Dre = Aluno.Nu_Dre\
             INNER JOIN Disciplina ON Grade_Curricular.Cd_Disciplina = Disciplina.Cd_Disciplina\
             INNER JOIN Periodo ON Grade_Curricular.Cd_Periodo = Periodo.Cd_Periodo\
+           \
             WHERE Aluno.Nu_DRE = :f<unsigned>;",
           db
          );

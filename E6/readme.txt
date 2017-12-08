@@ -18,12 +18,12 @@ Entrar na pasta sql/csv e copiar todos os csv para a pastar C:/TMAB/
 Tópicos:
 1) Se matricular em turma:
 	Exemplo de input:
-		116996571 3
+		116995883 3
 	Caso queira observar a lista de alunos, utilizar o script listarTurma.sql e modificar a turma escolhida
 
 2) Listar pauta de turma do professor:
 	Exemplo de input:
-	141278988 8
+	189298268 2
 	
 3) Lançar notas de turma
 	Exemplo de input:
@@ -32,15 +32,14 @@ Tópicos:
 
 4) Listar histórico de aluno
 	Exemplo de input:
-	116996571
+	116989974
 	
 Exemplos de DRES de alunos:
-116996571
-116999557
-116994565
-116998262
+116995883 - Hideo Vasconcelos Silva - está nas turmas: 0 e 5 
+116989974 - Isabella Ferraz Ferraz - está nas turmas: 17,18 e 23
+116991025 - Lara Ferraz - está nas turmas: 5,7 e 22
 
 Exemplos de Numeros de SIAPES e Cd_Periodo:
-141278988 8
-116470141 7
-102149145 4 ou 5
+189298268 - Felipe Silva - Cd_Pessoa: 6 - Periodo: 2 ou 3 turmas 12 e 0 respectivamente
+136877307 - Helena Kojima Vasconcelos - Cd_Pessoa: 2 - Periodo: 2 ou 4 turmas 2 e 1 respectivamente
+157033274 - Helena Beatriz Neiva Koster - Cd_Pessoa: 30 - Periodo: 2 turma 23
